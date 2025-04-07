@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html theme="dark" showBanner="true" hasBanner="true" > 
+<html theme="dark" showBanner="true" hasBanner="desktop" > 
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
@@ -14,31 +14,27 @@
   
 
   
-  <title>程序设计 | Smiling</title>
+  <title>程序设计备考笔记 | Smiling</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="备考笔记——Smiling  0 前言 本笔记写于2025年年初，为应对程序设计与数据结构-1的期末考试而写。主要针对的是在各类复习资料以及历年上交各班的期末考试试卷中出现的有关c++基本语法的易错点和考点，以供复习之用。  1 整形存储1.原码（符号位+数值）最高位为符号位，0表示正数，1表示负数，其余位表示数值的绝对值。 short int 类型的-1，其原码为 100000000000000">
+  <meta name="description" content="程序设计备考笔记——Smiling  0 前言 本笔记写于2025年年初，为应对程序设计与数据结构-1的期末考试而写。主要针对的是在各类复习资料以及历年上交各班的期末考试试卷中出现的有关c++基本语法的易错点和考点，以供复习之用。  1 整形存储1.原码（符号位+数值）最高位为符号位，0表示正数，1表示负数，其余位表示数值的绝对值。 short int 类型的-1，其原码为 10000000000">
 <meta property="og:type" content="article">
-<meta property="og:title" content="程序设计">
+<meta property="og:title" content="程序设计备考笔记">
 <meta property="og:url" content="http://example.com/2025/04/06/%E7%A8%8B%E8%AE%BE/index.html">
 <meta property="og:site_name" content="Smiling">
-<meta property="og:description" content="备考笔记——Smiling  0 前言 本笔记写于2025年年初，为应对程序设计与数据结构-1的期末考试而写。主要针对的是在各类复习资料以及历年上交各班的期末考试试卷中出现的有关c++基本语法的易错点和考点，以供复习之用。  1 整形存储1.原码（符号位+数值）最高位为符号位，0表示正数，1表示负数，其余位表示数值的绝对值。 short int 类型的-1，其原码为 100000000000000">
+<meta property="og:description" content="程序设计备考笔记——Smiling  0 前言 本笔记写于2025年年初，为应对程序设计与数据结构-1的期末考试而写。主要针对的是在各类复习资料以及历年上交各班的期末考试试卷中出现的有关c++基本语法的易错点和考点，以供复习之用。  1 整形存储1.原码（符号位+数值）最高位为符号位，0表示正数，1表示负数，其余位表示数值的绝对值。 short int 类型的-1，其原码为 10000000000">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20250110183458017.png">
-<meta property="og:image" content="c:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20250111213453212.png">
-<meta property="og:image" content="c:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20250112102801324.png">
-<meta property="og:image" content="c:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20250112102827119.png">
-<meta property="og:image" content="c:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20250114162609734.png">
+<meta property="og:image" content="http://example.com/2025/04/06/%E7%A8%8B%E8%AE%BE/images/Image_2001708531432030.jpg">
 <meta property="article:published_time" content="2025-04-06T15:31:44.000Z">
-<meta property="article:modified_time" content="2025-04-06T15:34:03.092Z">
+<meta property="article:modified_time" content="2025-04-07T08:09:03.439Z">
 <meta property="article:author" content="Smiling">
 <meta property="article:tag" content="学习">
-<meta property="article:tag" content="程序设计">
+<meta property="article:tag" content="程序设计与数据结构">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20250110183458017.png">
+<meta name="twitter:image" content="http://example.com/2025/04/06/%E7%A8%8B%E8%AE%BE/images/Image_2001708531432030.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Smiling" type="application/atom+xml">
   
@@ -176,8 +172,8 @@
                 <div class="category-count">3</div>
             </a>
         
-            <a class="category-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
-                程序设计
+            <a class="category-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                程序设计与数据结构
                 <div class="category-count">1</div>
             </a>
         </div>
@@ -190,7 +186,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">Tags</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%BA%9F%E8%AF%9D/" rel="tag">废话</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91/" rel="tag">数理逻辑</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" rel="tag">程序设计</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" rel="tag">网站建设</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%BA%9F%E8%AF%9D/" rel="tag">废话</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91/" rel="tag">数理逻辑</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">程序设计与数据结构</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" rel="tag">网站建设</a></li></ul>
     </div>
   </div>
 
@@ -206,6 +202,16 @@
 <article id="post-程设" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img" rel="gallery_cm95syf5y00006ola4lbm1mar">
+        <img src="/images/Image_2001708531432030.jpg" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
    
   <div class="article-inner">
     <div class="article-main">
@@ -216,7 +222,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        程序设计
+        程序设计备考笔记
       </h1>
     
   
@@ -229,7 +235,7 @@
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-  <a class="meta-cate-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">程序设计</a>
+  <a class="meta-cate-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">程序设计与数据结构</a>
    
 </div>
   
@@ -239,12 +245,12 @@
           </div>
         </div>
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" rel="tag">程序设计</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">程序设计与数据结构</a></li></ul>
 
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="备考笔记"><a href="#备考笔记" class="headerlink" title="备考笔记"></a>备考笔记</h1><p align="right"><i>——Smiling</i></p>
+          <h1 id="程序设计备考笔记"><a href="#程序设计备考笔记" class="headerlink" title="程序设计备考笔记"></a>程序设计备考笔记</h1><p align="right"><i>——Smiling</i></p>
 
 <h2 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h2><blockquote>
 <p>本笔记写于2025年年初，为应对程序设计与数据结构-1的期末考试而写。主要针对的是在各类复习资料以及历年上交各班的期末考试试卷中出现的有关c++基本语法的易错点和考点，以供复习之用。</p>
