@@ -44,7 +44,7 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
 
 <body>
   
@@ -164,13 +164,13 @@
                 <div class="category-count">3</div>
             </a>
         
-            <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
-                算法
+            <a class="category-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+                程序设计与数据结构
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-                程序设计与数据结构
+            <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95buyon/">
+                算法buyon
                 <div class="category-count">1</div>
             </a>
         </div>
@@ -278,13 +278,13 @@
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-  <a class="meta-cate-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+  <a class="meta-cate-link" href="/categories/%E7%AE%97%E6%B3%95buyon/">算法buyon</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            12 words 
+            39k words 
           </div>
         </div>
         
@@ -296,9 +296,23 @@
           <div class="truncate-text">
             
               
+
 用于记录算法课程的学习。
 
-
+现
+[TOC]
+在我想家目录111
+第一章 多元函数的极限与连续
+一维时，定义极限，我们使用了绝对值。在更高的维度上，我们需要用距离来刻画极限的概念。
+1、RnR^nRn上的度量与点列极限
+实数系是有理数系的完备化。通过十进制和Dedkind分割构造成的实数系，尊重的是序结构，从而最先引出确界存在定理。而Contor的构造方法，尊重的是距离结构，从而最先引出Cauchy收敛原理。
+在集合意义下的RnR^nRn,可以看做nnn个RRR的笛卡尔积，即
+{(x1,...,xn)∣xi∈R}\{(x^1,...,x^n)|x^i\in R\}
+{(x1,...,xn)∣xi∈R}
+RnR^nRn是RRR上的线性空间。因为它满足加法结构、数乘结构和分配律。
+RnR^nRn是RRR上的内积空间。内积空间由线性空间和满足自范性、对称性和线性性的内积运算组成。
+由内积，我们可以诱导出范数。比如，我们可以定义∣∣x∣∣=&lt;x,x&gt;||x||=\sqrt{&lt;x,x&gt;}∣∣x∣∣=&lt;x,x&gt;​。所以，内积空间一定是赋范空间。
+我们称线...
             
           </div>
         
@@ -372,20 +386,29 @@
           <div class="truncate-text">
             
               ——Smiling
-
 0 前言
+
 本笔记写于2025年年初，为应对程序设计与数据结构-1的期末考试而写。主要针对的是在各类复习资料以及历年上交各班的期末考试试卷中出现的有关c++基本语法的易错点和考点，以供复习之用。
 
-1 整形存储1.原码（符号位+数值）最高位为符号位，0表示正数，1表示负数，其余位表示数值的绝对值。
+1 整形存储
+1.原码（符号位+数值）
+最高位为符号位，0表示正数，1表示负数，其余位表示数值的绝对值。
 short int 类型的-1，其原码为 1000000000000001
-2.反码正数的反码不变。负数的反码符号位不变，其余位取反short int 类型 -1 的反码为 1111111111111110(原码除符号位外按位取反)
-3.补码正数的补码与原码相同。负数的补码是在反码的基础上加 1。short int类型-1的补码为 1111111111111111，在内存中存储为0xFFFF(十六进制表示的补码形式)。
-2 运算符1.优先级
-==！最高，（），算术运算符，关系表达式（&gt;，!=等），&amp;&amp;，||，赋值运算符（=，+=，*=等）最低==
-2.大多数运算符都可以重载，但有一些运算符是不能重载的：
+2.反码
+正数的反码不变。负数的反码符号位不变，其余位取反
+short int 类型 -1 的反码为 1111111111111110(原码除符号位外按位取反)
+3.补码
+正数的补码与原码相同。
+负数的补码是在反码的基础上加 1。
+short int类型-1的补码为 1111111111111111，在内存中存储为0xFFFF(十六进制表示的补码形式)。
+2 运算符
+1.优先级
 
-成员访问运算符（.）
-成员指针访问运算...
+==！最高，（），算术运算符，关系表达式（&gt;，!=等），&amp;&amp;，||，赋值运算符（=，+=，*=等）最低==
+2.
+大多数运算符都可以重载，但有一些运算符是不能重载的：
+
+成员访问运算符（....
             
           </div>
         
@@ -697,8 +720,10 @@ If you need this file, please contact me by wechat.
         
           <div class="truncate-text">
             
-              TestThis blog is used for tests.
+              Test
+This blog is used for tests.
 Images_Test
+
 (Put under the images)
 
             
@@ -778,19 +803,26 @@ Images_Test
               
 前排：只是我为了我日后方便而保留
 
-帮助页面hexo使用说明：https://zhuanlan.zhihu.com/p/392994381
-vivia排版：https://github.com/saicaca/hexo-theme-vivia
-新建Post相关12345$ cd /home/smiling/Blog$ hexo new &quot;My New Post&quot;$ hexo g$ hexo s #预览$ hexo d
-一个经常出现的问题node.js版本过低
+帮助页面
+hexo使用说明：
+https://zhuanlan.zhihu.com/p/392994381
+vivia排版：
+https://github.com/saicaca/hexo-theme-vivia
+新建Post相关
+12345$ cd /home/smiling/Blog$ hexo new &quot;My New Post&quot;$ hexo g$ hexo s #预览$ hexo d
+一个经常出现的问题
+node.js版本过低
 尝试
 1nvm install 18
 检查是否还有报错
-Othersvavia进阶使用指南
-网站域名相关本网站使用阿里云创建域名，并用其相应的DNS解析，链接：
+Others
+vavia进阶使用指南
+网站域名相关
+本网站使用阿里云创建域名，并用其相应的DNS解析，链接：
 https://dc.console.aliyun.com/next/index
 DNS解析位置：
 https://dns.console.aliyun.com/#/dns/setting/smiling689.top
-如果在hexo deploy的过程中导致git仓库中的CNAME文件消失，需要在git网页重新建一个名字叫做CNAME的文件，...
+如果在hexo deploy的过程中导致git仓库中的CNAME文件消失，需要在git网页重新建一个名字叫做CN...
             
           </div>
         
