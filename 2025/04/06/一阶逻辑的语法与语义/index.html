@@ -20,15 +20,15 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="\newcommand{\J}{\mathfrak{I}}\newcommand{\A}{\mathfrak{A}} $$一个数学定理是由公理出发经过正确的逻辑推导得出的一个结论。我们希望这整个过程是尽可能精确而严格的，因此这整个过程最好是能够被形式化(formalize)的。数学的形式化一方面能够帮助检查数学自身的严格性，一方面也是在计算机上做数学证明的基础。为此我们要定义一套形式语言来描述公">
+  <meta name="description" content="一个数学定理是由公理出发经过正确的逻辑推导得出的一个结论。我们希望这整个过程是尽可能精确而严格的，因此这整个过程最好是能够被形式化(formalize)的。数学的形式化一方面能够帮助检查数学自身的严格性，一方面也是在计算机上做数学证明的基础。为此我们要定义一套形式语言来描述公理、证明与定理。 一阶逻辑的语法(Syntax) 我们将会建立的这套形式语言称为一阶语言(first-order langu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一阶逻辑的语法与语义">
 <meta property="og:url" content="http://example.com/2025/04/06/%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91%E7%9A%84%E8%AF%AD%E6%B3%95%E4%B8%8E%E8%AF%AD%E4%B9%89/index.html">
 <meta property="og:site_name" content="Smiling">
-<meta property="og:description" content="\newcommand{\J}{\mathfrak{I}}\newcommand{\A}{\mathfrak{A}} $$一个数学定理是由公理出发经过正确的逻辑推导得出的一个结论。我们希望这整个过程是尽可能精确而严格的，因此这整个过程最好是能够被形式化(formalize)的。数学的形式化一方面能够帮助检查数学自身的严格性，一方面也是在计算机上做数学证明的基础。为此我们要定义一套形式语言来描述公">
+<meta property="og:description" content="一个数学定理是由公理出发经过正确的逻辑推导得出的一个结论。我们希望这整个过程是尽可能精确而严格的，因此这整个过程最好是能够被形式化(formalize)的。数学的形式化一方面能够帮助检查数学自身的严格性，一方面也是在计算机上做数学证明的基础。为此我们要定义一套形式语言来描述公理、证明与定理。 一阶逻辑的语法(Syntax) 我们将会建立的这套形式语言称为一阶语言(first-order langu">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-04-06T14:26:06.000Z">
-<meta property="article:modified_time" content="2025-04-27T14:20:58.130Z">
+<meta property="article:modified_time" content="2025-04-27T14:24:55.180Z">
 <meta property="article:author" content="Smiling">
 <meta property="article:tag" content="数理逻辑">
 <meta property="article:tag" content="学习">
@@ -290,53 +290,49 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p class='katex-block katex-error' title='ParseError: KaTeX parse error: Can&#039;t use function &#039;$&#039; in math mode at position 61: …{\mathfrak{A}} $̲$一个数学定理是由公理出发经过…'> \newcommand{\J}{\mathfrak{I}}\newcommand{\A}{\mathfrak{A}} $$一个数学定理是由公理出发经过正确的逻辑推导得出的一个结论。我们希望这整个过程是尽可能精确而严格的，因此这整个过程最好是能够被形式化(formalize)的。数学的形式化一方面能够帮助检查数学自身的严格性，一方面也是在计算机上做数学证明的基础。为此我们要定义一套形式语言来描述公理、证明与定理。
-
-## 一阶逻辑的语法(Syntax)
-
-我们将会建立的这套形式语言称为一阶语言(first-order language)或一阶逻辑(first-order logic)。对于一个集合，我们把集合的元素(elements)称为一阶对象(first-order objects)，它们是构成集合的最基本要素。一阶对象的集合也即子集称为二阶对象(second-order objects)，相应地二阶对象的集合构成三阶对象，等等。一阶语言规定我们在量词中只能提到一阶对象，例如我们可以说“对于集合 $$ A $$ 中的每个元素，……”，但不能直接说“对于集合 $$ A $$ 的每个子集，……”。这意味着一阶逻辑能够直接表达的数学定理是有限的，有许多涉及高阶两次的数学定理是不能直接翻译为一阶逻辑的。然而，通过一些基于集合论的转化，我们原则上可以用一阶逻辑表达当今世界上的所有数学定理，也就是说本质上对一阶逻辑的讨论就是对所有数学定理的讨论，我们之后会看到如何做到这一点。
-
-### Alphabet
-
-在形式语言中，一切讨论的对象都要用符号串(word)来表示，符号串就是由字母表(alphabet)中的字符连接而成的字符串。一阶逻辑的字母表中应当包含哪些字符呢？我们来考虑一些用自然语言表达的数学命题：一个群论中的命题是“群里存在一个元素使得所有元素和它相乘都等于自身”，我们看到这个命题中包含对元素的讨论，量词(quantifier)“存在”和“所有”，一个重要的概念“等于”，一个二元运算，也即一个“函数”；另一个表示等价关系的传递性的命题是“如果元素a和元素b等价并且元素b和元素c等价则元素a和元素c等价”，这个命题中包含一个因果推导和两个前提的并列的“逻辑关系”，用于表达两个元素等价的“二元关系”。一阶语言中还应当包括其它的一些表示“非”“或”“当且仅当”等等的符号。现在我们把这些符号总结如下：
-
-一阶逻辑的alphabet包括以下内容：
-
-* 变量(variables)：一般认为变量应当记为 $$ v_0,v_1,\cdots $$ ，这里能够用自然数做下标，是因为我们默认一阶逻辑能够使用的变量总数是至多可数的（有时为了方便，也可以把变量记为 $$ x,y,z,\cdots $$ 或 $$ a,b,c,\cdots $$ 可数的）；
-* 逻辑符号(logical symbols)：非（ $$ \neg $$ ），与（ $$ \land $$ ），或（ $$ \lor $$ ），推出（ $$ \to $$ ），等价（ $$ \leftrightarrow $$ ）；
-* 量词(quantifiers)：存在（ $$ \exists $$ ），任意（ $$ \forall $$ ）；
-* 等号(equality symbol)：一阶逻辑中等号用（ $$ \equiv $$ ）表示而不是算术中常用的（ $$ = $$ ）；
-* 括号(parentheses)：（ $$ ( $$ ），（ $$ ) $$ ）。用来区分命题中各个部分的优先级；
-* $$ n $$ 元关系符号( $$ n $$ -ary relation symbols)， $$ n\geq 1 $$ 。例如设 $$ R $$ 是一个二元关系符号，那么 $$ Rv_0v_1 $$ 就表示一个二元关系，比如 $$ v_0 $$ 与 $$ v_1 $$ 等价；
-* $$ n $$ 元函数符号( $$ n $$ -ary function symbols)， $$ n\geq 1 $$ 。例如设 $$ f $$ 是一个二元函数，那么 $$ fv_0v_1 $$ 就表示一个二元函数的值，比如自然数 $$ v_0 $$ 与 $$ v_1 $$ 的和；
-* 常数符号(constant symbols)， $$ c_0,c_1,\cdots $$ ，或者也可以用特殊的字母表示。例如在群论中可以用 $$ e $$ 表示单位元这一常量。
-
-我们注意到以上分类中的最后三类比较特殊。前面五类在所有场合都相同，而后三类则会在不同场合采用不同的符号，甚至如果讨论中不涉及的话可以为空。我们把这三类统称为符号集(symbol set)，记为 $$ S $$ 。前五类符号记为 $$ \mathcal{A} $$ 。整个字母表记为 $$ \mathcal{A}_S $$ 。所以事实上，我们认为我们在不同的场合会使用“不同”的字母表，这些不同的字母表只在符号集上有差异。（这里，场合是针对我们要形式化的对象的。例如如果我们想用一阶逻辑形式化自然数上的定理，那么我们就可能需要二元关系“整除”，二元运算“加法”，以及常量“ $$ 0 $$ ”。而如果我们想要形式化群论上的定理，则不需要整除或加法这些符号，而需要群元素间的二元运算，一元函数“逆元”，常量“单位元”等等。只有确定要形式化的对象之后我们才能确定字母表，字母表确定了以后所有一阶逻辑写出的命题就只能包含字母表中的字符）
-
-### Terms &amp; Formulas
-
-根据一阶逻辑的字母表，我们可以把字母表中的字母任意排列连接成字符串，这些字符串可以是任意的，比如 $$ )v_0(\neg c_0\to\equiv $$ 。然而并不是所有可能的组合形式的字符串都会是我们用到的，只有一小部分满足特定规则的字符串才会构成一阶逻辑的“语言”。和自然语言一样，形式语言也是需要有语法(syntax)的，语法就是那些会被我们使用的字符串要满足的构造规则。这样的构造规则是从人们日常使用的数学语言中抽象出来的。例如人们在学习二次方程的时候会用代数式与等号写出 $$ x^2+y^2=2xy $$ ，等号两边的字符串称为“项”(term)，整个字符串称为“公式”(formula)。我们要抽象出像这样的特殊组合的构造规则，定义一阶逻辑的项和公式。
-
-对于特定的符号集 $$ S $$ ，我们归纳地定义 $$ S $$ 下的一阶逻辑的项（称为 $$ S $$ -term）：
-
-* 单个变量 $$ v_i $$ 是一个 $$ S $$ -term；
-
-* 单个常数 $$ c_i $$ 是一个 $$ S $$ -term；
-
-* 对于 $$ n\geq 1 $$ ，如果 $$ t_1,\cdots,t_n $$ 都是 $$ S $$ -term，那么对于 $$ n $$ 元函数 $$ f $$ ， $$ ft_1t_2\cdots t_n $$ 也是一个 $$ S $$ -term；
-
-基于term的定义，我们归纳地定义 $$ S $$ 下的一阶逻辑的公式（称为 $$ S $$ -formula）：
-
-* 如果 $$ t_1 $$ 和 $$ t_2 $$ 是两个 $$ S $$ -term，那么 $$ t_1\equiv t_2 $$ 是一个 $$ S $$ -formula；
-* 对于 $$ n\geq 1 $$ ，如果 $$ t_1,\cdots,t_n $$ 都是 $$ S $$ -term，那么对于 $$ n $$ 元关系 $$ R $$ ， $$ Rt_1t_2\cdots t_n $$ 也是一个 $$ S $$ -formula；
-* 如果 $$ \varphi $$ 是 $$ S $$ -formula， $$ x $$ 是一个变量， $$ \neg \varphi $$ 、 $$ \forall x\varphi $$ 、 $$ \exists x\varphi $$ 也是 $$ S $$ -formula；
-* 如果 $$ \varphi,\psi $$ 是 $$ S $$ -formula， $$ (\varphi \land \psi) $$ 、 $$ (\varphi\lor\psi) $$ 、 $$ (\varphi\to \psi) $$ 、 $$ (\varphi \leftrightarrow \psi) $$ 也是 $$ S $$ -formula。
-
-应当指出，这里的“公式”与日常语言中的公式概念不同，这里的公式不是指恒成立的等式，而其实是一阶逻辑的“命题”。一阶逻辑的语言指的就是所有一阶逻辑的命题。所以，我们把符号集 $$ S $$ 下全体 $$ S $$ -formula的集合记为 $$ L^S $$ ，这里的 $$ L $$ 就是指language。全体 $$ S $$ -term的集合也有一个记号 $$ T^S $$ 。
-
-特别重要的一点是，我们要求一阶逻辑的term和formula都是有限长的字符串。也就是说，我们要求上面的归纳定义中，归纳次数是有限次。于是，每个term或formula都可以从某个原子性的(atomic) term或formula出发一步步构造得到，构造的过程可以写作一个有限长的字符串序列。我们把这样的归纳称为结构归纳(structural induction)。
-
-$$ \newcommand{\var}{\text{var}} $$ 我们可以基于结构归纳定义关于term或formula的函数。一个重要的基于结构归纳的函数用来指明term中出现的所有变量的集合，这个函数可以定义如下：
+          <p>一个数学定理是由公理出发经过正确的逻辑推导得出的一个结论。我们希望这整个过程是尽可能精确而严格的，因此这整个过程最好是能够被形式化(formalize)的。数学的形式化一方面能够帮助检查数学自身的严格性，一方面也是在计算机上做数学证明的基础。为此我们要定义一套形式语言来描述公理、证明与定理。</p>
+<h2 id="一阶逻辑的语法-syntax">一阶逻辑的语法(Syntax)</h2>
+<p>我们将会建立的这套形式语言称为一阶语言(first-order language)或一阶逻辑(first-order logic)。对于一个集合，我们把集合的元素(elements)称为一阶对象(first-order objects)，它们是构成集合的最基本要素。一阶对象的集合也即子集称为二阶对象(second-order objects)，相应地二阶对象的集合构成三阶对象，等等。一阶语言规定我们在量词中只能提到一阶对象，例如我们可以说“对于集合 $$ A $$ 中的每个元素，……”，但不能直接说“对于集合 $ A $ 的每个子集，……”。这意味着一阶逻辑能够直接表达的数学定理是有限的，有许多涉及高阶两次的数学定理是不能直接翻译为一阶逻辑的。然而，通过一些基于集合论的转化，我们原则上可以用一阶逻辑表达当今世界上的所有数学定理，也就是说本质上对一阶逻辑的讨论就是对所有数学定理的讨论，我们之后会看到如何做到这一点。</p>
+<h3 id="alphabet">Alphabet</h3>
+<p>在形式语言中，一切讨论的对象都要用符号串(word)来表示，符号串就是由字母表(alphabet)中的字符连接而成的字符串。一阶逻辑的字母表中应当包含哪些字符呢？我们来考虑一些用自然语言表达的数学命题：一个群论中的命题是“群里存在一个元素使得所有元素和它相乘都等于自身”，我们看到这个命题中包含对元素的讨论，量词(quantifier)“存在”和“所有”，一个重要的概念“等于”，一个二元运算，也即一个“函数”；另一个表示等价关系的传递性的命题是“如果元素a和元素b等价并且元素b和元素c等价则元素a和元素c等价”，这个命题中包含一个因果推导和两个前提的并列的“逻辑关系”，用于表达两个元素等价的“二元关系”。一阶语言中还应当包括其它的一些表示“非”“或”“当且仅当”等等的符号。现在我们把这些符号总结如下：</p>
+<p>一阶逻辑的alphabet包括以下内容：</p>
+<ul>
+<li>变量(variables)：一般认为变量应当记为 $$ v_0,v_1,\cdots $$ ，这里能够用自然数做下标，是因为我们默认一阶逻辑能够使用的变量总数是至多可数的（有时为了方便，也可以把变量记为 $$ x,y,z,\cdots $$ 或 $$ a,b,c,\cdots $$ 可数的）；</li>
+<li>逻辑符号(logical symbols)：非（ $$ \neg $$ ），与（ $$ \land $$ ），或（ $$ \lor $$ ），推出（ $$ \to $$ ），等价（ $$ \leftrightarrow $$ ）；</li>
+<li>量词(quantifiers)：存在（ $$ \exists $$ ），任意（ $$ \forall $$ ）；</li>
+<li>等号(equality symbol)：一阶逻辑中等号用（ $$ \equiv $$ ）表示而不是算术中常用的（ $$ = $$ ）；</li>
+<li>括号(parentheses)：（ $$ ( $$ ），（ $$ ) $$ ）。用来区分命题中各个部分的优先级；</li>
+<li>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: Can&#039;t use function &#039;$&#039; in math mode at position 4:  n $̲$ 元关系符号( $$ n $…'> n $$ 元关系符号( $$ n $$ -ary relation symbols)， $$ n\geq 1 $$ 。例如设 $$ R $$ 是一个二元关系符号，那么 $$ Rv_0v_1 $$ 就表示一个二元关系，比如 $$ v_0 $$ 与 $$ v_1 $$ 等价；
+</p>
+</li>
+<li>常数符号(constant symbols)， $$ c_0,c_1,\cdots $$ ，或者也可以用特殊的字母表示。例如在群论中可以用 $$ e $$ 表示单位元这一常量。</li>
+</ul>
+<p>我们注意到以上分类中的最后三类比较特殊。前面五类在所有场合都相同，而后三类则会在不同场合采用不同的符号，甚至如果讨论中不涉及的话可以为空。我们把这三类统称为符号集(symbol set)，记为 $$ S $$ 。前五类符号记为 $$ \mathcal{A} $$ 。整个字母表记为 $$ \mathcal{A}_S $$ 。所以事实上，我们认为我们在不同的场合会使用“不同”的字母表，这些不同的字母表只在符号集上有差异。（这里，场合是针对我们要形式化的对象的。例如如果我们想用一阶逻辑形式化自然数上的定理，那么我们就可能需要二元关系“整除”，二元运算“加法”，以及常量“ $$ 0 $$ ”。而如果我们想要形式化群论上的定理，则不需要整除或加法这些符号，而需要群元素间的二元运算，一元函数“逆元”，常量“单位元”等等。只有确定要形式化的对象之后我们才能确定字母表，字母表确定了以后所有一阶逻辑写出的命题就只能包含字母表中的字符）</p>
+<h3 id="terms-formulas">Terms &amp; Formulas</h3>
+<p>根据一阶逻辑的字母表，我们可以把字母表中的字母任意排列连接成字符串，这些字符串可以是任意的，比如 $$ )v_0(\neg c_0\to\equiv $$ 。然而并不是所有可能的组合形式的字符串都会是我们用到的，只有一小部分满足特定规则的字符串才会构成一阶逻辑的“语言”。和自然语言一样，形式语言也是需要有语法(syntax)的，语法就是那些会被我们使用的字符串要满足的构造规则。这样的构造规则是从人们日常使用的数学语言中抽象出来的。例如人们在学习二次方程的时候会用代数式与等号写出 $$ x^2+y^2=2xy $$ ，等号两边的字符串称为“项”(term)，整个字符串称为“公式”(formula)。我们要抽象出像这样的特殊组合的构造规则，定义一阶逻辑的项和公式。</p>
+<p>对于特定的符号集 $$ S $$ ，我们归纳地定义 $$ S $$ 下的一阶逻辑的项（称为 $$ S $$ -term）：</p>
+<ul>
+<li>
+<p>单个变量 $$ v_i $$ 是一个 $$ S $$ -term；</p>
+</li>
+<li>
+<p>单个常数 $$ c_i $$ 是一个 $$ S $$ -term；</p>
+</li>
+<li>
+<p>对于 $$ n\geq 1 $$ ，如果 $$ t_1,\cdots,t_n $$ 都是 $$ S $$ -term，那么对于 $$ n $$ 元函数 $$ f $$ ， $$ ft_1t_2\cdots t_n $$ 也是一个 $$ S $$ -term；</p>
+</li>
+</ul>
+<p>基于term的定义，我们归纳地定义 $$ S $$ 下的一阶逻辑的公式（称为 $$ S $$ -formula）：</p>
+<ul>
+<li>如果 $$ t_1 $$ 和 $$ t_2 $$ 是两个 $$ S $$ -term，那么 $$ t_1\equiv t_2 $$ 是一个 $$ S $$ -formula；</li>
+<li>对于 $$ n\geq 1 $$ ，如果 $$ t_1,\cdots,t_n $$ 都是 $$ S $$ -term，那么对于 $$ n $$ 元关系 $$ R $$ ， $$ Rt_1t_2\cdots t_n $$ 也是一个 $$ S $$ -formula；</li>
+<li>如果 $$ \varphi $$ 是 $$ S $$ -formula， $$ x $$ 是一个变量， $$ \neg \varphi $$ 、 $$ \forall x\varphi $$ 、 $$ \exists x\varphi $$ 也是 $$ S $$ -formula；</li>
+<li>如果 $$ \varphi,\psi $$ 是 $$ S $$ -formula， $$ (\varphi \land \psi) $$ 、 $$ (\varphi\lor\psi) $$ 、 $$ (\varphi\to \psi) $$ 、 $$ (\varphi \leftrightarrow \psi) $$ 也是 $$ S $$ -formula。</li>
+</ul>
+<p>应当指出，这里的“公式”与日常语言中的公式概念不同，这里的公式不是指恒成立的等式，而其实是一阶逻辑的“命题”。一阶逻辑的语言指的就是所有一阶逻辑的命题。所以，我们把符号集 $$ S $$ 下全体 $$ S $$ -formula的集合记为 $$ L^S $$ ，这里的 $$ L $$ 就是指language。全体 $$ S $$ -term的集合也有一个记号 $$ T^S $$ 。</p>
+<p>特别重要的一点是，我们要求一阶逻辑的term和formula都是有限长的字符串。也就是说，我们要求上面的归纳定义中，归纳次数是有限次。于是，每个term或formula都可以从某个原子性的(atomic) term或formula出发一步步构造得到，构造的过程可以写作一个有限长的字符串序列。我们把这样的归纳称为结构归纳(structural induction)。</p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: Can&#039;t use function &#039;$&#039; in math mode at position 32: …r}{\text{var}} $̲$ 我们可以基于结构归纳定义关…'> \newcommand{\var}{\text{var}} $$ 我们可以基于结构归纳定义关于term或formula的函数。一个重要的基于结构归纳的函数用来指明term中出现的所有变量的集合，这个函数可以定义如下：
 
 *  $$ \var(v_i):={v_i } $$ ；
 *  $$ \var(c_i):=\varnothing $$ ；
