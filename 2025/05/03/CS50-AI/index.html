@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2025/05/03/CS50-AI/images/cs50.png">
 <meta property="article:published_time" content="2025-05-03T08:44:36.000Z">
-<meta property="article:modified_time" content="2025-05-03T09:59:22.166Z">
+<meta property="article:modified_time" content="2025-05-03T10:02:36.766Z">
 <meta property="article:author" content="Smiling">
 <meta property="article:tag" content="学习">
 <meta property="article:tag" content="csdiy">
@@ -311,14 +311,14 @@
           <h2 id="Week-0-Search"><a href="#Week-0-Search" class="headerlink" title="Week 0 Search"></a>Week 0 Search</h2><h3 id="uninformed-search"><a href="#uninformed-search" class="headerlink" title="uninformed search"></a>uninformed search</h3><p>DFS &amp;&amp; BFS</p>
 <h3 id="informed-search"><a href="#informed-search" class="headerlink" title="informed search"></a>informed search</h3><h4 id="greedy-best-first-search"><a href="#greedy-best-first-search" class="headerlink" title="greedy best-first search"></a>greedy best-first search</h4><p>search algorithm that expands the node that is closest to the goal, as estimated by a heuristic function $h(n)$ (启发式)</p>
 <p>Heuristic function? Manhattan distance.</p>
-<p><img src="./assets/image-20250503165654055.png" alt="image-20250503165654055" style="zoom:33%;" /></p>
+<p><img src="/images/assets/image-20250503165654055.png" alt="image-20250503165654055" style="zoom:33%;" /></p>
 <p>Choose the best way that minimize the heuristic function every time. It makes decision locally.</p>
 <p>But this greedy algorithm won’t always find the best way.(The shortest)</p>
-<p><img src="./assets/image-20250503171030338.png" alt="image-20250503171030338" style="zoom:33%;" /></p>
+<p><img src="/images/assets/image-20250503171030338.png" alt="image-20250503171030338" style="zoom:33%;" /></p>
 <h4 id="A-search"><a href="#A-search" class="headerlink" title="$A^*$ search"></a>$A^*$ search</h4><p>search algorithm that expands node with lowest value of $g(n)+ h(n)$ </p>
 <p>$g(n)$ = cost to reach node </p>
 <p>$h(n)$ = estimated cost to goal</p>
-<p><img src="./assets/image-20250503171006554.png" alt="image-20250503171006554" style="zoom:33%;" /></p>
+<p><img src="/images/assets/image-20250503171006554.png" alt="image-20250503171006554" style="zoom:33%;" /></p>
 <p>A* search optimal if </p>
 <ul>
 <li><p>$h(n)$ is admissible (never overestimates the true cost), and </p>
@@ -328,11 +328,11 @@
 </ul>
 <h3 id="Adversarial-Search"><a href="#Adversarial-Search" class="headerlink" title="Adversarial Search"></a>Adversarial Search</h3><p>eg.Tic-Tac-Toe</p>
 <h4 id="Minimax"><a href="#Minimax" class="headerlink" title="Minimax"></a>Minimax</h4><p><strong>Minimax</strong> represents winning conditions as (-1) for one side and (+1) for the other side. Further actions will be driven by these conditions, with the minimizing side trying to get the lowest score, and the maximizer trying to get the highest score.</p>
-<p><img src="./assets/image-20250503174337589.png" alt="image-20250503174337589" style="zoom:33%;" /></p>
-<p><img src="./assets/image-20250503174424345.png" alt="image-20250503174424345" style="zoom: 50%;" /></p>
+<p><img src="/images/assets/image-20250503174337589.png" alt="image-20250503174337589" style="zoom:33%;" /></p>
+<p><img src="/images/assets/image-20250503174424345.png" alt="image-20250503174424345" style="zoom: 50%;" /></p>
 <h4 id="Alpha-Beta-Pruning"><a href="#Alpha-Beta-Pruning" class="headerlink" title="Alpha-Beta Pruning"></a>Alpha-Beta Pruning</h4><p>Alpha and Beta are two values that you need to update, which means the best thing you can do so far and the worst thing you can do so far.</p>
-<p><img src="./assets/image-20250503175333707.png" alt="image-20250503175333707" style="zoom:33%;" /></p>
-<p><img src="./assets/image-20250503175345593.png" alt="image-20250503175345593" style="zoom:33%;" /></p>
+<p><img src="/images/assets/image-20250503175333707.png" alt="image-20250503175333707" style="zoom:33%;" /></p>
+<p><img src="/images/assets/image-20250503175345593.png" alt="image-20250503175345593" style="zoom:33%;" /></p>
 <h4 id="Depth-Limited-Minimax"><a href="#Depth-Limited-Minimax" class="headerlink" title="Depth-Limited Minimax"></a>Depth-Limited Minimax</h4><p>need an evaluation function : function that estimates the expected utility of the game from a given state</p>
 
         
