@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html theme="dark" showBanner="true" hasBanner="true" > 
+<html theme="dark" showBanner="true" hasBanner="desktop" > 
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
@@ -14,19 +14,28 @@
   
 
   
-  <title>Tag: 算法 | Smiling</title>
+  <title>CS50_AI | Smiling</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Smiling">
-<meta property="og:url" content="http://example.com/tags/%E7%AE%97%E6%B3%95/index.html">
+  <meta name="description" content="Week 0 Searchuninformed searchDFS &amp;&amp; BFS informed searchgreedy best-first searchsearch algorithm that expands the node that is closest to the goal, as estimated by a heuristic function $h(n)$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS50_AI">
+<meta property="og:url" content="http://example.com/2025/05/03/CS50-AI/index.html">
 <meta property="og:site_name" content="Smiling">
+<meta property="og:description" content="Week 0 Searchuninformed searchDFS &amp;&amp; BFS informed searchgreedy best-first searchsearch algorithm that expands the node that is closest to the goal, as estimated by a heuristic function $h(n)$">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2025/05/03/CS50-AI/images/cs50.png">
+<meta property="article:published_time" content="2025-05-03T08:44:36.000Z">
+<meta property="article:modified_time" content="2025-05-03T09:59:22.166Z">
 <meta property="article:author" content="Smiling">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="csdiy">
+<meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/05/03/CS50-AI/images/cs50.png">
   
     <link rel="alternate" href="/atom.xml" title="Smiling" type="application/atom+xml">
   
@@ -247,44 +256,140 @@
     <div id="content-body">
        
 
-<div class="archive-main-card">
-    <div class="archive-top">
-      <div class="main-title-bar">
-        <div class="main-title-dot"></div>
-        <h1 class="article-title">Archives</h1>
-      </div>    
-    </div>
+
+<article id="post-CS50-AI" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
     
+<div class="article-gallery">
+  <div class="article-gallery-photos">
     
-      
-      
-        
-        <div class="year-line">
-            <div class="year-num">2025</div>
-            <div class="dot-wrapper">
-                <div class="dot"></div>
-            </div>
-            <div class="article-count">1 article</div>
-        </div>
-      
-      <a class="archive-article-link" href="/2025/05/03/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="算法笔记">
-        <div class="date">05-03</div>
-        <div class="line">
-            <div class="dot"></div>
-        </div>
-        <div class="title">
-            <div class="title-inner">
-                
-                    算法笔记
-                
-            </div>
-        </div>
-        <div class="tags">
-            #学习 #算法
-        </div>
+      <a class="article-gallery-img" rel="gallery_cma7zc0740000l2laht4ady0j">
+        <img src="/images/cs50.png" itemprop="image">
       </a>
     
   </div>
+</div>
+
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        CS50_AI
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2025-05-03T08:44:36.000Z" itemprop="datePublished">2025-05-03</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.1k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/csdiy/" rel="tag">csdiy</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h2 id="Week-0-Search"><a href="#Week-0-Search" class="headerlink" title="Week 0 Search"></a>Week 0 Search</h2><h3 id="uninformed-search"><a href="#uninformed-search" class="headerlink" title="uninformed search"></a>uninformed search</h3><p>DFS &amp;&amp; BFS</p>
+<h3 id="informed-search"><a href="#informed-search" class="headerlink" title="informed search"></a>informed search</h3><h4 id="greedy-best-first-search"><a href="#greedy-best-first-search" class="headerlink" title="greedy best-first search"></a>greedy best-first search</h4><p>search algorithm that expands the node that is closest to the goal, as estimated by a heuristic function $h(n)$ (启发式)</p>
+<p>Heuristic function? Manhattan distance.</p>
+<p><img src="./assets/image-20250503165654055.png" alt="image-20250503165654055" style="zoom:33%;" /></p>
+<p>Choose the best way that minimize the heuristic function every time. It makes decision locally.</p>
+<p>But this greedy algorithm won’t always find the best way.(The shortest)</p>
+<p><img src="./assets/image-20250503171030338.png" alt="image-20250503171030338" style="zoom:33%;" /></p>
+<h4 id="A-search"><a href="#A-search" class="headerlink" title="$A^*$ search"></a>$A^*$ search</h4><p>search algorithm that expands node with lowest value of $g(n)+ h(n)$ </p>
+<p>$g(n)$ = cost to reach node </p>
+<p>$h(n)$ = estimated cost to goal</p>
+<p><img src="./assets/image-20250503171006554.png" alt="image-20250503171006554" style="zoom:33%;" /></p>
+<p>A* search optimal if </p>
+<ul>
+<li><p>$h(n)$ is admissible (never overestimates the true cost), and </p>
+</li>
+<li><p>$h(n)$ is consistent (for every node <em>n</em> and successor <em>n’</em> with step cost <em>c</em>, <em>h(n) ≤ h(n’) + c</em>)</p>
+</li>
+</ul>
+<h3 id="Adversarial-Search"><a href="#Adversarial-Search" class="headerlink" title="Adversarial Search"></a>Adversarial Search</h3><p>eg.Tic-Tac-Toe</p>
+<h4 id="Minimax"><a href="#Minimax" class="headerlink" title="Minimax"></a>Minimax</h4><p><strong>Minimax</strong> represents winning conditions as (-1) for one side and (+1) for the other side. Further actions will be driven by these conditions, with the minimizing side trying to get the lowest score, and the maximizer trying to get the highest score.</p>
+<p><img src="./assets/image-20250503174337589.png" alt="image-20250503174337589" style="zoom:33%;" /></p>
+<p><img src="./assets/image-20250503174424345.png" alt="image-20250503174424345" style="zoom: 50%;" /></p>
+<h4 id="Alpha-Beta-Pruning"><a href="#Alpha-Beta-Pruning" class="headerlink" title="Alpha-Beta Pruning"></a>Alpha-Beta Pruning</h4><p>Alpha and Beta are two values that you need to update, which means the best thing you can do so far and the worst thing you can do so far.</p>
+<p><img src="./assets/image-20250503175333707.png" alt="image-20250503175333707" style="zoom:33%;" /></p>
+<p><img src="./assets/image-20250503175345593.png" alt="image-20250503175345593" style="zoom:33%;" /></p>
+<h4 id="Depth-Limited-Minimax"><a href="#Depth-Limited-Minimax" class="headerlink" title="Depth-Limited Minimax"></a>Depth-Limited Minimax</h4><p>need an evaluation function : function that estimates the expected utility of the game from a given state</p>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2025/05/03/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/"
+      title="算法笔记"
+     >
+
+    <p class="title-text">
+      
+        算法笔记
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="comment-card" class="comment-card">
+    <div class="main-title-bar">
+      <div class="main-title-dot"></div>
+      <div class="main-title">Comments </div>
+    </div>
+    <div id="vcomments"></div>
+  </div>
+  <script>
+      new Valine({"enable":true,"appId":"SfQIE69iSsJmTNkcRv2nKXfR-gzGzoHsz","appKey":"Qui0C4Ke95otxc0zdgAa3UwV","placeholder":"Write something","pageSize":10,"highlight":true,"avatar":"identicon","serverURLs":null,"el":"#vcomments"});
+  </script>
+
+
+
+
+
     </div>
     <div id="footer-wrapper">
       <footer id="footer">
