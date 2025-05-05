@@ -20,16 +20,16 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="Week 0 Searchuninformed searchDFS &amp;&amp; BFS informed searchgreedy best-first searchsearch algorithm that expands the node that is closest to the goal, as estimated by a heuristic function $h(n)$">
+  <meta name="description" content="Week 0 Search uninformed search DFS &amp;&amp; BFS informed search greedy best-first search search algorithm that expands the node that is closest to the goal, as estimated by a heuristic function h(n">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CS50_AI">
 <meta property="og:url" content="http://example.com/2025/05/03/CS50-AI/index.html">
 <meta property="og:site_name" content="Smiling">
-<meta property="og:description" content="Week 0 Searchuninformed searchDFS &amp;&amp; BFS informed searchgreedy best-first searchsearch algorithm that expands the node that is closest to the goal, as estimated by a heuristic function $h(n)$">
+<meta property="og:description" content="Week 0 Search uninformed search DFS &amp;&amp; BFS informed search greedy best-first search search algorithm that expands the node that is closest to the goal, as estimated by a heuristic function h(n">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2025/05/03/CS50-AI/images/cs50.png">
 <meta property="article:published_time" content="2025-05-03T08:44:36.000Z">
-<meta property="article:modified_time" content="2025-05-03T10:02:36.766Z">
+<meta property="article:modified_time" content="2025-05-05T03:15:10.486Z">
 <meta property="article:author" content="Smiling">
 <meta property="article:tag" content="学习">
 <meta property="article:tag" content="csdiy">
@@ -299,7 +299,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.1k words 
+            5.6k words 
           </div>
         </div>
         
@@ -308,32 +308,175 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h2 id="Week-0-Search"><a href="#Week-0-Search" class="headerlink" title="Week 0 Search"></a>Week 0 Search</h2><h3 id="uninformed-search"><a href="#uninformed-search" class="headerlink" title="uninformed search"></a>uninformed search</h3><p>DFS &amp;&amp; BFS</p>
-<h3 id="informed-search"><a href="#informed-search" class="headerlink" title="informed search"></a>informed search</h3><h4 id="greedy-best-first-search"><a href="#greedy-best-first-search" class="headerlink" title="greedy best-first search"></a>greedy best-first search</h4><p>search algorithm that expands the node that is closest to the goal, as estimated by a heuristic function $h(n)$ (启发式)</p>
+          <h2 id="week-0-search">Week 0 Search</h2>
+<h3 id="uninformed-search">uninformed search</h3>
+<p>DFS &amp;&amp; BFS</p>
+<h3 id="informed-search">informed search</h3>
+<h4 id="greedy-best-first-search">greedy best-first search</h4>
+<p>search algorithm that expands the node that is closest to the goal, as estimated by a heuristic function <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></p>
 <p>Heuristic function? Manhattan distance.</p>
-<p><img src="/images/assets/image-20250503165654055.png" alt="image-20250503165654055" style="zoom:33%;" /></p>
+<img src="/images/assets/image-20250503165654055.png" alt="image-20250503165654055" style="zoom:33%;" />
 <p>Choose the best way that minimize the heuristic function every time. It makes decision locally.</p>
 <p>But this greedy algorithm won’t always find the best way.(The shortest)</p>
-<p><img src="/images/assets/image-20250503171030338.png" alt="image-20250503171030338" style="zoom:33%;" /></p>
-<h4 id="A-search"><a href="#A-search" class="headerlink" title="$A^*$ search"></a>$A^*$ search</h4><p>search algorithm that expands node with lowest value of $g(n)+ h(n)$ </p>
-<p>$g(n)$ = cost to reach node </p>
-<p>$h(n)$ = estimated cost to goal</p>
-<p><img src="/images/assets/image-20250503171006554.png" alt="image-20250503171006554" style="zoom:33%;" /></p>
-<p>A* search optimal if </p>
+<img src="/images/assets/image-20250503171030338.png" alt="image-20250503171030338" style="zoom:33%;" />
+<h4 id="a-search"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">A^*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.688696em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.688696em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span></span></span></span> search</h4>
+<p>search algorithm that expands node with lowest value of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><mi>h</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(n)+ h(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> = cost to reach node</p>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> = estimated cost to goal</p>
+<img src="/images/assets/image-20250503171006554.png" alt="image-20250503171006554" style="zoom:33%;" />
+<p>A* search optimal if</p>
 <ul>
-<li><p>$h(n)$ is admissible (never overestimates the true cost), and </p>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> is admissible (never overestimates the true cost), and</p>
 </li>
-<li><p>$h(n)$ is consistent (for every node <em>n</em> and successor <em>n’</em> with step cost <em>c</em>, <em>h(n) ≤ h(n’) + c</em>)</p>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> is consistent (for every node <em>n</em> and successor <em>n’</em> with step cost <em>c</em>, <em>h(n) ≤ h(n’) + c</em>)</p>
 </li>
 </ul>
-<h3 id="Adversarial-Search"><a href="#Adversarial-Search" class="headerlink" title="Adversarial Search"></a>Adversarial Search</h3><p>eg.Tic-Tac-Toe</p>
-<h4 id="Minimax"><a href="#Minimax" class="headerlink" title="Minimax"></a>Minimax</h4><p><strong>Minimax</strong> represents winning conditions as (-1) for one side and (+1) for the other side. Further actions will be driven by these conditions, with the minimizing side trying to get the lowest score, and the maximizer trying to get the highest score.</p>
-<p><img src="/images/assets/image-20250503174337589.png" alt="image-20250503174337589" style="zoom:33%;" /></p>
-<p><img src="/images/assets/image-20250503174424345.png" alt="image-20250503174424345" style="zoom: 50%;" /></p>
-<h4 id="Alpha-Beta-Pruning"><a href="#Alpha-Beta-Pruning" class="headerlink" title="Alpha-Beta Pruning"></a>Alpha-Beta Pruning</h4><p>Alpha and Beta are two values that you need to update, which means the best thing you can do so far and the worst thing you can do so far.</p>
-<p><img src="/images/assets/image-20250503175333707.png" alt="image-20250503175333707" style="zoom:33%;" /></p>
-<p><img src="/images/assets/image-20250503175345593.png" alt="image-20250503175345593" style="zoom:33%;" /></p>
-<h4 id="Depth-Limited-Minimax"><a href="#Depth-Limited-Minimax" class="headerlink" title="Depth-Limited Minimax"></a>Depth-Limited Minimax</h4><p>need an evaluation function : function that estimates the expected utility of the game from a given state</p>
+<h3 id="adversarial-search">Adversarial Search</h3>
+<p>eg.Tic-Tac-Toe</p>
+<h4 id="minimax">Minimax</h4>
+<p><strong>Minimax</strong> represents winning conditions as (-1) for one side and (+1) for the other side. Further actions will be driven by these conditions, with the minimizing side trying to get the lowest score, and the maximizer trying to get the highest score.</p>
+<img src="/images/assets/image-20250503174337589.png" alt="image-20250503174337589" style="zoom:33%;" />
+<img src="/images/assets/image-20250503174424345.png" alt="image-20250503174424345" style="zoom: 50%;" />
+<h4 id="alpha-beta-pruning">Alpha-Beta Pruning</h4>
+<p>Alpha and Beta are two values that you need to update, which means the best thing you can do so far and the worst thing you can do so far.</p>
+<img src="/images/assets/image-20250503175333707.png" alt="image-20250503175333707" style="zoom:33%;" />
+<img src="/images/assets/image-20250503175345593.png" alt="image-20250503175345593" style="zoom:33%;" />
+<h4 id="depth-limited-minimax">Depth-Limited Minimax</h4>
+<p>need an evaluation function : function that estimates the expected utility of the game from a given state</p>
+<h2 id="week-1-knowledge">Week 1 Knowledge</h2>
+<h3 id="propositional-logic">Propositional Logic</h3>
+<p>We’ve learned most of them in Mathematical Logic.</p>
+<h3 id="inference">Inference</h3>
+<h4 id="model-checking">Model checking</h4>
+<p>To determine if KB ⊨ <em>α</em>:</p>
+<p>• Enumerate all possible models.</p>
+<p>• If in every model where KB is true, <em>α</em> is true, then KB entails <em>α</em>.</p>
+<p>• Otherwise, KB does not entail <em>α</em></p>
+<h3 id="knowledge-engineering">Knowledge Engineering</h3>
+<h3 id="inference-rules">Inference Rules</h3>
+<h3 id="conjunctive-normal-form">Conjunctive Normal Form</h3>
+<p>A <strong>Clause</strong> is a disjunction of literals (a propositional symbol or a negation of a propositional symbol, such as P, ¬P). A <strong>disjunction</strong> consists of propositions that are connected with an Or logical connective (P ∨ Q ∨ R). A <strong>conjunction</strong>, on the other hand, consists of propositions that are connected with an And logical connective (P ∧ Q ∧ R). Clauses allow us to convert any logical statement into a <strong>Conjunctive Normal Form</strong> (CNF), which is a conjunction of clauses, for example: (A ∨ B ∨ C) ∧ (D ∨ ¬E) ∧ (F ∨ G).</p>
+<img src="/images/assets/image-20250503203608917.png" alt="image-20250503203608917" style="zoom:33%;" />
+<p>Resolving a literal and its negation, i.e. ¬P and P, gives the <strong>empty clause</strong> (). The empty clause is always false, and this makes sense because it is impossible that both P and ¬P are true. This fact is used by the resolution algorithm.</p>
+<ul>
+<li>To determine if KB ⊨ α:
+<ul>
+<li>Check: is (KB ∧ ¬α) a contradiction?
+<ul>
+<li>If so, then KB ⊨ α.</li>
+<li>Otherwise, no entailment.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Proof by contradiction is a tool used often in computer science. If our knowledge base is true, and it contradicts ¬α, it means that ¬α is false, and, therefore, α must be true. More technically, the algorithm would perform the following actions:</p>
+<ul>
+<li>To determine if KB ⊨ α:
+<ul>
+<li>Convert (KB ∧ ¬α) to Conjunctive Normal Form.</li>
+<li>Keep checking to see if we can use resolution to produce a new clause.</li>
+<li>If we ever produce the empty clause (equivalent to False), congratulations! We have arrived at a contradiction, thus proving that KB ⊨ α.</li>
+<li>However, if contradiction is not achieved and no more clauses can be inferred, there is no entailment.</li>
+</ul>
+</li>
+</ul>
+<h3 id="first-order-logic">First-Order Logic</h3>
+<h2 id="week-2-uncertainty">Week 2 Uncertainty</h2>
+<h3 id="conditional-probability">Conditional probability</h3>
+<p>P(<em>a | b</em>), meaning “the probability of event <em>a</em> occurring given that we know event <em>b</em> to have occurred,”</p>
+<img src="/images/assets/image-20250504150329209.png" alt="image-20250504150329209" style="zoom:33%;" />
+<h4 id="random-variables">Random Variables</h4>
+<h4 id="bayes-rule">Bayes’ Rule</h4>
+<img src="/images/assets/image-20250504154011759.png" alt="image-20250504154011759" style="zoom:33%;" />
+<h4 id="conditioning">Conditioning</h4>
+<img src="/images/assets/image-20250504154724873.png" alt="image-20250504154724873" style="zoom:33%;" />
+<h3 id="bayesian-networks">Bayesian Networks</h3>
+<img src="/images/assets/image-20250504155732710.png" alt="image-20250504155732710" style="zoom:50%;" />
+<h4 id="inferences">Inferences</h4>
+<h5 id="inference-by-enumeration"><strong>Inference by Enumeration</strong></h5>
+<img src="/images/assets/image-20250504160852268.png" alt="image-20250504160852268" style="zoom:15%;" />
+<h4 id="approximate-inference">Approximate Inference</h4>
+<h3 id="sampling">Sampling</h3>
+<h4 id="likelihood-weighting">Likelihood Weighting</h4>
+<ul>
+<li>Sample the non-evidence variables using conditional probabilities in the Bayesian network.</li>
+<li>Weight each sample by its <strong>likelihood</strong>: the probability of all the evidence occurring.</li>
+</ul>
+<h3 id="markov-models">Markov Models</h3>
+<p>The probability changed due to time changes</p>
+<h4 id="the-markov-assumption">The Markov Assumption</h4>
+<p>the assumption that the current state depends on only a finite fixed number of previous states</p>
+<h4 id="markov-chain">Markov chain</h4>
+<p>a sequence of random variables where the distribution of each variable follows the Markov assumption</p>
+<p>To start constructing a Markov chain, we need a <strong>transition model</strong> that will specify the the probability distributions of the next event based on the possible values of the current event.</p>
+<h3 id="hidden-markov-models">Hidden Markov Models</h3>
+<p>a Markov model for a system with hidden states that generate some observed event</p>
+<p>Our AI wants to infer the weather (the hidden state), but it only has access to an indoor camera that records how many people brought umbrellas with them. Here is our <strong>sensor model</strong> (also called <strong>emission model</strong>) that represents these probabilities:</p>
+<img src="/images/assets/image-20250504164044394.png" alt="image-20250504164044394" style="zoom:33%;" />
+<h4 id="sensor-markov-assumption">sensor Markov assumption</h4>
+<p>the assumption that the evidence variable depends only the corresponding state</p>
+<h2 id="week-3-optimization">Week 3 Optimization</h2>
+<h3 id="optimization">Optimization</h3>
+<p>choosing the best option from a set of options</p>
+<h3 id="local-search">local search</h3>
+<p>search algorithms that maintain a single node and searches by moving to a neighboring node</p>
+<p>Construct a state-space landscape. We’re going to find the global maximum or global minimum.</p>
+<img src="/images/assets/image-20250505101104121.png" alt="image-20250505101104121" style="zoom:33%;" />
+<h3 id="hill-climbing">Hill Climbing</h3>
+<p>function Hill-Climb(<em>problem</em>):</p>
+<ul>
+<li><em>current</em> = initial state of <em>problem</em></li>
+<li>repeat:
+<ul>
+<li><em>neighbor</em> = best valued neighbor of <em>current</em></li>
+<li>if <em>neighbor</em> not better than <em>current</em> :
+<ul>
+<li>return <em>current</em></li>
+</ul>
+</li>
+<li><em>current</em> = <em>neighbor</em></li>
+</ul>
+</li>
+</ul>
+<h4 id="local-and-global-minima-and-maxima"><strong>Local and Global Minima and Maxima</strong></h4>
+<p>shoulders, where multiple states of equal value are adjacent and the neighbors of the plateau can be both better and worse</p>
+<h3 id="hill-climbing-variants"><strong>Hill Climbing Variants</strong></h3>
+<ul>
+<li><strong>Steepest-ascent</strong>: choose the highest-valued neighbor. This is the standard variation that we discussed above.</li>
+<li><strong>Stochastic</strong>: choose randomly from higher-valued neighbors. Doing this, we choose to go to any direction that improves over our value. This makes sense if, for example, the highest-valued neighbor leads to a local maximum while another neighbor leads to a global maximum.</li>
+<li><strong>First-choice</strong>: choose the first higher-valued neighbor.</li>
+<li><strong>Random-restart</strong>: conduct hill climbing multiple times. Each time, start from a random state. Compare the maxima from every trial, and choose the highest amongst those.</li>
+<li><strong>Local Beam Search</strong>: chooses the <em>k</em> highest-valued neighbors. This is unlike most local search algorithms in that it uses multiple nodes for the search, and not just one.</li>
+</ul>
+<h3 id="simulated-annealing">Simulated Annealing</h3>
+<p>function Simulated-Annealing(<em>problem</em>, <em>max</em>):</p>
+<ul>
+<li><em>current</em> = initial state of <em>problem</em></li>
+<li>for t = 1 to max:
+<ul>
+<li><em>T</em> = Temperature(<em>t</em>)</li>
+<li><em>neighbor</em> = random neighbor of <em>current</em></li>
+<li><em>ΔE</em> = how much better <em>neighbor</em> is than <em>current</em></li>
+<li>if ΔE &gt; 0:
+<ul>
+<li><em>current</em> = <em>neighbor</em></li>
+</ul>
+</li>
+<li>with probability e^(<em>ΔE/T</em>) set <em>current</em> = <em>neighbor</em></li>
+</ul>
+</li>
+<li>return <em>current</em></li>
+</ul>
+<p>The algorithm takes as input a problem and <em>max</em>, the number of times it should repeat itself. For each iteration, <em>T</em> is set using a Temperature function. This function returns a higher value in the early iterations (when <em>t</em> is low) and a lower value in later iterations (when <em>t</em> is high).</p>
+<h4 id="traveling-salesman-problem"><strong>Traveling Salesman Problem</strong></h4>
+<h3 id="linear-programming">Linear Programming</h3>
+<ul>
+<li>Simplex</li>
+<li>Interior-Point</li>
+</ul>
 
         
       </div>
