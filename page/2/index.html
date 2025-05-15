@@ -156,7 +156,7 @@
       <div class="category-box">
             <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">
                 学习
-                <div class="category-count">15</div>
+                <div class="category-count">17</div>
             </a>
         
             <a class="category-link" href="/categories/%E6%9D%82%E8%B0%88/">
@@ -187,7 +187,7 @@
       
         <a class="archive-link" href="/archives/2025/05 ">
           May 2025 
-          <div class="archive-count">3 </div>
+          <div class="archive-count">5 </div>
         </a>
       
         <a class="archive-link" href="/archives/2025/04 ">
@@ -206,9 +206,21 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/05/08/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="算法笔记" >
+          <a class="recent-link" href="/2025/05/15/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="算法笔记" >
             <div class="recent-link-text">
               算法笔记
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/05/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E7%BB%93/" title="数据结构总结" >
+            <div class="recent-link-text">
+              数据结构总结
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/05/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0/" title="数据结构备考笔记" >
+            <div class="recent-link-text">
+              数据结构备考笔记
             </div>
           </a>
         
@@ -224,18 +236,6 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/04/30/ESet-report/" title="ESet-report" >
-            <div class="recent-link-text">
-              ESet-report
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/04/29/%E7%B4%A7%E6%80%A7%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6/" title="紧性的深入研究" >
-            <div class="recent-link-text">
-              紧性的深入研究
-            </div>
-          </a>
-        
       </ul>
     </div>
   </div>
@@ -246,6 +246,169 @@
     </div>
     <div id="content-body">
       
+   
+
+
+<article id="post-有关π的数项级数与技术变换" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2025/04/28/%E6%9C%89%E5%85%B3%CF%80%E7%9A%84%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0%E4%B8%8E%E6%8A%80%E6%9C%AF%E5%8F%98%E6%8D%A2/">有关π的数项级数与级数变换</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2025-04-28T09:30:44.000Z" itemprop="datePublished">2025-04-28</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            28k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              smiling数学分析（一）小论文2024.12
+一、摘要
+本文着眼于若干有趣的关于π\piπ 的数项级数，并就他们的背景，证明，性质等进行分析。同时，还对一些常见的级数变换进行了整理归纳，并通过若干例子阐释了其应用。
+
+第二至五部分，我们分别探讨若干个有关π\piπ的数项级数，在第六至七部分我们就两种常见的级数变换进行说明。
+
+二、巴塞尔问题中的级数
+∑i=1∞1n2=1+122+132+142⋅⋅⋅=π26\sum\limits_{i=1}^{\infty}\frac{1}{n^2} = 1 + \frac{1}{2^2} +\frac{1}{3^2} + \frac{1}{4^2} ··· = \frac{\pi^2}{6}
+i=1∑∞​n21​=1+221​+321​+421​⋅⋅⋅=6π2​
+2.1 巴塞尔问题的提出：
+巴塞尔问题是由数学家彼得罗・门戈利在 1644 年提出，1735 年由莱昂哈德・欧拉解决。问题的核心就是求自然数平方的倒数之和，即求解∑i=1∞1n2\sum\limits_{i=1}^{\infty} \frac{1}{n^2}i=1∑∞​n21​。
+...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2025/04/28/%E6%9C%89%E5%85%B3%CF%80%E7%9A%84%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0%E4%B8%8E%E6%8A%80%E6%9C%AF%E5%8F%98%E6%8D%A2/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+   
+
+
+<article id="post-数分二期中反例" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2025/04/26/%E6%95%B0%E5%88%86%E4%BA%8C%E6%9C%9F%E4%B8%AD%E5%8F%8D%E4%BE%8B/">数学分析2-期中考试-反例</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2025-04-26T15:32:44.000Z" itemprop="datePublished">2025-04-26</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            32 words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              如题，给出期中考试的反例。
+
+请保持审视的态度看这些内容，不保证对错
+
+
+
+
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2025/04/26/%E6%95%B0%E5%88%86%E4%BA%8C%E6%9C%9F%E4%B8%AD%E5%8F%8D%E4%BE%8B/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+
    
 
 
@@ -470,8 +633,7 @@ short int类型-1的补码为 1111111111111111，在内存中存储为0xFFFF(十
           <div class="truncate-text">
             
               PDF版本 ：哥德尔不完全性定理
-哥德尔不完全性定理
-在关于完备性的讨论中，我们最终得到了只要有Φ⊢Φ\Phi \vdash \varPhiΦ⊢Φ成立，那么它当且仅当Φ⊨Φ\Phi \models \varPhiΦ⊨Φ。也就是说，在一阶逻辑上，所有机械地在语法上证明成立的命题恰好就是在语义上可以由Φ\PhiΦ中的命题推出的。而我们意识到，有时Φ⊢Φ\Phi \vdash \varPhiΦ⊢Φ（或等价地，Φ⊨Φ\Phi \models \varPhiΦ⊨Φ）是否成立本身就是一个难以判定的问题。以自然数为例，对于自然数我们构建地非常完善的一个公理系统称为皮亚诺算术，它包括了六条基本的加法和乘法法则以及归纳法这一条准则。如今我们发现，由皮亚诺公理出发所能证明的所有命题并不就是所有自然数上的真命题，我们能够证明存在一个自然数上的真命题，既不能被皮亚诺算术证真也不能被皮亚诺算术证伪。这就是不完全性的一个例子。一般地，我们说当Φ\PhiΦ满足了一些条件时，就会出现一个命题Φ\varPhiΦ，使得Φ⊢Φ\Phi\vdash\varPhiΦ⊢Φ和Φ⊬Φ\Phi \not\vdash \varP...
+在关于完备性的讨论中，我们最终得到了只要有Φ⊢Φ\Phi \vdash \varPhiΦ⊢Φ成立，那么它当且仅当Φ⊨Φ\Phi \models \varPhiΦ⊨Φ。也就是说，在一阶逻辑上，所有机械地在语法上证明成立的命题恰好就是在语义上可以由Φ\PhiΦ中的命题推出的。而我们意识到，有时Φ⊢Φ\Phi \vdash \varPhiΦ⊢Φ（或等价地，Φ⊨Φ\Phi \models \varPhiΦ⊨Φ）是否成立本身就是一个难以判定的问题。以自然数为例，对于自然数我们构建地非常完善的一个公理系统称为皮亚诺算术，它包括了六条基本的加法和乘法法则以及归纳法这一条准则。如今我们发现，由皮亚诺公理出发所能证明的所有命题并不就是所有自然数上的真命题，我们能够证明存在一个自然数上的真命题，既不能被皮亚诺算术证真也不能被皮亚诺算术证伪。这就是不完全性的一个例子。一般地，我们说当Φ\PhiΦ满足了一些条件时，就会出现一个命题Φ\varPhiΦ，使得Φ⊢Φ\Phi\vdash\varPhiΦ⊢Φ和Φ⊬Φ\Phi \not\vdash \varPhiΦ​⊢Φ都不成...
             
           </div>
         
@@ -684,7 +846,7 @@ short int类型-1的补码为 1111111111111111，在内存中存储为0xFFFF(十
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            79 words 
+            158 words 
           </div>
         </div>
         
@@ -705,7 +867,13 @@ Youtube
 
 Bilibili
 
-
+Code Test
+ 
+Show Code 
+int main()&#123;
+   std::cout < "Hello World!" < std::endl;
+   return 0;
+&#125;
             
           </div>
         

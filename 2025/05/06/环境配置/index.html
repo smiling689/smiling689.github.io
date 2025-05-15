@@ -28,7 +28,7 @@
 <meta property="og:description" content="记录一下我在配置各种环境的时候遇到的问题，以便未来再次遇到的时候能够快速解决。 tensorflow 安装tensorflow的时候，pip 找不到适配的 tensorflow 版本。 12345678smiling@Smiling:~&#x2F;csdiy&#x2F;CS50_AI&#x2F;Project5&#x2F;traffic$ pip3 install -r requirements.txt    Defaulting to">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-05-06T03:15:38.000Z">
-<meta property="article:modified_time" content="2025-05-06T10:51:50.063Z">
+<meta property="article:modified_time" content="2025-05-15T02:07:42.387Z">
 <meta property="article:author" content="Smiling">
 <meta property="article:tag" content="学习">
 <meta property="article:tag" content="杂项">
@@ -162,7 +162,7 @@
       <div class="category-box">
             <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">
                 学习
-                <div class="category-count">15</div>
+                <div class="category-count">17</div>
             </a>
         
             <a class="category-link" href="/categories/%E6%9D%82%E8%B0%88/">
@@ -193,7 +193,7 @@
       
         <a class="archive-link" href="/archives/2025/05 ">
           May 2025 
-          <div class="archive-count">3 </div>
+          <div class="archive-count">5 </div>
         </a>
       
         <a class="archive-link" href="/archives/2025/04 ">
@@ -212,9 +212,21 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/05/08/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="算法笔记" >
+          <a class="recent-link" href="/2025/05/15/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="算法笔记" >
             <div class="recent-link-text">
               算法笔记
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/05/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E7%BB%93/" title="数据结构总结" >
+            <div class="recent-link-text">
+              数据结构总结
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/05/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0/" title="数据结构备考笔记" >
+            <div class="recent-link-text">
+              数据结构备考笔记
             </div>
           </a>
         
@@ -227,18 +239,6 @@
           <a class="recent-link" href="/2025/05/05/CS50-AI/" title="CS50-AI" >
             <div class="recent-link-text">
               CS50-AI
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/04/30/ESet-report/" title="ESet-report" >
-            <div class="recent-link-text">
-              ESet-report
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2025/04/29/%E7%B4%A7%E6%80%A7%E7%9A%84%E6%B7%B1%E5%85%A5%E7%A0%94%E7%A9%B6/" title="紧性的深入研究" >
-            <div class="recent-link-text">
-              紧性的深入研究
             </div>
           </a>
         
@@ -286,7 +286,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.4k words 
+            1.8k words 
           </div>
         </div>
         
@@ -333,6 +333,13 @@
 <p>打开命令提示符或 PowerShell ，进入到 myenv312 虚拟环境所在目录，执行命令：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myenv312\Scripts\activate</span><br></pre></td></tr></table></figure>
 <p>执行后，命令行开头会显示 (myenv312)  ，如 (myenv312) C:\Users\your_username\your_directory&gt; ，即成功进入虚拟环境。</p>
+<h2 id="python经典问题">python经典问题</h2>
+<p>有时候在安装了一个库之后发现还是识别不到，很可能是如下问题：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">smiling@Smiling:~/physics-raudio$ pip3 --version</span><br><span class="line">pip 25.1.1 from /home/smiling/.local/lib/python3.13/site-packages/pip (python 3.13)</span><br><span class="line">smiling@Smiling:~/physics-raudio$ python3 --version</span><br><span class="line">Python 3.8.10</span><br></pre></td></tr></table></figure>
+<p>使用的pip和python版本不一样，导致无法识别</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">smiling@Smiling:~/physics-raudio$ <span class="built_in">sudo</span> <span class="built_in">rm</span> /usr/bin/python3</span><br><span class="line">smiling@Smiling:~/physics-raudio$ <span class="built_in">sudo</span> <span class="built_in">ln</span> -s /usr/bin/python3.13 /usr/bin/python3 </span><br></pre></td></tr></table></figure>
+<p>之后再检查应该就会发现python调到了正确的版本。</p>
+<p>但是好像这样的方法ai不推荐。建议下次有空的话还是仔细探索一下怎么使用</p>
 
         
       </div>
@@ -347,13 +354,13 @@
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="/2025/05/08/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/"
-      title="算法笔记"
+      href="/2025/05/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0/"
+      title="数据结构备考笔记"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
       
-        算法笔记
+        数据结构备考笔记
         
     </p>
   </a>
