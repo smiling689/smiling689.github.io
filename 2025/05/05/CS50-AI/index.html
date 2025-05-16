@@ -12,6 +12,22 @@
   
   
   
+<!-- Gaug.es Analytics -->
+<script>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', 'true');
+    t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+    t.src = 'https://d36ee2fcip1434.cloudfront.net/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+<!-- End Gaug.es Analytics -->
+
 
   
   <title>CS50-AI | Smiling</title>
@@ -215,15 +231,15 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/05/15/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="算法笔记" >
+          <a class="recent-link" href="/2025/05/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E7%BB%93/" title="数据结构总结" >
             <div class="recent-link-text">
-              算法笔记
+              数据结构总结
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/05/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E7%BB%93/" title="数据结构总结" >
+          <a class="recent-link" href="/2025/05/15/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="算法笔记" >
             <div class="recent-link-text">
-              数据结构总结
+              算法笔记
             </div>
           </a>
         
@@ -263,7 +279,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_cmaf2xnzz0001jxla8ehab2c3">
+      <a class="article-gallery-img" rel="gallery_cmap42i2m0001z8la5eid9ukr">
         <img src="/images/cs50ai.png" itemprop="image">
       </a>
     
@@ -316,55 +332,55 @@
 <p>About submitting projects:</p>
 <p><a target="_blank" rel="noopener" href="https://cs50.readthedocs.io/projects/check50/en/latest/index.html">check50</a> , <a target="_blank" rel="noopener" href="https://cs50.readthedocs.io/submit50/">submit50</a> , <a target="_blank" rel="noopener" href="https://github.com/me50/smiling689">my submit</a> , <a target="_blank" rel="noopener" href="https://submit.cs50.io/courses/2072/">Pass_submit</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/smiling689/CS50-AI">Here</a> is my solution to labs and the course resources including slides and code ex.</p>
-<h2 id="lecture-0-search">Lecture 0 Search</h2>
+<h2 id="Lecture-0-Search">Lecture 0 Search</h2>
 <h3 id="uninformed-search">uninformed search</h3>
 <p>DFS &amp;&amp; BFS</p>
 <h3 id="informed-search">informed search</h3>
 <h4 id="greedy-best-first-search">greedy best-first search</h4>
-<p>search algorithm that expands the node that is closest to the goal, as estimated by a heuristic function <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></p>
+<p>search algorithm that expands the node that is closest to the goal, as estimated by a heuristic function $h(n)$</p>
 <p>Heuristic function? Manhattan distance.</p>
 <img src="/images/assets/image-20250503165654055.png" alt="image-20250503165654055" style="zoom:33%;" />
 <p>Choose the best way that minimize the heuristic function every time. It makes decision locally.</p>
 <p>But this greedy algorithm won’t always find the best way.(The shortest)</p>
 <img src="/images/assets/image-20250503171030338.png" alt="image-20250503171030338" style="zoom:33%;" />
-<h4 id="a-search"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>A</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">A^*</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.688696em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.688696em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span></span></span></span> search</h4>
-<p>search algorithm that expands node with lowest value of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><mi>h</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(n)+ h(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></p>
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">g(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> = cost to reach node</p>
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> = estimated cost to goal</p>
+<h4 id="A-search">$A^*$ search</h4>
+<p>search algorithm that expands node with lowest value of $g(n)+ h(n)$</p>
+<p>$g(n)$ = cost to reach node</p>
+<p>$h(n)$ = estimated cost to goal</p>
 <img src="/images/assets/image-20250503171006554.png" alt="image-20250503171006554" style="zoom:33%;" />
 <p>A* search optimal if</p>
 <ul>
 <li>
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> is admissible (never overestimates the true cost), and</p>
+<p>$h(n)$ is admissible (never overestimates the true cost), and</p>
 </li>
 <li>
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">h(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span> is consistent (for every node <em>n</em> and successor <em>n’</em> with step cost <em>c</em>, <em>h(n) ≤ h(n’) + c</em>)</p>
+<p>$h(n)$ is consistent (for every node <em>n</em> and successor <em>n’</em> with step cost <em>c</em>, <em>h(n) ≤ h(n’) + c</em>)</p>
 </li>
 </ul>
-<h3 id="adversarial-search">Adversarial Search</h3>
+<h3 id="Adversarial-Search">Adversarial Search</h3>
 <p>eg.Tic-Tac-Toe</p>
-<h4 id="minimax">Minimax</h4>
+<h4 id="Minimax">Minimax</h4>
 <p><strong>Minimax</strong> represents winning conditions as (-1) for one side and (+1) for the other side. Further actions will be driven by these conditions, with the minimizing side trying to get the lowest score, and the maximizer trying to get the highest score.</p>
 <img src="/images/assets/image-20250503174337589.png" alt="image-20250503174337589" style="zoom:33%;" />
 <img src="/images/assets/image-20250503174424345.png" alt="image-20250503174424345" style="zoom: 50%;" />
-<h4 id="alpha-beta-pruning">Alpha-Beta Pruning</h4>
+<h4 id="Alpha-Beta-Pruning">Alpha-Beta Pruning</h4>
 <p>Alpha and Beta are two values that you need to update, which means the best thing you can do so far and the worst thing you can do so far.</p>
 <img src="/images/assets/image-20250503175333707.png" alt="image-20250503175333707" style="zoom:33%;" />
 <img src="/images/assets/image-20250503175345593.png" alt="image-20250503175345593" style="zoom:33%;" />
-<h4 id="depth-limited-minimax">Depth-Limited Minimax</h4>
+<h4 id="Depth-Limited-Minimax">Depth-Limited Minimax</h4>
 <p>need an evaluation function : function that estimates the expected utility of the game from a given state</p>
-<h2 id="lecture-1-knowledge">Lecture 1 Knowledge</h2>
-<h3 id="propositional-logic">Propositional Logic</h3>
+<h2 id="Lecture-1-Knowledge">Lecture 1 Knowledge</h2>
+<h3 id="Propositional-Logic">Propositional Logic</h3>
 <p>We’ve learned most of them in Mathematical Logic.</p>
-<h3 id="inference">Inference</h3>
-<h4 id="model-checking">Model checking</h4>
+<h3 id="Inference">Inference</h3>
+<h4 id="Model-checking">Model checking</h4>
 <p>To determine if KB ⊨ <em>α</em>:</p>
 <p>• Enumerate all possible models.</p>
 <p>• If in every model where KB is true, <em>α</em> is true, then KB entails <em>α</em>.</p>
 <p>• Otherwise, KB does not entail <em>α</em></p>
-<h3 id="knowledge-engineering">Knowledge Engineering</h3>
-<h3 id="inference-rules">Inference Rules</h3>
-<h3 id="conjunctive-normal-form">Conjunctive Normal Form</h3>
+<h3 id="Knowledge-Engineering">Knowledge Engineering</h3>
+<h3 id="Inference-Rules">Inference Rules</h3>
+<h3 id="Conjunctive-Normal-Form">Conjunctive Normal Form</h3>
 <p>A <strong>Clause</strong> is a disjunction of literals (a propositional symbol or a negation of a propositional symbol, such as P, ¬P). A <strong>disjunction</strong> consists of propositions that are connected with an Or logical connective (P ∨ Q ∨ R). A <strong>conjunction</strong>, on the other hand, consists of propositions that are connected with an And logical connective (P ∧ Q ∧ R). Clauses allow us to convert any logical statement into a <strong>Conjunctive Normal Form</strong> (CNF), which is a conjunction of clauses, for example: (A ∨ B ∨ C) ∧ (D ∨ ¬E) ∧ (F ∨ G).</p>
 <img src="/images/assets/image-20250503203608917.png" alt="image-20250503203608917" style="zoom:33%;" />
 <p>Resolving a literal and its negation, i.e. ¬P and P, gives the <strong>empty clause</strong> (). The empty clause is always false, and this makes sense because it is impossible that both P and ¬P are true. This fact is used by the resolution algorithm.</p>
@@ -391,50 +407,50 @@
 </ul>
 </li>
 </ul>
-<h3 id="first-order-logic">First-Order Logic</h3>
-<h2 id="lecture-2-uncertainty">Lecture 2 Uncertainty</h2>
-<h3 id="conditional-probability">Conditional probability</h3>
+<h3 id="First-Order-Logic">First-Order Logic</h3>
+<h2 id="Lecture-2-Uncertainty">Lecture 2 Uncertainty</h2>
+<h3 id="Conditional-probability">Conditional probability</h3>
 <p>P(<em>a | b</em>), meaning “the probability of event <em>a</em> occurring given that we know event <em>b</em> to have occurred,”</p>
 <img src="/images/assets/image-20250504150329209.png" alt="image-20250504150329209" style="zoom:33%;" />
-<h4 id="random-variables">Random Variables</h4>
-<h4 id="bayes-rule">Bayes’ Rule</h4>
+<h4 id="Random-Variables">Random Variables</h4>
+<h4 id="Bayes’-Rule">Bayes’ Rule</h4>
 <img src="/images/assets/image-20250504154011759.png" alt="image-20250504154011759" style="zoom:33%;" />
-<h4 id="conditioning">Conditioning</h4>
+<h4 id="Conditioning">Conditioning</h4>
 <img src="/images/assets/image-20250504154724873.png" alt="image-20250504154724873" style="zoom:33%;" />
-<h3 id="bayesian-networks">Bayesian Networks</h3>
+<h3 id="Bayesian-Networks">Bayesian Networks</h3>
 <img src="/images/assets/image-20250504155732710.png" alt="image-20250504155732710" style="zoom:50%;" />
-<h4 id="inferences">Inferences</h4>
-<h5 id="inference-by-enumeration"><strong>Inference by Enumeration</strong></h5>
+<h4 id="Inferences">Inferences</h4>
+<h5 id="Inference-by-Enumeration"><strong>Inference by Enumeration</strong></h5>
 <img src="/images/assets/image-20250504160852268.png" alt="image-20250504160852268" style="zoom:15%;" />
-<h4 id="approximate-inference">Approximate Inference</h4>
-<h3 id="sampling">Sampling</h3>
-<h4 id="likelihood-weighting">Likelihood Weighting</h4>
+<h4 id="Approximate-Inference">Approximate Inference</h4>
+<h3 id="Sampling">Sampling</h3>
+<h4 id="Likelihood-Weighting">Likelihood Weighting</h4>
 <ul>
 <li>Sample the non-evidence variables using conditional probabilities in the Bayesian network.</li>
 <li>Weight each sample by its <strong>likelihood</strong>: the probability of all the evidence occurring.</li>
 </ul>
-<h3 id="markov-models">Markov Models</h3>
+<h3 id="Markov-Models">Markov Models</h3>
 <p>The probability changed due to time changes</p>
-<h4 id="the-markov-assumption">The Markov Assumption</h4>
+<h4 id="The-Markov-Assumption">The Markov Assumption</h4>
 <p>the assumption that the current state depends on only a finite fixed number of previous states</p>
-<h4 id="markov-chain">Markov chain</h4>
+<h4 id="Markov-chain">Markov chain</h4>
 <p>a sequence of random variables where the distribution of each variable follows the Markov assumption</p>
 <p>To start constructing a Markov chain, we need a <strong>transition model</strong> that will specify the the probability distributions of the next event based on the possible values of the current event.</p>
-<h3 id="hidden-markov-models">Hidden Markov Models</h3>
+<h3 id="Hidden-Markov-Models">Hidden Markov Models</h3>
 <p>a Markov model for a system with hidden states that generate some observed event</p>
 <p>Our AI wants to infer the weather (the hidden state), but it only has access to an indoor camera that records how many people brought umbrellas with them. Here is our <strong>sensor model</strong> (also called <strong>emission model</strong>) that represents these probabilities:</p>
 <img src="/images/assets/image-20250504164044394.png" alt="image-20250504164044394" style="zoom:33%;" />
-<h4 id="sensor-markov-assumption">sensor Markov assumption</h4>
+<h4 id="sensor-Markov-assumption">sensor Markov assumption</h4>
 <p>the assumption that the evidence variable depends only the corresponding state</p>
-<h2 id="lecture-3-optimization">Lecture 3 Optimization</h2>
+<h2 id="Lecture-3-Optimization">Lecture 3 Optimization</h2>
 <img src="/images/assets/image-20250505151248761.png" alt="image-20250505151248761" style="zoom:50%;" />
-<h3 id="optimization">Optimization</h3>
+<h3 id="Optimization">Optimization</h3>
 <p>choosing the best option from a set of options</p>
 <h3 id="local-search">local search</h3>
 <p>search algorithms that maintain a single node and searches by moving to a neighboring node</p>
 <p>Construct a state-space landscape. We’re going to find the global maximum or global minimum.</p>
 <img src="/images/assets/image-20250505101104121.png" alt="image-20250505101104121" style="zoom:33%;" />
-<h3 id="hill-climbing">Hill Climbing</h3>
+<h3 id="Hill-Climbing">Hill Climbing</h3>
 <p>function Hill-Climb(<em>problem</em>):</p>
 <ul>
 <li><em>current</em> = initial state of <em>problem</em></li>
@@ -450,9 +466,9 @@
 </ul>
 </li>
 </ul>
-<h4 id="local-and-global-minima-and-maxima"><strong>Local and Global Minima and Maxima</strong></h4>
+<h4 id="Local-and-Global-Minima-and-Maxima"><strong>Local and Global Minima and Maxima</strong></h4>
 <p>shoulders, where multiple states of equal value are adjacent and the neighbors of the plateau can be both better and worse</p>
-<h3 id="hill-climbing-variants"><strong>Hill Climbing Variants</strong></h3>
+<h3 id="Hill-Climbing-Variants"><strong>Hill Climbing Variants</strong></h3>
 <ul>
 <li><strong>Steepest-ascent</strong>: choose the highest-valued neighbor. This is the standard variation that we discussed above.</li>
 <li><strong>Stochastic</strong>: choose randomly from higher-valued neighbors. Doing this, we choose to go to any direction that improves over our value. This makes sense if, for example, the highest-valued neighbor leads to a local maximum while another neighbor leads to a global maximum.</li>
@@ -460,7 +476,7 @@
 <li><strong>Random-restart</strong>: conduct hill climbing multiple times. Each time, start from a random state. Compare the maxima from every trial, and choose the highest amongst those.</li>
 <li><strong>Local Beam Search</strong>: chooses the <em>k</em> highest-valued neighbors. This is unlike most local search algorithms in that it uses multiple nodes for the search, and not just one.</li>
 </ul>
-<h3 id="simulated-annealing">Simulated Annealing</h3>
+<h3 id="Simulated-Annealing">Simulated Annealing</h3>
 <p>function Simulated-Annealing(<em>problem</em>, <em>max</em>):</p>
 <ul>
 <li><em>current</em> = initial state of <em>problem</em></li>
@@ -480,13 +496,13 @@
 <li>return <em>current</em></li>
 </ul>
 <p>The algorithm takes as input a problem and <em>max</em>, the number of times it should repeat itself. For each iteration, <em>T</em> is set using a Temperature function. This function returns a higher value in the early iterations (when <em>t</em> is low) and a lower value in later iterations (when <em>t</em> is high).</p>
-<h4 id="traveling-salesman-problem"><strong>Traveling Salesman Problem</strong></h4>
-<h3 id="linear-programming">Linear Programming</h3>
+<h4 id="Traveling-Salesman-Problem"><strong>Traveling Salesman Problem</strong></h4>
+<h3 id="Linear-Programming">Linear Programming</h3>
 <ul>
 <li>Simplex</li>
 <li>Interior-Point</li>
 </ul>
-<h3 id="constraint-satisfaction">Constraint Satisfaction</h3>
+<h3 id="Constraint-Satisfaction">Constraint Satisfaction</h3>
 <p>Constraint Satisfaction problems are a class of problems where variables need to be assigned values while satisfying some conditions.</p>
 <p>Constraints satisfaction problems have the following properties:</p>
 <ul>
@@ -503,10 +519,10 @@
 <li>A <strong>Unary Constraint</strong> is a constraint that involves only one variable. In our example, a unary constraint would be saying that course A can’t have an exam on Monday {<em>A ≠ Monday</em>}.</li>
 <li>A <strong>Binary Constraint</strong> is a constraint that involves two variables. This is the type of constraint that we used in the example above, saying that some two courses can’t have the same value {<em>A ≠ B</em>}.</li>
 </ul>
-<h4 id="node-consistency">Node Consistency</h4>
+<h4 id="Node-Consistency">Node Consistency</h4>
 <p>Node consistency is when all the values in a variable’s domain satisfy the variable’s unary constraints.</p>
 <p>Else we’ll remove something from the domain in order to satisfy the constraint.</p>
-<h4 id="arc-consistency">Arc Consistency</h4>
+<h4 id="Arc-Consistency">Arc Consistency</h4>
 <p>Arc consistency is when all the values in a variable’s domain satisfy the variable’s binary constraints (note that we are now using “arc” to refer to what we previously referred to as “edge”). In other words, to make X arc-consistent with respect to Y, remove elements from X’s domain until every choice for X has a possible choice for Y.</p>
 <p>When X choose any one in X’s domain, there is at least one choice that Y can choose in Y’s domain that satisfy Y’s constraint. If not, we need to remove something from X’s domain.</p>
 <p>function Revise(<em>csp, X, Y</em>):</p>
@@ -558,7 +574,7 @@
 <li>goal test: check if all variables assigned and constraints all satisfied</li>
 <li>path cost function: all paths have same cost</li>
 </ul>
-<h3 id="backtracking-search">Backtracking Search</h3>
+<h3 id="Backtracking-Search">Backtracking Search</h3>
 <p>function Backtrack(<em>assignment, csp</em>):</p>
 <ul>
 <li>if <em>assignment</em> complete:
@@ -585,7 +601,7 @@
 </li>
 <li>return <em>failure</em></li>
 </ul>
-<h3 id="inference">Inference</h3>
+<h3 id="Inference-2">Inference</h3>
 <p><strong>maintaining arc-consistency</strong></p>
 <p>algorithm for enforcing arc-consistency every time we make a new assignment</p>
 <p>When we make a new assignment to <em>X</em>, calls AC-3, starting with a queue of all arcs (<em>Y</em>, <em>X</em>)where <em>Y</em> is a neighbor of <em>X</em></p>
@@ -634,18 +650,18 @@
 </ul>
 </li>
 </ul>
-<h2 id="lecture-4-learning">Lecture 4 Learning</h2>
-<h3 id="machine-learning">Machine Learning</h3>
+<h2 id="Lecture-4-Learning">Lecture 4 Learning</h2>
+<h3 id="Machine-Learning">Machine Learning</h3>
 <p>Three categories : Supervised Learning, Reinforcement Learning and Unsupervised Learning.</p>
-<h3 id="1-supervised-learning">1) Supervised Learning</h3>
+<h3 id="1-Supervised-Learning">1) Supervised Learning</h3>
 <p>given a data set of input-output pairs, learn a function to map inputs to outputs</p>
-<h3 id="classification">Classification</h3>
+<h3 id="Classification">Classification</h3>
 <p>supervised learning task of learning a function mapping an input point to a discrete category</p>
 <p>There are lots of ways to classify:</p>
 <h4 id="1-k-nearest-neighbor-classification">1. <em>k</em>-nearest-neighbor classification</h4>
 <p>algorithm that, given an input, chooses the most common class out of the <em>k</em> nearest data points to that input</p>
 <img src="/images/assets/image-20250505164312683.png" alt="image-20250505164312683" style="zoom:33%;" />
-<h4 id="2-perceptron-learning">2. Perceptron Learning</h4>
+<h4 id="2-Perceptron-Learning">2. Perceptron Learning</h4>
 <p>Another way of going about a classification problem, as opposed to the nearest-neighbor strategy, is looking at the data as a whole and trying to create a decision boundary.</p>
 <img src="/images/assets/image-20250505164411282.png" alt="image-20250505164411282" style="zoom:33%;" />
 <p>Goal:</p>
@@ -656,15 +672,15 @@
 <img src="/images/assets/image-20250505170343145.png" alt="image-20250505170343145" style="zoom:25%;" />
 <p>The problem with this type of function is that it is unable to express uncertainty, since it can only be equal to 0 or to 1. It employs a <strong>hard threshold</strong>. A way to go around this is by using a logistic function, which employs a <strong>soft threshold</strong>. A logistic function can yield a real number between 0 and 1, which will express confidence in the estimate. The closer the value to 1, the more likely it is to rain.</p>
 <img src="/images/assets/image-20250505170355935.png" alt="image-20250505170355935" style="zoom:25%;" />
-<h4 id="3-support-vector-machines">3. Support Vector Machines</h4>
+<h4 id="3-Support-Vector-Machines">3. Support Vector Machines</h4>
 <p>Trying to find</p>
 <h5 id="maximum-margin-separator">maximum margin separator</h5>
 <p>boundary that maximizes the distance between any of the data points</p>
 <p>It can be non-linear.</p>
 <img src="/images/assets/image-20250505172212461.png" alt="image-20250505172212461" style="zoom:33%;" />
-<h3 id="regression">Regression</h3>
+<h3 id="Regression">Regression</h3>
 <p>supervised learning task of learning a function mapping an input point to a continuous value</p>
-<h3 id="loss-function">Loss function</h3>
+<h3 id="Loss-function">Loss function</h3>
 <p>function that expresses how poorly our hypothesis performs</p>
 <p>For classification problems, we can use a <strong>0-1 Loss Function</strong>.</p>
 <ul>
@@ -682,11 +698,11 @@
 <li>L₂: <em>L</em>(actual, predicted) = (actual - predicted)²</li>
 </ul>
 <img src="/images/assets/image-20250505173016404.png" alt="image-20250505173016404" style="zoom:33%;" />
-<h3 id="overfitting">Overfitting</h3>
+<h3 id="Overfitting">Overfitting</h3>
 <p>a model that fits too closely to a particular data set and therefore may fail to generalize to future data</p>
 <img src="/images/assets/image-20250505173313827.png" alt="image-20250505173313827" style="zoom:33%;" />
 <img src="/images/assets/image-20250505173323879.png" alt="image-20250505173323879" style="zoom:33%;" />
-<h3 id="regularization">Regularization</h3>
+<h3 id="Regularization">Regularization</h3>
 <p>penalizing hypotheses that are more complex to favor simpler, more general hypotheses</p>
 <p><em>cost</em>(h) = <em>loss</em>(h) + λ<em>complexity</em>(h)</p>
 <p>If the model is too complex, like the two graphs up there, we should give some penalty to avoid overfitting.</p>
@@ -696,10 +712,10 @@
 <p>splitting data into <em>k</em> sets, and experimenting <em>k</em> times, using each set as a test set once, and using remaining data as training set</p>
 <h3 id="scikit-learn">scikit-learn</h3>
 <p>As often is the case with Python, there are multiple libraries that allow us to conveniently use machine learning algorithms. One of such libraries is scikit-learn.</p>
-<h3 id="2-reinforcement-learning">2) Reinforcement Learning</h3>
+<h3 id="2-Reinforcement-Learning">2) Reinforcement Learning</h3>
 <p>given a set of rewards or punishments, learn what actions to take in the future</p>
 <img src="/images/assets/image-20250505182845191.png" alt="image-20250505182845191" style="zoom:33%;" />
-<h4 id="markov-decision-process">Markov Decision Process</h4>
+<h4 id="Markov-Decision-Process">Markov Decision Process</h4>
 <p>model for decision-making, representing states, actions, and their rewards</p>
 <p>Reinforcement learning can be viewed as a Markov decision process, having the following properties:</p>
 <ul>
@@ -708,18 +724,18 @@
 <li>Transition model <em><strong>P(s’ | s, a)</strong></em></li>
 <li>Reward function <em><strong>R(s, a, s’)</strong></em></li>
 </ul>
-<h4 id="q-learning">Q-learning</h4>
+<h4 id="Q-learning">Q-learning</h4>
 <p>one model of reinforcement learning, where a function <em><strong>Q(s, a)</strong></em> outputs an estimate of the value of taking action <em>a</em> in state <em>s</em>.</p>
 <p>The model starts with all estimated values equal to 0 (<strong><em>Q(s,a)</em> = 0</strong> for all <em>s, a</em>). When an action is taken and a reward is received, the function does two things: 1) it estimates the value of <em><strong>Q(s, a)</strong></em> based on current reward and expected future rewards, and 2) updates <em><strong>Q(s, a)</strong></em> to take into account both the old estimate and the new estimate. This gives us an algorithm that is capable of improving upon its past knowledge without starting from scratch.</p>
 <img src="/images/assets/image-20250505183952324.png" alt="image-20250505183952324" style="zoom:33%;" />
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span></span></span></span> : learning rate, represent how much we value new information compared to old information.</p>
+<p>$\alpha$ : learning rate, represent how much we value new information compared to old information.</p>
 <p>r is the reward of this step. What’s more, we can add some future rewards into it:</p>
 <img src="/images/assets/image-20250505184252428.png" alt="image-20250505184252428" style="zoom:33%;" />
 <p>For example:</p>
 <img src="/images/assets/image-20250505184304661.png" alt="image-20250505184304661" style="zoom:33%;" />
 <p>Or:</p>
 <img src="/images/assets/image-20250505184314960.png" alt="image-20250505184314960" style="zoom:33%;" />
-<h5 id="greedy-decision-making">Greedy Decision-Making</h5>
+<h5 id="Greedy-Decision-Making">Greedy Decision-Making</h5>
 <p>When in state <em>s</em>, choose action <em>a</em> with highest <em>Q</em>(<em>s</em>, <em>a</em>)</p>
 <p>This brings us to discuss the <strong>Explore vs. Exploit</strong> tradeoff. A greedy algorithm always exploits, taking the actions that are already established to bring to good outcomes. However, it will always follow the same path to the solution, never finding a better path.</p>
 <h5 id="ε-greedy">ε-greedy</h5>
@@ -738,23 +754,23 @@
 <p>algorithm for clustering data based on repeatedly assigning points to clusters and updating those clusters’ centers</p>
 <img src="/images/assets/image-20250505190220959.png" alt="image-20250505190220959" style="zoom:33%;" />
 <p>Set k centers. Divide all the data for these clusters. Move these centers lots of time.</p>
-<h2 id="lecture-5-neural-networks">Lecture 5 Neural Networks</h2>
-<h3 id="neural-networks">Neural Networks</h3>
+<h2 id="Lecture-5-Neural-Networks">Lecture 5 Neural Networks</h2>
+<h3 id="Neural-Networks">Neural Networks</h3>
 <ul>
 <li>Neurons are connected to and receive electrical signals from other neurons.</li>
 <li>Neurons process input signals and can be activated</li>
 </ul>
-<h4 id="artificial-neural-networks">Artificial Neural Networks</h4>
+<h4 id="Artificial-Neural-Networks">Artificial Neural Networks</h4>
 <ul>
 <li>Model mathematical function from inputs to outputs based on the structure and parameters of the network.</li>
 <li>Allows for learning the network’s parameters based on data.</li>
 </ul>
 <p>When implemented in AI, the parallel of each neuron is a <strong>unit</strong> that’s connected to other units. For example, like in the last lecture, the AI might map two inputs, x₁ and x₂, to whether it is going to rain today or not. Last lecture, we suggested the following form for this hypothesis function: <em>h(x₁, x₂)</em> = <em>w₀ + w₁x₁ + w₂x₂</em>, where <em>w₁</em> and <em>w₂</em> are weights that modify the inputs, and <em>w₀</em> is a constant, also called <strong>bias</strong>, modifying the value of the whole expression.</p>
-<h3 id="activation-function">Activation Function</h3>
+<h3 id="Activation-Function">Activation Function</h3>
 <img src="/images/assets/image-20250505205850413.png" alt="image-20250505205850413" style="zoom:25%;" />
 <img src="/images/assets/image-20250505205858500.png" alt="image-20250505205858500" style="zoom:25%;" />
 <img src="/images/assets/image-20250505205906147.png" alt="image-20250505205906147" style="zoom:25%;" />
-<h3 id="neural-network-structure">Neural Network Structure</h3>
+<h3 id="Neural-Network-Structure">Neural Network Structure</h3>
 <img src="/images/assets/image-20250505210448275.png" alt="image-20250505210448275" style="zoom:33%;" />
 <p>Or logical connective can be presented as:</p>
 <img src="/images/assets/image-20250505210457723.png" alt="image-20250505210457723" style="zoom: 33%;" />
@@ -762,7 +778,7 @@
 <img src="/images/assets/image-20250505210626745.png" alt="image-20250505210626745" style="zoom:33%;" />
 <p>A similar process can be repeated with the And function (where the bias will be (-2)). Moreover, inputs and outputs don’t have to be distinct. A similar process can be used to take humidity and air pressure as input, and produce the probability of rain as output.</p>
 <img src="/images/assets/image-20250505210813610.png" alt="image-20250505210813610" style="zoom:33%;" />
-<h3 id="gradient-descent">Gradient Descent</h3>
+<h3 id="Gradient-Descent">Gradient Descent</h3>
 <p>algorithm for minimizing loss when training neural network</p>
 <ul>
 <li>Start with a random choice of weights. This is our naive starting place, where we don’t know how much we should weight each input.</li>
@@ -779,10 +795,10 @@
 <img src="/images/assets/image-20250505211834229.png" alt="image-20250505211834229" style="zoom:33%;" />
 <p>So far, our neural networks relied on <strong>perceptron</strong> output units. These are units that are only capable of learning a linear decision boundary, using a straight line to separate data. That is, based on a linear equation, the perceptron could classify an input to be one type or another (e.g. left picture). However, often, data are not linearly separable (e.g. right picture). In this case, we turn to multilayer neural networks to model data non-linearly.</p>
 <img src="/images/assets/image-20250505212016234.png" alt="image-20250505212016234" style="zoom:30%;" />
-<h3 id="multilayer-neural-networks">Multilayer Neural Networks</h3>
+<h3 id="Multilayer-Neural-Networks">Multilayer Neural Networks</h3>
 <p>artificial neural network with an input layer, an output layer, and at least one hidden layer</p>
 <img src="/images/assets/image-20250505212507143.png" alt="image-20250505212507143" style="zoom:25%;" />
-<h3 id="backpropagation">Backpropagation</h3>
+<h3 id="Backpropagation">Backpropagation</h3>
 <p>algorithm for training neural networks with hidden layers</p>
 <ul>
 <li>Calculate error for output layer</li>
@@ -794,18 +810,18 @@
 </li>
 </ul>
 <p>This can be extended to any number of hidden layers, creating <strong>deep neural networks</strong>, which are neural networks that have more than one hidden layer.</p>
-<h3 id="overfitting">Overfitting</h3>
+<h3 id="Overfitting-2">Overfitting</h3>
 <h4 id="dropout">dropout</h4>
 <p>temporarily removing units — selected at random — from a neural network to prevent over-reliance on certain units</p>
 <img src="/images/assets/image-20250505214252309.png" alt="image-20250505214252309" style="zoom:30%;" />
 <p>Note that after the training is finished, the whole neural network will be used again.</p>
-<h3 id="tensorflow">TensorFlow</h3>
+<h3 id="TensorFlow">TensorFlow</h3>
 <p>You can experiment with TensorFlow neural networks in this <a target="_blank" rel="noopener" href="http://playground.tensorflow.org/">web application</a></p>
 <h3 id="computer-vision">computer vision</h3>
 <p>computational methods for analyzing and understanding digital images</p>
 <img src="/images/assets/image-20250505221058736.png" alt="image-20250505221058736" style="zoom:25%;" />
 <p>Images consist of pixels, and pixels are represented by three values that range from 0 to 255, one for red, one for green and one for blue. These values are often referred to with the acronym RGB. We can use this to create a neural network where each color value in each pixel is an input, where we have some hidden layers, and the output is some number of units that tell us what it is that was shown in the image. However, there are a few drawbacks to this approach. First, by breaking down the image into pixels and the values of their colors, we can’t use the structure of the image as an aid. That is, as humans, if we see a part of a face we know to expect to see the rest of the face, and this quickens computation. We want to be able to use a similar advantage in our neural networks. Second, the sheer number of inputs is very big, which means that we will have to calculate a lot of weights.</p>
-<h3 id="image-convolution">Image Convolution</h3>
+<h3 id="Image-Convolution">Image Convolution</h3>
 <p>applying a filter that adds each pixel value of an image to its neighbors, weighted according to a kernel matrix</p>
 <p>The kernel is the blue matrix, and the image is the big matrix on the left. The resulting filtered image is the small matrix on the bottom right. To filter the image with the kernel, we start with the pixel with value 20 in the top-left of the image (coordinates 1,1). Then, we will multiply all the values around it by the corresponding value in the kernel and sum them up (10<em>0 + 20</em>(-1) + 30<em>0 + 10</em>(-1) + 20<em>5 + 30</em>(-1) + 20<em>0 + 30</em>(-1) + 40*0), producing the value 10.</p>
 <img src="/images/assets/image-20250505221545838.png" alt="image-20250505221545838" style="zoom:33%;" />
@@ -826,7 +842,7 @@
 <p>neural networks that use convolution, usually for analyzing images</p>
 <img src="/images/assets/image-20250505232852891.png" alt="image-20250505232852891" style="zoom:33%;" />
 <img src="/images/assets/image-20250505232906756.png" alt="image-20250505232906756" style="zoom:33%;" />
-<h3 id="recurrent-neural-networks">Recurrent Neural Networks</h3>
+<h3 id="Recurrent-Neural-Networks">Recurrent Neural Networks</h3>
 <h4 id="feed-forward-neural-network">feed-forward neural network</h4>
 <p>neural network that has connections only in one direction</p>
 <p><strong>Feed-Forward Neural Networks</strong> are the type of neural networks that we have discussed so far, where input data is provided to the network, which eventually produces some output. A diagram of how feed-forward neural networks work can be seen below.</p>
@@ -840,8 +856,8 @@
 <img src="/images/assets/image-20250506000004296.png" alt="image-20250506000004296" style="zoom:33%;" />
 <p>Translation:</p>
 <img src="/images/assets/image-20250506000017045.png" alt="image-20250506000017045" style="zoom:33%;" />
-<h2 id="lecture-6-language">Lecture 6 Language</h2>
-<h3 id="language">Language</h3>
+<h2 id="Lecture-6-Language">Lecture 6 Language</h2>
+<h3 id="Language">Language</h3>
 <p><strong>Natural Language Processing</strong> spans all tasks where the AI gets human language as input. The following are a few examples of such tasks:</p>
 <ul>
 <li>automatic summarization, where the AI is given text as input and it produces a summary of the text as output.</li>
@@ -853,8 +869,8 @@
 <li>text classification, where the AI is given text and it needs to classify it as some type of text.</li>
 <li>word sense disambiguation, where the AI needs to choose the right meaning of a word that has multiple meanings (e.g. bank means both a financial institution and the ground on the sides of a river).</li>
 </ul>
-<h3 id="syntax-and-semantics">Syntax and Semantics</h3>
-<h3 id="context-free-grammar">Context-Free Grammar</h3>
+<h3 id="Syntax-and-Semantics">Syntax and Semantics</h3>
+<h3 id="Context-Free-Grammar">Context-Free Grammar</h3>
 <img src="/images/assets/image-20250506095616567.png" alt="image-20250506095616567" style="zoom:33%;" />
 <img src="/images/assets/image-20250506095626982.png" alt="image-20250506095626982" style="zoom:33%;" />
 <img src="/images/assets/image-20250506095651854.png" alt="image-20250506095651854" style="zoom:33%;" />
@@ -862,24 +878,24 @@
 <h3 id="nltk">nltk</h3>
 <h3 id="n-grams">n-grams</h3>
 <p>a contiguous sequence of <em>n</em> items from a sample of text</p>
-<h3 id="tokenization">Tokenization</h3>
+<h3 id="Tokenization">Tokenization</h3>
 <p>the task of splitting a sequence of</p>
 <p>characters into pieces (tokens)</p>
-<h3 id="markov-models">Markov Models</h3>
+<h3 id="Markov-Models-2">Markov Models</h3>
 <p>As discussed in previous lectures, Markov models consist of nodes, the value of each of which has a probability distribution based on a finite number of previous nodes. Markov models can be used to generate text. To do so, we train the model on a text, and then establish probabilities for every <em>n</em>-th token in an <em>n</em>-gram based on the <em>n</em> words preceding it. For example, using trigrams, after the Markov model has two words, it can choose a third one from a probability distribution based on the first two. Then, it can choose a fourth word from a probability distribution based on the second and third words.</p>
-<h3 id="bag-of-words-model">Bag-of-words model</h3>
+<h3 id="Bag-of-words-model">Bag-of-words model</h3>
 <p>model that represents text as an unordered collection of words</p>
 <img src="/images/assets/image-20250506100517781.png" alt="image-20250506100517781" style="zoom:33%;" />
-<h3 id="naive-bayes">Naive Bayes</h3>
+<h3 id="Naive-Bayes">Naive Bayes</h3>
 <img src="/images/assets/image-20250506100617659.png" alt="image-20250506100617659" style="zoom:33%;" />
 <img src="/images/assets/image-20250506100625422.png" alt="image-20250506100625422" style="zoom:33%;" />
 <img src="/images/assets/image-20250506100633674.png" alt="image-20250506100633674" style="zoom:33%;" />
 <img src="/images/assets/image-20250506100650344.png" alt="image-20250506100650344" style="zoom:33%;" />
 <h4 id="additive-smoothing">additive smoothing</h4>
 <p>adding a value α to each value in our distribution to smooth the data</p>
-<h4 id="laplace-smoothing">Laplace smoothing</h4>
+<h4 id="Laplace-smoothing">Laplace smoothing</h4>
 <p>adding 1 to each value in our distribution: pretending we’ve seen each value one more time than we actually have</p>
-<h3 id="word-representation">Word Representation</h3>
+<h3 id="Word-Representation">Word Representation</h3>
 <h4 id="one-hot-representation">one-hot representation</h4>
 <p>representation of meaning as a vector with a single 1, and with other values as 0</p>
 <img src="/images/assets/image-20250506100813654.png" alt="image-20250506100813654" style="zoom:33%;" />
@@ -891,17 +907,17 @@
 <p>word2vec is an algorithm for generating distributed representations of words. It does so by <strong>Skip-Gram Architecture</strong>, which is a neural network architecture for predicting context given a target word.</p>
 <img src="/images/assets/image-20250506100958562.png" alt="image-20250506100958562" style="zoom:33%;" />
 <img src="/images/assets/image-20250506101008226.png" alt="image-20250506101008226" style="zoom:33%;" />
-<h3 id="neural-networks">Neural Networks</h3>
+<h3 id="Neural-Networks-2">Neural Networks</h3>
 <p>We use <strong>Recurrent neural networks</strong> :</p>
 <img src="/images/assets/image-20250506101125985.png" alt="image-20250506101125985" style="zoom:33%;" />
 <img src="/images/assets/image-20250506101146760.png" alt="image-20250506101146760" style="zoom:33%;" />
 <img src="/images/assets/image-20250506101215024.png" alt="image-20250506101215024" style="zoom:33%;" />
 <img src="/images/assets/image-20250506101237039.png" alt="image-20250506101237039" style="zoom:33%;" />
 <img src="/images/assets/image-20250506101407640.png" alt="image-20250506101407640" style="zoom:33%;" />
-<h3 id="attention">Attention</h3>
+<h3 id="Attention">Attention</h3>
 <p><strong>Attention</strong> refers to the neural network’s ability to decide what values are more important than others.</p>
 <img src="/images/assets/image-20250506101446257.png" alt="image-20250506101446257" style="zoom:33%;" />
-<h3 id="transformers">Transformers</h3>
+<h3 id="Transformers">Transformers</h3>
 <p><strong>Transformers</strong> is a new type of training architecture whereby each input word is passed through a neural network simultaneously. An input word goes into the neural network and is captured as an encoded representation. Because all words are fed into the neural network at the same time, word order could easily be lost. Accordingly, <strong>position encoding</strong> is added to the inputs. The neural network, therefore, will use both the word and the position of the word in the encoded representation. Additionally, a <strong>self-attention</strong> step is added to help define the context of the word being inputted.</p>
 <p>Encode:</p>
 <img src="/images/assets/image-20250506101611134.png" alt="image-20250506101611134" style="zoom:43%;" />
@@ -961,7 +977,7 @@
     <div id="vcomments"></div>
   </div>
   <script>
-      new Valine({"enable":true,"appId":"SfQIE69iSsJmTNkcRv2nKXfR-gzGzoHsz","appKey":"Qui0C4Ke95otxc0zdgAa3UwV","placeholder":"Write something","pageSize":10,"highlight":true,"avatar":"identicon","serverURLs":null,"el":"#vcomments"});
+      new Valine({"enable":true,"appId":"SfQIE69iSsJmTNkcRv2nKXfR-gzGzoHsz","appKey":"Qui0C4Ke95otxc0zdgAa3UwV","placeholder":"Write something ... (You should go to https://cn.gravatar.com and sign up to have your own profile picture)","pageSize":10,"highlight":true,"avatar":"identicon","serverURLs":null,"el":"#vcomments"});
   </script>
 
 

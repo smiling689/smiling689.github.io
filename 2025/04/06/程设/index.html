@@ -12,6 +12,22 @@
   
   
   
+<!-- Gaug.es Analytics -->
+<script>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', 'true');
+    t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+    t.src = 'https://d36ee2fcip1434.cloudfront.net/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+<!-- End Gaug.es Analytics -->
+
 
   
   <title>程序设计备考笔记 | Smiling</title>
@@ -29,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2025/04/06/%E7%A8%8B%E8%AE%BE/images/Image_2001708531432030.jpg">
 <meta property="article:published_time" content="2025-04-06T15:31:44.000Z">
-<meta property="article:modified_time" content="2025-04-26T15:12:39.552Z">
+<meta property="article:modified_time" content="2025-05-12T14:42:40.607Z">
 <meta property="article:author" content="Smiling">
 <meta property="article:tag" content="学习">
 <meta property="article:tag" content="程序设计与数据结构">
@@ -214,15 +230,15 @@
       <h3 class="widget-title">Recent Posts</h3>
       <ul>
         
-          <a class="recent-link" href="/2025/05/15/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="算法笔记" >
+          <a class="recent-link" href="/2025/05/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E7%BB%93/" title="数据结构总结" >
             <div class="recent-link-text">
-              算法笔记
+              数据结构总结
             </div>
           </a>
         
-          <a class="recent-link" href="/2025/05/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E7%BB%93/" title="数据结构总结" >
+          <a class="recent-link" href="/2025/05/15/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="算法笔记" >
             <div class="recent-link-text">
-              数据结构总结
+              算法笔记
             </div>
           </a>
         
@@ -262,7 +278,7 @@
 <div class="article-gallery">
   <div class="article-gallery-photos">
     
-      <a class="article-gallery-img" rel="gallery_cmaf2xo0n002ajxla73ora2s5">
+      <a class="article-gallery-img" rel="gallery_cmap42i360019z8la2p033i22">
         <img src="/images/Image_2001708531432030.jpg" itemprop="image">
       </a>
     
@@ -313,7 +329,7 @@
 <p>本笔记写于2025年年初，为应对程序设计与数据结构-1的期末考试而写。主要针对的是在各类复习资料以及历年上交各班的期末考试试卷中出现的有关c++基本语法的易错点和考点，以供复习之用。</p>
 </blockquote>
 <h2 id="1-整形存储">1 整形存储</h2>
-<h5 id="1-原码-符号位-数值">1.原码（符号位+数值）</h5>
+<h5 id="1-原码（符号位-数值）">1.原码（符号位+数值）</h5>
 <p>最高位为符号位，0表示正数，1表示负数，其余位表示数值的绝对值。</p>
 <p>short int 类型的-1，其原码为 1000000000000001</p>
 <h5 id="2-反码">2.反码</h5>
@@ -344,7 +360,7 @@ short int类型-1的补码为 1111111111111111，在内存中存储为0xFFFF(十
 <p>值传递会调用拷贝构造函数，传递引用/指针的时候不会调用</p>
 <p>后两种直接修改原始对象，拷贝构造不会修改原始对象（修改的是一个副本）</p>
 <h3 id="三种特殊情况：">三种特殊情况：</h3>
-<h4 id="1-基类构造函数需要参数-派生类本身不需要构造函数时">1. 基类构造函数需要参数，派生类本身不需要构造函数时</h4>
+<h4 id="1-基类构造函数需要参数，派生类本身不需要构造函数时">1. 基类构造函数需要参数，派生类本身不需要构造函数时</h4>
 <ul>
 <li><strong>派生类必须定义构造函数</strong>：当基类的构造函数需要参数时，派生类必须定义自己的构造函数，即便派生类自身不需要进行额外的初始化操作。</li>
 </ul>
@@ -375,31 +391,31 @@ short int类型-1的补码为 1111111111111111，在内存中存储为0xFFFF(十
 4、控制程序执行的“控制器”;<br>
 5、输出处理结果的“输出设备”。</p>
 <p>没有编译器。</p>
-<h2 id="6-protected-private和public">6 Protected、Private和Public</h2>
+<h2 id="6-Protected、Private和Public">6 Protected、Private和Public</h2>
 <p>Protected可以被派生类直接访问，而Private不可以</p>
 <p>public继承：基类的Public和protected仍然如此，基类的Private不能访问</p>
 <p>Private继承：基类的Public和protected变成Private，基类的Private不能访问</p>
 <p>protected继承：基类的public和protected变成protected，基类的private不能访问</p>
-<h2 id="7-switch">7 Switch</h2>
+<h2 id="7-Switch">7 Switch</h2>
 <p>switch-case中，case不可以相同</p>
 <h2 id="8-指针的使用">8 指针的使用</h2>
 <h5 id="1">1.</h5>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a[<span class="number">3</span>]=&#123;<span class="number">1</span>，<span class="number">3</span> ，<span class="number">5</span>&#125;，*p;</span><br><span class="line"><span class="type">int</span> i, b[<span class="number">6</span>];</span><br><span class="line">p = a;</span><br><span class="line">b[<span class="number">0</span>]= *p;<span class="comment">//b_0 =1</span></span><br><span class="line">p++;b[<span class="number">1</span>]=*p;<span class="comment">//b_1=3</span></span><br><span class="line">b[<span class="number">2</span>]=(*p)++;<span class="comment">//b_2 = 3;a_1 变为4</span></span><br><span class="line">b[<span class="number">3</span>]=*(p<span class="number">-1</span>);<span class="comment">//b_3 =1;(地址向前走一个)</span></span><br><span class="line">b[<span class="number">4</span>]=(*p)<span class="number">+1</span>:<span class="comment">//b_4=4+1=5(对于这个地址的值+1)</span></span><br><span class="line">b[<span class="number">5</span>]=*(p<span class="number">+1</span>);<span class="comment">//b_5=a_2=5;</span></span><br></pre></td></tr></table></figure>
-<h5 id="2">2.</h5>
+<h5 id="2-2">2.</h5>
 <p>指针在没有赋初值的时候不可以直接使用，例如，</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">studentT student1, *sp;</span><br><span class="line">sp-&gt;chinese=<span class="number">90</span>;</span><br><span class="line">(*sp).chinese=<span class="number">90</span>;  <span class="comment">//注意看看这种用法哦，在赋了初值的时候这种用法常常被误以为是错的</span></span><br><span class="line">sp.chinese=<span class="number">90</span></span><br></pre></td></tr></table></figure>
 <p>这三种使用都是错的</p>
 <h2 id="9-虚函数的使用">9 虚函数的使用</h2>
-<h5 id="1">1.</h5>
+<h5 id="1-2">1.</h5>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Base</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="type">int</span> <span class="title">f1</span><span class="params">()</span></span>&#123; <span class="keyword">return</span> <span class="number">100</span>;&#125;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">f2</span><span class="params">()</span></span>&#123; cout&lt;&lt;<span class="string">&quot;Base&quot;</span>&lt;&lt;endl;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Derived</span>:<span class="keyword">public</span> Base&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">int</span> <span class="title">f1</span><span class="params">()</span></span>&#123; <span class="keyword">return</span> ; &#125;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">f2</span><span class="params">()</span></span>&#123; cout&lt;&lt;<span class="string">&quot;Derived&quot;</span>&lt;&lt;endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    Derived d</span>;</span><br><span class="line">	Base *b=&amp;d;<span class="comment">//用指针来调用d</span></span><br><span class="line">	Base &amp;c=d;<span class="comment">//用引用来调用d</span></span><br><span class="line">	Base x;</span><br><span class="line">	cout&lt;&lt; x.<span class="built_in">f1</span>()&lt;&lt; endl;<span class="comment">//x是base，输出100</span></span><br><span class="line">	cout&lt;&lt;b-&gt;<span class="built_in">f1</span>()&lt;&lt;endl;<span class="comment">//f1虚函数，所以调用d实际的f1,0</span></span><br><span class="line">	b-&gt;<span class="built_in">f2</span>();<span class="comment">//f2不虚，调用base，输出base</span></span><br><span class="line">	cout&lt;&lt;c.<span class="built_in">f1</span>()&lt;&lt;endl;<span class="comment">//f1虚函数，调用d实际的f1,0</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="2">2.</h5>
+<h5 id="2-3">2.</h5>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;<span class="keyword">public</span>: <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">display</span><span class="params">()</span></span>; &#125;; </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>:<span class="keyword">public</span> A &#123; <span class="keyword">public</span>: <span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">display</span><span class="params">()</span></span>;&#125;;</span><br></pre></td></tr></table></figure>
 <p>A *p = B &amp;b.在调用display的时候会根据指针实际指向的对象类型来决定调用哪个函数，即：调用B的display<br>
 引用也一样：A &amp;p = b，也会调用B的display<br>
 A p = B b；这里发生了切片，b的B部分被切掉，只有A部分被复制给a。因此，a.display()调用的是A类的display函数</p>
-<h5 id="3">3.</h5>
+<h5 id="3-2">3.</h5>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">classA &#123;</span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">f1</span><span class="params">()</span></span>; </span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">f2</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;  </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>:<span class="keyword">public</span> A &#123; </span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">f1</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">f2</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line">A *pa = <span class="keyword">new</span> B;</span><br><span class="line">pa-&gt;<span class="built_in">f1</span>();<span class="comment">//f1是虚函数，调用的时候用派生类中的</span></span><br><span class="line">pa-&gt;<span class="built_in">f2</span>();<span class="comment">//f2不是，调用的时候根据指针的类（A），调用基类的</span></span><br></pre></td></tr></table></figure>
-<h5 id="4-教材中的虚函数内容-使用方法以及override-final-虚析构函数-纯虚函数">4.教材中的虚函数内容（使用方法以及override，final，虚析构函数，纯虚函数）</h5>
+<h5 id="4-教材中的虚函数内容（使用方法以及override，final，虚析构函数，纯虚函数）">4.教材中的虚函数内容（使用方法以及override，final，虚析构函数，纯虚函数）</h5>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">f1</span><span class="params">(<span class="type">int</span>)</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="type">void</span> <span class="title">f2</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>:<span class="keyword">public</span> A&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">f1</span><span class="params">(<span class="type">int</span>)</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">f2</span><span class="params">(<span class="type">int</span>)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">A *p1 = <span class="keyword">new</span> A;<span class="comment">//基类指针指向基类对象</span></span><br><span class="line">A *p2 = <span class="keyword">new</span> B;<span class="comment">//基类指针指向派生类对象</span></span><br><span class="line"></span><br><span class="line">p1-&gt;<span class="built_in">f1</span>(<span class="number">2</span>);<span class="comment">//正常执行基类的f1</span></span><br><span class="line">p2-&gt;<span class="built_in">f1</span>(<span class="number">2</span>);<span class="comment">//p2是基类指针，只能看到基类的f1，然后发现f1是虚函数！于是检查p2到底指向谁，p2指向的是派生类对象，于是找到派生类中的f1执行</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>
@@ -435,7 +451,7 @@ A p = B b；这里发生了切片，b的B部分被切掉，只有A部分被复�
 <h5 id="3-vector迭代器">3.vector迭代器</h5>
 <p>vector在扩容（比如push_back)的时候，所用的迭代器都会失效，所以不能</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; a;</span><br><span class="line"><span class="keyword">auto</span> x = a.<span class="built_in">begin</span>();</span><br><span class="line">a.<span class="built_in">push_back</span>(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">if</span>(a.end &gt;= x)&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="4">4.！</h5>
+<h5 id="4-！">4.！</h5>
 <p>!(x%7)和x%7!=0不同，!(x%7)中，如果x是7的倍数，x%7=0,!0=true,反而是true</p>
 <h5 id="5">5.&amp;&amp;</h5>
 <p>留意短路特性，&amp;&amp;如果前面一个已经是false了，后面一个是不会算的，||同理。</p>
@@ -578,18 +594,18 @@ B:想直接修改p指向的内容，与const 冲突           B</p>
 <h2 id="27-const">27 const</h2>
 <p>在一个函数中，如果调用了自己建的类，如<code>void func(const A&amp; a)&#123;&#125;</code>,const说明不会更改a的内容，那么就只能调用A类里面承诺不会更改成员的函数，如<code>void get() const &#123;...&#125;</code>，这个const的位置，表示不会修改成员变量，注意const不是加在最前面的，加在最前面，如<code>const int get()&#123;...&#125;</code>表示的是返回值不能修改（不会报错，但基本不会这么用）</p>
 <p>const 数据成员只能初始化列表，不能赋值</p>
-<h3 id="对const对象只能调用const成员函数-且必须初始化"><strong>对const对象只能调用const成员函数</strong>，且必须初始化</h3>
+<h3 id="对const对象只能调用const成员函数，且必须初始化"><strong>对const对象只能调用const成员函数</strong>，且必须初始化</h3>
 <p>举例：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// 非const成员函数，可能修改data</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">modifyData</span><span class="params">(<span class="type">int</span> newData)</span> </span>&#123;</span><br><span class="line">        data = newData;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// const成员函数，承诺不修改data，请务必注意const的位置！是在后面的</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">printData</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Data: &quot;</span> &lt;&lt; data &lt;&lt; std::endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="type">const</span> MyClass <span class="title">obj</span><span class="params">(<span class="number">5</span>)</span></span>;  <span class="comment">// 常量对象不能被赋值，只能初始化，且一定要初始化</span></span><br><span class="line">    <span class="comment">// obj.modifyData(10);  // 错误，不能调用非const成员函数修改const对象</span></span><br><span class="line">    obj.<span class="built_in">printData</span>();       <span class="comment">// 正确，只能调用const成员函数</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="const指针：">const指针：</h3>
 <p>区分方法：去掉类名之后看const的右边有没有*，如果有，说明不能改变的是值，没有，说明不能改变的是指针本身（指向性）</p>
-<h5 id="1-不许改变指针本身-己值和他址-：int-const-p">1. 不许改变指针本身（己值和他址）：<code>int* const p;</code></h5>
+<h5 id="1-不许改变指针本身（己值和他址）：int-const-p">1. 不许改变指针本身（己值和他址）：<code>int* const p;</code></h5>
 <ul>
 <li><strong>含义</strong>：这种声明方式表示 <code>p</code> 是一个常量指针。一旦 <code>p</code> 被初始化指向某个地址，就不能再让它指向其他地址了。但是，通过 <code>p</code> 可以修改指向的对象的值。</li>
 <li><strong>示例</strong>：</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="type">int</span> b = <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span>* <span class="type">const</span> p = &amp;a; </span><br><span class="line"><span class="comment">// p = &amp;b;  // 这是错误的，不能修改指针 p 本身，使其指向 b</span></span><br><span class="line">*p = <span class="number">20</span>;    <span class="comment">// 这是正确的，可以通过 p 修改 a 的值为 20</span></span><br></pre></td></tr></table></figure>
-<h5 id="2-不许改变指针所指的对象-他值-：const-int-p-或-int-const-p">2. 不许改变指针所指的对象（他值）：<code>const int *p</code> 或 <code>int const *p;</code></h5>
+<h5 id="2-不许改变指针所指的对象（他值）：const-int-p-或-int-const-p">2. 不许改变指针所指的对象（他值）：<code>const int *p</code> 或 <code>int const *p;</code></h5>
 <ul>
 <li><strong>含义</strong>：这两种声明方式表示 <code>p</code> 是一个指向常量的指针。也就是说，不能通过 <code>p</code> 去修改它所指向的对象的值，但 <code>p</code> 本身可以被重新赋值，指向其他的地址。</li>
 <li><strong>示例</strong>：</li>
@@ -640,7 +656,7 @@ B:想直接修改p指向的内容，与const 冲突           B</p>
 <p>函数参数中一个参数有缺省值，后面参数都必须有缺省值，否则无法利用到这个缺省值（缺省值必须全部后置，把所有没有缺省值的参数尽量往前放）</p>
 <h2 id="36-模版形参">36 模版形参</h2>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="type">int</span> LEN&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    People  data[LEN];</span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">int</span> num;</span><br><span class="line"><span class="function">A&lt;num&gt;  <span class="title">array</span><span class="params">(name, day)</span></span>;<span class="comment">//错误！模版形参LEN不可以传入一个变量，必须是一个确定的值，例如10</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="37-将派生类对象隐式转换为基类对象-多态-教材">37 将派生类对象隐式转换为基类对象（多态，教材）</h2>
+<h2 id="37-将派生类对象隐式转换为基类对象（多态，教材）">37 将派生类对象隐式转换为基类对象（多态，教材）</h2>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">A</span>(<span class="type">int</span> x1 = <span class="number">0</span>)&#123;x = x1;&#125;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">display</span><span class="params">()</span> <span class="type">const</span> </span>&#123;cout &lt;&lt; x &lt;&lt; endl;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span>:<span class="keyword">public</span> A&#123;</span><br><span class="line">	<span class="type">int</span> y;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">B</span>(<span class="type">int</span> x1 = <span class="number">0</span>,<span class="type">int</span> y1 = <span class="number">0</span>):<span class="built_in">A</span>(x1)&#123;y = y1;&#125;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">display</span><span class="params">()</span> <span class="type">const</span> </span>&#123;cout &lt;&lt; y &lt;&lt; endl;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//派生类赋予基类</span></span><br><span class="line"><span class="function">B <span class="title">b</span><span class="params">(<span class="number">1</span>,<span class="number">2</span>)</span></span>;</span><br><span class="line">A a;</span><br><span class="line">a = b;<span class="comment">//这里会直接把b中基类的部分（x）给a，其余抹去</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//指针</span></span><br><span class="line">A *bp = &amp;b;<span class="comment">//基类指针bp指向一个派生类对象，只能解释这个派生类当中基类的部分</span></span><br><span class="line">bp-&gt;<span class="built_in">display</span>();<span class="comment">//这里也只能使用基类中的display函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//引用（实际上就是隐式的指针）</span></span><br><span class="line">A &amp;br = b;<span class="comment">//相当于给派生类对象b的基类部分取了一个名字br，对br的访问和修改就是对于b的基类部分的访问和修改</span></span><br><span class="line">br.<span class="built_in">display</span>();<span class="comment">//也是只能使用基类中的display函数</span></span><br><span class="line"></span><br><span class="line">A *a;</span><br><span class="line">B *b;</span><br><span class="line">a = b;<span class="comment">//切片</span></span><br><span class="line">b = a;<span class="comment">//报错，因为这不一定是正确的，所以编译器不会自动调用隐式类型转换</span></span><br><span class="line">a = (A*) b;<span class="comment">//显式的切片</span></span><br><span class="line">b = (B*) a;<span class="comment">//显式类型转换，这里可以成功是因为有可能a指向的是一个B类对象。但此时需要程序员承担这个风险</span></span><br></pre></td></tr></table></figure>
 <h2 id="38-常引用">38 常引用</h2>
 <p><code>const A &amp;k2 = k1;</code>这一步相当于是把k1此时的样子记录下来了，之后无论k1怎么变化，k2始终是此时的样子</p>
@@ -718,7 +734,7 @@ B:想直接修改p指向的内容，与const 冲突           B</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">MyClass</span><span class="params">(<span class="type">int</span> value)</span> : m_value(value) &#123;</span>&#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getValue</span><span class="params">()</span> <span class="type">const</span> </span>&#123; <span class="keyword">return</span> m_value; &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> m_value;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>此时，<code>MyClass obj2 = 10;</code>和<code>func(20);</code>这样的代码将无法编译通过，因为<code>explicit</code>禁止了这种隐式类型转换，必须显式地使用<code>MyClass obj(10);</code>这样的方式来创建对象或调用函数。</p>
 <h2 id="48-词汇">48 词汇</h2>
-<h3 id="1-hex16-oct8-dec10">1. <code>hex16</code>、<code>oct8</code>、<code>dec10</code></h3>
+<h3 id="1-hex16、oct8、dec10">1. <code>hex16</code>、<code>oct8</code>、<code>dec10</code></h3>
 <ul>
 <li>含义
 <ul>
@@ -734,7 +750,7 @@ B:想直接修改p指向的内容，与const 冲突           B</p>
 <li><strong>示例</strong>：</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> num = <span class="number">100</span>;</span><br><span class="line">cout &lt;&lt; <span class="built_in">setbase</span>(<span class="number">16</span>) &lt;&lt; num &lt;&lt; endl; </span><br></pre></td></tr></table></figure>
-<h3 id="3-fixed-setprecision-precision-scientific">3. <code>fixed</code>、<code>setprecision()</code>、<code>.precision</code>、<code>scientific</code></h3>
+<h3 id="3-fixed、setprecision-、-precision、scientific">3. <code>fixed</code>、<code>setprecision()</code>、<code>.precision</code>、<code>scientific</code></h3>
 <ul>
 <li>含义
 <ul>
@@ -748,7 +764,7 @@ B:想直接修改p指向的内容，与const 冲突           B</p>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> num = <span class="number">123.456789</span>;</span><br><span class="line">cout &lt;&lt; fixed &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; num &lt;&lt; endl; </span><br><span class="line">cout &lt;&lt; scientific &lt;&lt; num &lt;&lt; endl; </span><br></pre></td></tr></table></figure>
 <p>上述代码中，<code>fixed</code>结合<code>setprecision(2)</code>将<code>num</code>以定点数形式输出且保留两位小数，<code>scientific</code>将<code>num</code>以科学计数法形式输出。</p>
-<h3 id="4-width-setw-setfill">4. <code>width()</code>、<code>setw</code>、<code>setfill</code></h3>
+<h3 id="4-width-、setw、setfill">4. <code>width()</code>、<code>setw</code>、<code>setfill</code></h3>
 <ul>
 <li>含义</li>
 <li>后两个需要 <code>#include&lt;iomanip&gt;</code>
@@ -781,7 +797,7 @@ B:想直接修改p指向的内容，与const 冲突           B</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">long</span> b1 = a;</span><br><span class="line"><span class="type">const</span> <span class="type">long</span> &amp;b2 = a;</span><br></pre></td></tr></table></figure>
 <p>要么直接复制构造一个新的long类型变量，值类型的变量可以从右值初始化；要么使用const左值引用，因为它能绑定到右值。</p>
 <h2 id="51-强制类型转换">51 强制类型转换</h2>
-<h5 id="c-风格的强制类型转换">C 风格的强制类型转换</h5>
+<h5 id="C-风格的强制类型转换">C 风格的强制类型转换</h5>
 <ul>
 <li>几乎万能：(type)value</li>
 <li>调用构造函数式：type(value)</li>
@@ -924,7 +940,7 @@ B:想直接修改p指向的内容，与const 冲突           B</p>
 <h4 id="2-char-不合法">2. <code>char&amp;*</code> 不合法</h4>
 <h2 id="69-链表">69 链表</h2>
 <p>带头节点的链表，头结点是不参与实际内容组成的，只是为了做一个节点，没有任何意义。在排序的时候也不考虑它。</p>
-<h2 id="70-类模板-教材">70 类模板（教材）</h2>
+<h2 id="70-类模板（教材）">70 类模板（教材）</h2>
 <p>由于类模板的成员函数可能用到模板参数，所以类模板的所有成员函数全部为函数模板，如果在类内定义不需要再加模板声明，如果是类外，需要一定的修改。</p>
 <p>类模板只有在被调用的时候才会实例化，所以编译器不会检查具体的错误。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    T a;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">aaa</span><span class="params">()</span> </span>;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">mod</span><span class="params">()</span></span>&#123; a %= <span class="number">2</span>&#125;<span class="comment">//这里虽然对于T是double等不能取模情形是错误的，但此时不会实例化，不会报错</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="title class_">T</span>&gt;</span><br><span class="line"><span class="type">void</span> A&lt;T&gt;::<span class="built_in">aaa</span>() &#123;<span class="keyword">return</span>;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">A&lt;<span class="type">int</span>&gt; <span class="title">a</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="function">A&lt;<span class="type">double</span>&gt; <span class="title">b</span><span class="params">(<span class="number">3</span>)</span></span>;<span class="comment">//这里不会报错，因为是隐式实例化，如果在main之前加上显式实例化的声明template class A &lt;double&gt;，就会报错了</span></span><br><span class="line">a.<span class="built_in">mod</span>();</span><br><span class="line">b.<span class="built_in">mod</span>();<span class="comment">//这里才会报错（使用的mod的时候才会实例化）</span></span><br></pre></td></tr></table></figure>
@@ -989,7 +1005,7 @@ B:想直接修改p指向的内容，与const 冲突           B</p>
     <div id="vcomments"></div>
   </div>
   <script>
-      new Valine({"enable":true,"appId":"SfQIE69iSsJmTNkcRv2nKXfR-gzGzoHsz","appKey":"Qui0C4Ke95otxc0zdgAa3UwV","placeholder":"Write something","pageSize":10,"highlight":true,"avatar":"identicon","serverURLs":null,"el":"#vcomments"});
+      new Valine({"enable":true,"appId":"SfQIE69iSsJmTNkcRv2nKXfR-gzGzoHsz","appKey":"Qui0C4Ke95otxc0zdgAa3UwV","placeholder":"Write something ... (You should go to https://cn.gravatar.com and sign up to have your own profile picture)","pageSize":10,"highlight":true,"avatar":"identicon","serverURLs":null,"el":"#vcomments"});
   </script>
 
 
