@@ -196,6 +196,28 @@ body:after {
 body:after {
   clear: both;
 }
+.toc-parent {
+  position: relative;
+}
+.toc-article {
+  padding: 0em;
+}
+.toc-article .toc-title {
+  font-weight: none;
+}
+#toc .toc {
+  padding: 0;
+}
+#toc li,
+.toc li {
+  list-style-type: none;
+}
+#toc ol {
+  margin: 0;
+}
+#toc .toc-child {
+  padding-left: 1.5em;
+}
 html,
 body,
 div,
