@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="desktop" > 
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+<!-- Gaug.es Analytics -->
+<script>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', 'true');
+    t.setAttribute('data-track-path', 'https://track.gaug.es/track.gif');
+    t.src = 'https://d36ee2fcip1434.cloudfront.net/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+<!-- End Gaug.es Analytics -->
+
+
+  
+  <title>算法笔记 | Smiling</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <meta name="description" content="用于记录算法课程的学习。 笔记中的所有图片来源于教材与陈翌佳老师的Slides。  第 0 章 序言0.1 书籍和算法0.2 从 Fibonacci 数列开始算法：  时间复杂度：线性 0.3 大 O 符号第 1 章 数字的算法1.1 基本算术1.1.1 加法二进制，n位 时间复杂度：$O(n)$ 1.1.2 乘法和除法乘法：法一： $n - 1$ 次加法，时间复杂度 $O(n^2)$ 法二：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法笔记">
+<meta property="og:url" content="http://example.com/2025/05/29/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Smiling">
+<meta property="og:description" content="用于记录算法课程的学习。 笔记中的所有图片来源于教材与陈翌佳老师的Slides。  第 0 章 序言0.1 书籍和算法0.2 从 Fibonacci 数列开始算法：  时间复杂度：线性 0.3 大 O 符号第 1 章 数字的算法1.1 基本算术1.1.1 加法二进制，n位 时间复杂度：$O(n)$ 1.1.2 乘法和除法乘法：法一： $n - 1$ 次加法，时间复杂度 $O(n^2)$ 法二：">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2025/05/29/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/images/1742362269512.png">
+<meta property="article:published_time" content="2025-05-29T02:34:52.000Z">
+<meta property="article:modified_time" content="2025-05-29T11:09:43.937Z">
+<meta property="article:author" content="Smiling">
+<meta property="article:tag" content="学习">
+<meta property="article:tag" content="算法">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2025/05/29/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/images/1742362269512.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Smiling" type="application/atom+xml">
+  
+  
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/images/banner1.png" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="  ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Smiling </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
+      </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/images/avatar1.jpg></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">Smiling </div>
+      <div class="dot"></div>
+      <div class="subtitle">ε = = (づ′▽`)づ </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://twitter.com" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://bilibili.com" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/smiling689" title="GitHub"><i class="fa-brands fa-github"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">
+                学习
+                <div class="category-count">17</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%9D%82%E8%B0%88/">
+                杂谈
+                <div class="category-count">2</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%94%9F%E6%B4%BB/">
+                生活
+                <div class="category-count">2</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/AI/" rel="tag">AI</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/csdiy/" rel="tag">csdiy</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%A8%B1%E4%B9%90/" rel="tag">娱乐</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%AD%A6%E6%9C%AF%E5%86%99%E4%BD%9C/" rel="tag">学术写作</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%BA%9F%E8%AF%9D/" rel="tag">废话</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/" rel="tag">数学分析</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%95%B0%E7%90%86%E9%80%BB%E8%BE%91/" rel="tag">数理逻辑</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%9D%82%E9%A1%B9/" rel="tag">杂项</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%89%A9%E7%90%86/" rel="tag">物理</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">程序设计与数据结构</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%BD%91%E7%AB%99%E5%BB%BA%E8%AE%BE/" rel="tag">网站建设</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%9F%B3%E4%B9%90/" rel="tag">音乐</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Archives</h3>
+      
+      
+        <a class="archive-link" href="/archives/2025/05 ">
+          May 2025 
+          <div class="archive-count">7 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2025/04 ">
+          April 2025 
+          <div class="archive-count">14 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Recent Posts</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2025/05/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E7%BB%93/" title="数据结构总结" >
+            <div class="recent-link-text">
+              数据结构总结
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/05/29/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="算法笔记" >
+            <div class="recent-link-text">
+              算法笔记
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/05/20/%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%97%AD%E9%A6%86%E9%9F%B3%E4%B9%90/" title="图书馆闭馆音乐" >
+            <div class="recent-link-text">
+              图书馆闭馆音乐
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/05/17/La-Vie-Boheme/" title="La Vie Bohème" >
+            <div class="recent-link-text">
+              La Vie Bohème
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2025/05/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0/" title="数据结构备考笔记" >
+            <div class="recent-link-text">
+              数据结构备考笔记
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+
+<article id="post-算法笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img" rel="gallery_cmawjymhl002sx3la07th8we6">
+        <img src="/images/1742362269512.png" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        算法笔记
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2025-05-29T02:34:52.000Z" itemprop="datePublished">2025-05-29</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            15k words 
+          </div>
+          <!-- busuanzi-counter -->
+          
+            
+            <div class="readcount need-seperator meta-info">
+             <span id="busuanzi_container_page_pv">阅读<span id="busuanzi_value_page_pv"></span>次</span>
+            </div>
+          
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+            <!-- Table of Contents -->
+             
+          <blockquote>
+<p>用于记录算法课程的学习。</p>
+<p>笔记中的所有图片来源于教材与陈翌佳老师的Slides。</p>
+</blockquote>
+<h2 id="第-0-章-序言"><a href="#第-0-章-序言" class="headerlink" title="第 0 章 序言"></a>第 0 章 序言</h2><h3 id="0-1-书籍和算法"><a href="#0-1-书籍和算法" class="headerlink" title="0.1 书籍和算法"></a>0.1 书籍和算法</h3><h3 id="0-2-从-Fibonacci-数列开始"><a href="#0-2-从-Fibonacci-数列开始" class="headerlink" title="0.2 从 Fibonacci 数列开始"></a>0.2 从 Fibonacci 数列开始</h3><p>算法：</p>
+<p><img src="/images/assets//image-20250427215559412.png" alt="image-20250427215559412" style="zoom:40%;" /></p>
+<p>时间复杂度：线性</p>
+<h3 id="0-3-大-O-符号"><a href="#0-3-大-O-符号" class="headerlink" title="0.3 大 O 符号"></a>0.3 大 O 符号</h3><h2 id="第-1-章-数字的算法"><a href="#第-1-章-数字的算法" class="headerlink" title="第 1 章 数字的算法"></a>第 1 章 数字的算法</h2><h3 id="1-1-基本算术"><a href="#1-1-基本算术" class="headerlink" title="1.1 基本算术"></a>1.1 基本算术</h3><h4 id="1-1-1-加法"><a href="#1-1-1-加法" class="headerlink" title="1.1.1 加法"></a>1.1.1 加法</h4><p>二进制，n位</p>
+<p>时间复杂度：$O(n)$</p>
+<h4 id="1-1-2-乘法和除法"><a href="#1-1-2-乘法和除法" class="headerlink" title="1.1.2 乘法和除法"></a>1.1.2 乘法和除法</h4><h5 id="乘法："><a href="#乘法：" class="headerlink" title="乘法："></a>乘法：</h5><p>法一： $n - 1$ 次加法，时间复杂度 $O(n^2)$</p>
+<p>法二：<img src="/images/assets//image-20250429103507423.png" alt="image-20250429103507423" style="zoom:53%;" /></p>
+<p>时间复杂度 $O(n^2)$</p>
+<h5 id="除法："><a href="#除法：" class="headerlink" title="除法："></a>除法：</h5><p><img src="/images/assets//image-20250427220921357.png" alt="image-20250427220921357" style="zoom:40%;" /></p>
+<p>时间复杂度 $O(n^2)$</p>
+<h3 id="1-2-模运算"><a href="#1-2-模运算" class="headerlink" title="1.2 模运算"></a>1.2 模运算</h3><h4 id="1-2-1-模的加法和乘法"><a href="#1-2-1-模的加法和乘法" class="headerlink" title="1.2.1 模的加法和乘法"></a>1.2.1 模的加法和乘法</h4><p>$mod\left(N\right) \rightarrow n = log(N)$</p>
+<p>加法时间复杂度：$O(n)$</p>
+<p>乘法时间复杂度：$O(n^2)$</p>
+<p>除法时间复杂度：$O(n^3)$</p>
+<h4 id="1-2-2-模的指数运算"><a href="#1-2-2-模的指数运算" class="headerlink" title="1.2.2 模的指数运算"></a>1.2.2 模的指数运算</h4><p><img src="/images/assets//image-20250427220759053.png" alt="image-20250427220759053" style="zoom:40%;" /></p>
+<p>倍增算法，时间复杂度：$O(n^3)$</p>
+<h4 id="1-2-3-Euclid-的最大公因数算法"><a href="#1-2-3-Euclid-的最大公因数算法" class="headerlink" title="1.2.3 Euclid 的最大公因数算法"></a>1.2.3 Euclid 的最大公因数算法</h4><p><img src="/images/assets//image-20250427220831232.png" alt="image-20250427220831232" style="zoom:40%;" /></p>
+<p>时间复杂度：$O(n^3)$</p>
+<h4 id="1-2-4-Euclid-算法的一种扩展"><a href="#1-2-4-Euclid-算法的一种扩展" class="headerlink" title="1.2.4 Euclid 算法的一种扩展"></a>1.2.4 Euclid 算法的一种扩展</h4><p><img src="/images/assets//image-20250427221101020.png" alt="image-20250427221101020" style="zoom:40%;" /></p>
+<p>扩展欧几里得算法在给出 $d$ 的同时还给出了 $ax + by = d$ 中的 $x$ 和 $y$ 。</p>
+<p>$\Rightarrow$ 得到获取模逆的 $O(n^3)$ 算法</p>
+<h4 id="1-2-5-模的除法"><a href="#1-2-5-模的除法" class="headerlink" title="1.2.5 模的除法"></a>1.2.5 模的除法</h4><p>用模逆算</p>
+<h3 id="1-3-素性测试"><a href="#1-3-素性测试" class="headerlink" title="1.3 素性测试"></a>1.3 素性测试</h3><p>费马小定理：</p>
+<p><img src="/images/assets//image-20250427221550048.png" alt="image-20250427221550048" style="zoom:43%;" /></p>
+<p>素性测试：</p>
+<p><img src="/images/assets//image-20250429101953387.png" alt="image-20250429101953387" style="zoom:40%;" /></p>
+<p>我们的期望：对于非素数，这个算法能够很大概率输出no</p>
+<p>只要有一次输出no，就不是素数。</p>
+<p>但是：</p>
+<p><img src="/images/assets//image-20250429102117559.png" alt="image-20250429102117559" style="zoom:40%;" /></p>
+<p>确实存在这样的合数，很大概率是yes的，称为 Carmichael numbers</p>
+<p>对于非Carmichael numbers，我们的期望是成立的：</p>
+<p><img src="/images/assets//image-20250429103125488.png" alt="image-20250429103125488" style="zoom:40%;" /></p>
+<p>改进：一次测多个：</p>
+<p><img src="/images/assets//image-20250429103204159.png" alt="image-20250429103204159" style="zoom:40%;" /></p>
+<p><img src="/images/assets//image-20250429103216376.png" alt="image-20250429103216376" style="zoom:40%;" /></p>
+<p>时间复杂度：平均会在 $O(n)$ 轮后停下。</p>
+<h3 id="1-4-密码学"><a href="#1-4-密码学" class="headerlink" title="1.4 密码学"></a>1.4 密码学</h3><h4 id="1-4-1-密钥机制：一次一密乱码本和-AES"><a href="#1-4-1-密钥机制：一次一密乱码本和-AES" class="headerlink" title="1.4.1 密钥机制：一次一密乱码本和 AES"></a>1.4.1 密钥机制：一次一密乱码本和 AES</h4><p>一次一密乱码本：</p>
+<p><img src="/images/assets//image-20250429103659279.png" alt="image-20250429103659279" style="zoom:40%;" /></p>
+<h4 id="1-4-2-RSA"><a href="#1-4-2-RSA" class="headerlink" title="1.4.2 RSA"></a>1.4.2 RSA</h4><p>Bob给出一个公匙 $(N , e)$ ，自己保留私匙 $d$ ， $N = pq$ ,当 Alice 想给 Bob 传 $x$ 的时候，她传出 $x^e(mod\ N)$ ， Bob通过 $(x^e)^d(mod\ N)$ 恢复 $x$  </p>
+<p>其中 $d , e$ 需要满足 $d$ 是 $e$ 对于 $(p-1)(q-1)$ 的模逆。 </p>
+<h3 id="1-5-通用散列表"><a href="#1-5-通用散列表" class="headerlink" title="1.5 通用散列表"></a>1.5 通用散列表</h3><h4 id="1-5-1-散列表"><a href="#1-5-1-散列表" class="headerlink" title="1.5.1 散列表"></a>1.5.1 散列表</h4><p>哈希函数 </p>
+<p>目的：给一个较短的nickname给一个很长的IP地址，且使得两个IP地址nickname相同的概率（哈希碰撞概率）较小。</p>
+<script type="math/tex; mode=display">
+h_a(x_1,\cdots,x_4) = (a_1\cdot x_1+\cdots + a_4\cdot x_4) mod \ n\\
+Pr[h_a(x_1,\cdots,x_4) = h_a(y_1,\cdots,y_4)] = \frac{1}{n}</script><h4 id="1-5-2-散列函数族"><a href="#1-5-2-散列函数族" class="headerlink" title="1.5.2 散列函数族"></a>1.5.2 散列函数族</h4><p><img src="/images/assets//image-20250429113314451.png" alt="image-20250429113314451" style="zoom:40%;" /></p>
+<h2 id="第-2-章-分治算法"><a href="#第-2-章-分治算法" class="headerlink" title="第 2 章 分治算法"></a>第 2 章 分治算法</h2><h3 id="2-1-乘法"><a href="#2-1-乘法" class="headerlink" title="2.1 乘法"></a>2.1 乘法</h3><p><img src="/images/assets//image-20250430082825811.png" alt="image-20250430082825811" style="zoom:40%;" /></p>
+<p>然后运用Gauss’ trick，把计算4个变成三个：</p>
+<p><img src="/images/assets//image-20250430082931956.png" alt="image-20250430082931956" style="zoom:40%;" /></p>
+<p>时间复杂度： $O(n^{log_2{3}})$ </p>
+<h3 id="2-2-递推式"><a href="#2-2-递推式" class="headerlink" title="2.2 递推式"></a>2.2 递推式</h3><p>主定理：</p>
+<p><img src="/images/assets//image-20250430083020408.png" alt="image-20250430083020408" style="zoom:40%;" /></p>
+<h3 id="2-3-合并排序"><a href="#2-3-合并排序" class="headerlink" title="2.3 合并排序"></a>2.3 合并排序</h3><p><img src="/images/assets//image-20250430083048378.png" alt="image-20250430083048378" style="zoom:40%;" /></p>
+<p>时间复杂度：$O(nlogn)$ </p>
+<p>对于仅使用比较的排序方法，有下界 $O(nlogn)$ </p>
+<h3 id="2-4-寻找中项"><a href="#2-4-寻找中项" class="headerlink" title="2.4 寻找中项"></a>2.4 寻找中项</h3><p>寻找第 $k$ 小的数：</p>
+<p>用一个数 $v$ 把 $S$ 分成三部分 $S_L , S_v , S_R$ ：比 $v$ 小的，和 $v$ 一样大的，比 $v$ 大的。然后：</p>
+<p><img src="/images/assets//image-20250430083402148.png" alt="image-20250430083402148" style="zoom:40%;" /></p>
+<p>时间复杂度：最差 $O(n^2)$ ，最好 $O(n)$ ， 平均？</p>
+<p>由于是随机选取的 $v$ ， 所以 $v$ 在 25% ~75% 之间的概率是 50% ，而50%概率事件出现的期望次数为2次：</p>
+<script type="math/tex; mode=display">
+E=1+\frac{1}{2}E</script><p>所以 $T(n)≤T(\frac{3n}{4}) + O(n) = O(n).$</p>
+<h3 id="2-5-矩阵乘法"><a href="#2-5-矩阵乘法" class="headerlink" title="2.5 矩阵乘法"></a>2.5 矩阵乘法</h3><p>8次变7次：</p>
+<p><img src="/images/assets//image-20250430084219386.png" alt="image-20250430084219386" style="zoom:40%;" /></p>
+<h3 id="2-6-快速-Fourier-变换"><a href="#2-6-快速-Fourier-变换" class="headerlink" title="2.6 快速 Fourier 变换"></a>2.6 快速 Fourier 变换</h3><h4 id="2-6-1-多项式的另一种表示法"><a href="#2-6-1-多项式的另一种表示法" class="headerlink" title="2.6.1 多项式的另一种表示法"></a>2.6.1 多项式的另一种表示法</h4><p>一个多项式 $A(x) = a_0 + a_1x + \cdots + a_dx^d$ 可以用两种方式表示：</p>
+<ol>
+<li>系数表示： $a_0 , \cdots , a_d$</li>
+<li>值表示：$A(x_0) , \cdots,A(x_d)$</li>
+</ol>
+<p>两种表示可以互相转换：系数表示计算得到值表示，值表示用插值得到系数表示。</p>
+<p>计算多项式乘积的大致步骤：</p>
+<p><img src="/images/assets//image-20250430084721269.png" alt="image-20250430084721269" style="zoom:43%;" /></p>
+<h4 id="2-6-2-计算步骤的分治实现"><a href="#2-6-2-计算步骤的分治实现" class="headerlink" title="2.6.2 计算步骤的分治实现"></a>2.6.2 计算步骤的分治实现</h4><p>想法： $A(x) , B(x)$ 的系数表示 $\Rightarrow$  $A(x) , B(x)$ 的值表示 $\Rightarrow$ $C(x)$ 的值表示 $\Rightarrow$ $C(x)$ 的系数表示</p>
+<p>如果对于一般的 $x_0 , x_1  ,\cdots , x_n$ ， 我们可能需要 $O(n^2)$ 的时间来计算这 $n$ 个表达式的值，但是如果选取的比较好，我们就可以用 FFT 实现 $O(nlogn)$ 的计算速度。</p>
+<p>令 $\omega = e^{\frac{2\pi i}{n}}$ </p>
+<p><img src="/images/assets//image-20250430085433891.png" alt="image-20250430085433891" style="zoom:40%;" /></p>
+<p>我们得到了：</p>
+<script type="math/tex; mode=display">
+\langle 值 \rangle = FFT(\langle 系数 \rangle , \omega)</script><h4 id="2-6-3-插值"><a href="#2-6-3-插值" class="headerlink" title="2.6.3 插值"></a>2.6.3 插值</h4><p>下面我们想要得到</p>
+<script type="math/tex; mode=display">
+\langle 系数 \rangle = \frac{1}{n}FFT(\langle 值 \rangle , \omega^{-1})</script><p><img src="/images/assets//image-20250430090008287.png" alt="image-20250430090008287" style="zoom:40%;" /></p>
+<p>中间的矩阵 $M$ 是一个范德蒙德矩阵，我们其实就是要求 $M^{-1}$ </p>
+<p><img src="/images/assets//image-20250430090104104.png" alt="image-20250430090104104" style="zoom:40%;" /></p>
+<p>于是我们只需要求 $M_n(\omega)$ 这样的矩阵了。</p>
+<p>这可以使用一般的FFT来做，思想与多项式FFT类似：</p>
+<p><img src="/images/assets//image-20250430090241481.png" alt="image-20250430090241481" style="zoom:40%;" /></p>
+<h4 id="2-6-4-快速-Fourier-变换的细节"><a href="#2-6-4-快速-Fourier-变换的细节" class="headerlink" title="2.6.4 快速 Fourier 变换的细节"></a>2.6.4 快速 Fourier 变换的细节</h4><h2 id="第-3-章-图的分解"><a href="#第-3-章-图的分解" class="headerlink" title="第 3 章 图的分解"></a>第 3 章 图的分解</h2><h3 id="3-1-为什么是图"><a href="#3-1-为什么是图" class="headerlink" title="3.1 为什么是图"></a>3.1 为什么是图</h3><h3 id="3-2-无向图的深度优先搜索"><a href="#3-2-无向图的深度优先搜索" class="headerlink" title="3.2 无向图的深度优先搜索"></a>3.2 无向图的深度优先搜索</h3><h4 id="3-2-1-迷宫探索"><a href="#3-2-1-迷宫探索" class="headerlink" title="3.2.1 迷宫探索"></a>3.2.1 迷宫探索</h4><h4 id="3-2-2-深度优先搜索"><a href="#3-2-2-深度优先搜索" class="headerlink" title="3.2.2 深度优先搜索"></a>3.2.2 深度优先搜索</h4><p><img src="/images/assets//image-20250430091322265.png" alt="image-20250430091322265" style="zoom:40%;" /></p>
+<p><img src="/images/assets//image-20250430091202343.png" alt="image-20250430091202343" style="zoom:40%;" /></p>
+<p>EXPLORE 到的边是树边，其他的是回边。</p>
+<p><img src="/images/assets//image-20250430091238982.png" alt="image-20250430091238982" style="zoom:40%;" /></p>
+<p>时间复杂度：$O(|V|+|E|)$</p>
+<h4 id="3-2-3-无向图的连通性"><a href="#3-2-3-无向图的连通性" class="headerlink" title="3.2.3 无向图的连通性"></a>3.2.3 无向图的连通性</h4><p>只需要把 $previsit(v)$ 设置为 $ccnum[v] = cc$ ，$cc$ 在每次DFS中 EXPLORE 的时候++就可以获取所有的连通分量了。</p>
+<h4 id="3-2-4-前序和后序"><a href="#3-2-4-前序和后序" class="headerlink" title="3.2.4 前序和后序"></a>3.2.4 前序和后序</h4><p>DFS序：</p>
+<p><img src="/images/assets//image-20250430091711799.png" alt="image-20250430091711799" style="zoom:40%;" /></p>
+<p><img src="/images/assets//image-20250430091732927.png" alt="image-20250430091732927" style="zoom:40%;" /></p>
+<p><img src="/images/assets//image-20250430091752762.png" alt="image-20250430091752762" style="zoom:40%;" /></p>
+<h3 id="3-3-有向图的深度优先搜索"><a href="#3-3-有向图的深度优先搜索" class="headerlink" title="3.3 有向图的深度优先搜索"></a>3.3 有向图的深度优先搜索</h3><h4 id="3-3-1-边的类型"><a href="#3-3-1-边的类型" class="headerlink" title="3.3.1 边的类型"></a>3.3.1 边的类型</h4><p><img src="/images/assets//image-20250430091949043.png" alt="image-20250430091949043" style="zoom:40%;" /></p>
+<p><img src="/images/assets//image-20250430092006055.png" alt="image-20250430092006055" style="zoom:40%;" /></p>
+<h4 id="3-3-2-有向无环图（dag）"><a href="#3-3-2-有向无环图（dag）" class="headerlink" title="3.3.2 有向无环图（dag）"></a>3.3.2 有向无环图（dag）</h4><p><strong>有回边 $\Leftrightarrow$ 有环</strong></p>
+<p><strong>线性化/拓扑排序</strong>：对所有点进行排序，使得所有边都从小点指向大点。</p>
+<p>法一：由上图可以注意到， $post$ 顺序在没有回边的时候总是先 $v$ 后 $u$ ，也就是说，每条边 $(u , v)$ 都从 $post$ 大的点指向 $post$ 小的点，于是可以用 $post$ 倒序排序作为一种线性化。</p>
+<p>法二：dag一定有至少一个源点（source）和至少一个汇点（sink）：$post$ 最小的点一定是源点，最大的一定是汇点</p>
+<p>于是只需要每次找到一个源点并输出，删除，然后继续找就行了。</p>
+<h3 id="3-4-强连通部件"><a href="#3-4-强连通部件" class="headerlink" title="3.4 强连通部件"></a>3.4 强连通部件</h3><h4 id="3-4-1-定义有向图的连通性"><a href="#3-4-1-定义有向图的连通性" class="headerlink" title="3.4.1 定义有向图的连通性"></a>3.4.1 定义有向图的连通性</h4><p><img src="/images/assets//image-20250430092739757.png" alt="image-20250430092739757" style="zoom:40%;" /></p>
+<p>且每个有向图都是他的强连通分量的dag（有向无环图）：</p>
+<p><img src="/images/assets//image-20250430092937558.png" alt="image-20250430092937558" style="zoom:40%;" /></p>
+<h4 id="3-4-2-一个有效的算法"><a href="#3-4-2-一个有效的算法" class="headerlink" title="3.4.2 一个有效的算法"></a>3.4.2 一个有效的算法</h4><p><strong>性质1</strong> 如果explore子过程从顶点u开始，那么该子过程恰好在从u可达的所有顶点都已访问之时终止。</p>
+<p>因此，若我们对位于汇强连通分量（即在元图中表现为汇点的强连通分量）中的某个节点调用EXPLORE，就能获取该分量。</p>
+<p><strong>性质2</strong> 在深度优先搜索中得到的post值最大的顶点一定位于一个源点强连通部件中。</p>
+<p>所以我们只需要把整个图反向，$G \Rightarrow G^R$ ，就可以在 $G^R$ 中使用 DFS 得到 $G^R$ 中post最大的，这个点在 $G^R$ 的源点强连通部件中，也就一定在 $G$ 的汇点强连通部件中。</p>
+<p><strong>性质3</strong> 如果 $C$ 和 $C^′$ 是强连通部件，同时从 $C$ 中的一个顶点到 $C^′$ 中的一个顶点存在一条边，则 $C$ 中post的最大值要大于 $C^′$ 中post的最大值。</p>
+<p>于是我们得到一个最终算法：</p>
+<script type="math/tex; mode=display">
+1.在图G^R上运行深度优先搜索。\\
+2.在图G上运行无向图连通部件算法(见3.2.3节),\\在深度优先搜索的过程中，
+按照step1得到的顶点post值的降序逐个处理每个顶点。</script><p>理解： $G^R$ 中找post最大的，用这个点 EXPLORE 得到 $G$ 的汇点连通分量，然后扔掉这个分量，找剩下的图中post最大的，再用 EXPLORE …</p>
+<p>时间复杂度：线性</p>
+<h2 id="第-4-章-图中的路径"><a href="#第-4-章-图中的路径" class="headerlink" title="第 4 章 图中的路径"></a>第 4 章 图中的路径</h2><h3 id="4-1-距离"><a href="#4-1-距离" class="headerlink" title="4.1 距离"></a>4.1 距离</h3><h3 id="4-2-广度优先搜索"><a href="#4-2-广度优先搜索" class="headerlink" title="4.2 广度优先搜索"></a>4.2 广度优先搜索</h3><p><img src="/images/assets//image-20250430123342875.png" alt="image-20250430123342875" style="zoom:40%;" /></p>
+<p>queue：先进先出</p>
+<p>对于每个 $d=0、1、2、…、$ 都曾经有一个时刻，满足以下条件：(1)所有与 $s$ 之间的距离小于等于$d$ 的顶点被正确设定了距离；(2)其他顶点的距离都被设定为 $\infin$  ;(3)队列中只含有与 $s$ 距离为 $d$ 的顶点。</p>
+<p><img src="/images/assets//image-20250430123412278.png" alt="image-20250430123412278" style="zoom:40%;" /></p>
+<p>时间复杂度：$O(|V|+|E|)$</p>
+<h3 id="4-3-边的长度"><a href="#4-3-边的长度" class="headerlink" title="4.3 边的长度"></a>4.3 边的长度</h3><h3 id="4-4-Dijkstra-算法"><a href="#4-4-Dijkstra-算法" class="headerlink" title="4.4 Dijkstra 算法"></a>4.4 Dijkstra 算法</h3><h4 id="4-4-1-广度优先搜索的一个改进"><a href="#4-4-1-广度优先搜索的一个改进" class="headerlink" title="4.4.1 广度优先搜索的一个改进"></a>4.4.1 广度优先搜索的一个改进</h4><p>对于有权正整数边，直接变成若干个点</p>
+<p><img src="/images/assets//image-20250430123646251.png" alt="image-20250430123646251" style="zoom:40%;" /></p>
+<p>但是复杂度太高，需要改进——使用闹钟</p>
+<p>形象的解释：用闹钟来记录：跳过中间的节点。</p>
+<p><img src="/images/assets//image-20250430123826935.png" alt="image-20250430123826935" style="zoom: 40%;" /></p>
+<p>首先引入<strong>优先队列</strong>：</p>
+<p>支持以下操作：</p>
+<p><strong>插入（Insert）</strong>：向集合中添加一个新的元素。</p>
+<p><strong>减小键值（Decrease-key）</strong>：用来减少某个特定元素的键值1。</p>
+<p><strong>删除最小元素（Delete-min）</strong>：返回键值最小的元素，并且将它从集合中删除。</p>
+<p><strong>构造队列（Make-queue）</strong>：用给定的元素以及给定的元素键值构建一个队列。</p>
+<p>然后使用优先队列来严谨书写Dijkstra算法：</p>
+<p><img src="/images/assets//image-20250430123927210.png" alt="image-20250430123927210" style="zoom:40%;" /></p>
+<p><img src="/images/assets//image-20250430124028894.png" alt="image-20250430124028894" style="zoom:40%;" /></p>
+<h4 id="4-4-2-另一种解释"><a href="#4-4-2-另一种解释" class="headerlink" title="4.4.2 另一种解释"></a>4.4.2 另一种解释</h4><p>在每次 while 循环迭代的末尾，有以下条件成立：(1)存在一个值 $d$ ,使得从 $s$ 到 $R$ 中所有顶点的距离小于等于 $d$ ,同时使得从 $s$ 到 $R$ 外所有顶点的距离大于等于 $d$ ;(2)对于每个顶点 $u$ , $dist(u)$ 表示一条从 $s$ 到 $u$ 的最短路径的长度，该路径经过的顶点均在 $R$ 中(如果不存在这样的路径，$dist$ 值设为 $∞$ )。</p>
+<p><img src="/images/assets//image-20250430124017336.png" alt="image-20250430124017336" style="zoom:40%;" /></p>
+<h4 id="4-4-3-运行时间"><a href="#4-4-3-运行时间" class="headerlink" title="4.4.3 运行时间"></a>4.4.3 运行时间</h4><p>总共需要 $|V|$ 次 deletemin 操作和 $|V|+|E|$ 次 insert/decreasekey 操作</p>
+<p>取决于使用的优先队列实现方式，eg.二分堆实现，时间复杂度：$O((|V|+|E|)\ log|V|)$ </p>
+<h3 id="4-5-优先队列的实现"><a href="#4-5-优先队列的实现" class="headerlink" title="4.5 优先队列的实现"></a>4.5 优先队列的实现</h3><p>列表：</p>
+<p><img src="/images/assets//image-20250430125032642.png" alt="image-20250430125032642" style="zoom:40%;" /></p>
+<h4 id="4-5-1-数组"><a href="#4-5-1-数组" class="headerlink" title="4.5.1 数组"></a>4.5.1 数组</h4><h4 id="4-5-2-二分堆"><a href="#4-5-2-二分堆" class="headerlink" title="4.5.2 二分堆"></a>4.5.2 二分堆</h4><p>元素被存储在一个<strong>完全二叉树</strong>中，即二叉树每层上的节点都被从左到右地填满，并且在上一层未填满之前不会出现下一层。另外，需要遵循一种特殊的顺序：树中任意节点的键值必须小于等于其后裔节点的键值。因此，特别的，根节点一定对应着键值最小的元素。</p>
+<p>插入（Insert）：先插入到尾部，然后不断和父亲交换（称为冒泡）$O(log\ n)$</p>
+<p><img src="/images/assets//image-20250430125302603.png" alt="image-20250430125302603" style="zoom:40%;" /></p>
+<p>减少键值（decreakey）和插入类似。</p>
+<p>删除最小元素（deletemin）：删除根，用尾部元素代替这个根，然后再不断地和所有孩子比较并交换。时间复杂度：$O(log\ n)$</p>
+<p><img src="/images/assets//image-20250430125814628.png" alt="image-20250430125814628" style="zoom:40%;" /></p>
+<h4 id="4-5-3-d-堆"><a href="#4-5-3-d-堆" class="headerlink" title="4.5.3 d 堆"></a>4.5.3 d 堆</h4><p>每个节点有 d 个儿子。树的高度缩减为 $O(log_d{n})$</p>
+<p>插入操作时间复杂度为 $O(log\ d)$</p>
+<p>删除最小元素时间复杂度为 $O(d\ log_d{n})$ </p>
+<h3 id="4-6-含有负边的图的最短路径"><a href="#4-6-含有负边的图的最短路径" class="headerlink" title="4.6 含有负边的图的最短路径"></a>4.6 含有负边的图的最短路径</h3><h4 id="4-6-1-负边"><a href="#4-6-1-负边" class="headerlink" title="4.6.1 负边"></a>4.6.1 负边</h4><p>在有负边的时候，Dijkstra算法失效。但是值得注意的是，在Dijkstra算法中，dist永远大于等于最优的dist，也就是说，在每次update的时候，dist永远是safe的。所以我们只要在每次update的时候update所有的边（比较暴力），就可以得到<strong>Bellman-Ford算法</strong>：</p>
+<p><img src="/images/assets/image-20250503090745534.png" alt="image-20250503090745534" style="zoom:40%;" /></p>
+<p>时间复杂度：$O(|V|\cdot|E|)$</p>
+<h4 id="4-6-2-负环"><a href="#4-6-2-负环" class="headerlink" title="4.6.2 负环"></a>4.6.2 负环</h4><p>通过Bellman-Ford我们还可以轻松地检测负环：</p>
+<p>我们只需要在 $|V| - 1$ 次迭代之后再多执行一次迭代过程。图中存在一个负环当且仅当在这最后一次迭代中有某个dist的值被减少。</p>
+<h3 id="4-7-有向无环图中的最短路"><a href="#4-7-有向无环图中的最短路" class="headerlink" title="4.7 有向无环图中的最短路"></a>4.7 有向无环图中的最短路</h3><p>有两类图直接排除了负环存在的可能性：一类是不含负边的图，另一类是没有环的图。前一种直接用Dijkstra即可，后一种，即有向无环图（dag）中，我们下面给出线性时间的算法。注意到：</p>
+<p>在dag的任意路径中，顶点是按照图线性化产生的顶点序列的升序排列的。</p>
+<p>因此，进行以下步骤足矣：通过深度优先搜索线性化(即拓扑排序)有向无环图，然后按照得到的顶点顺序访问顶点，对从当前访问顶点出发的边执行更新操作。</p>
+<p><img src="/images/assets/image-20250503091344840.png" alt="image-20250503091344840" style="zoom:40%;" /></p>
+<h2 id="第-5-章-贪心算法"><a href="#第-5-章-贪心算法" class="headerlink" title="第 5 章 贪心算法"></a>第 5 章 贪心算法</h2><h3 id="5-1-最小生成树"><a href="#5-1-最小生成树" class="headerlink" title="5.1 最小生成树"></a>5.1 最小生成树</h3><h4 id="5-1-1-一个贪心方法"><a href="#5-1-1-一个贪心方法" class="headerlink" title="5.1.1 一个贪心方法"></a>5.1.1 一个贪心方法</h4><p>形式化：</p>
+<p><img src="/images/assets/image-20250503091641515.png" alt="image-20250503091641515" style="zoom: 40%;" /></p>
+<p>Kruskal算法：不断重复地选择未被选中的边中权重最轻且不会形成环的一条。</p>
+<p><img src="/images/assets/image-20250503091807529.png" alt="image-20250503091807529" style="zoom:40%;" /></p>
+<h4 id="5-1-2-分割性质"><a href="#5-1-2-分割性质" class="headerlink" title="5.1.2 分割性质"></a>5.1.2 分割性质</h4><p>Kruskal算法的正确性由分割性质（Cut property）保证。</p>
+<p><img src="/images/assets/image-20250503092728052.png" alt="image-20250503092728052" style="zoom:40%;" /></p>
+<p>证明：</p>
+<p><img src="/images/assets/image-20250503092954793.png" alt="image-20250503092954793" style="zoom:40%;" /></p>
+<p>T是MST，若不包含 $e$ ，由于连通，一定包含 $e’$ ，则把 $e’$ 换成 $e$ 之后得到的 $T’$ 边权小于等于 $T$ 。所以一定等于 $\Rightarrow$ $T’$ 也是MST。</p>
+<h4 id="5-1-3-Kruskal-算法"><a href="#5-1-3-Kruskal-算法" class="headerlink" title="5.1.3 Kruskal 算法"></a>5.1.3 Kruskal 算法</h4><p><img src="/images/assets/image-20250503093221908.png" alt="image-20250503093221908" style="zoom:40%;" /></p>
+<h4 id="5-1-4-一种用于分离集的数据结构"><a href="#5-1-4-一种用于分离集的数据结构" class="headerlink" title="5.1.4 一种用于分离集的数据结构"></a>5.1.4 一种用于分离集的数据结构</h4><p>$\pi(x)$ 表示 $x$ 的父亲，$rank(x)$ 表示其下悬挂的子树的高度。</p>
+<p><img src="/images/assets/image-20250503093514921.png" alt="image-20250503093514921" style="zoom:40%;" /></p>
+<p><img src="/images/assets/image-20250503093502686.png" alt="image-20250503093502686" style="zoom:40%;" /></p>
+<p>一些性质：</p>
+<p><img src="/images/assets/image-20250503093557928.png" alt="image-20250503093557928" style="zoom:40%;" /></p>
+<p><img src="/images/assets/image-20250503093632397.png" alt="image-20250503093632397" style="zoom:40%;" /></p>
+<p>改进并查集：</p>
+<p><img src="/images/assets/image-20250503093657092.png" alt="image-20250503093657092" style="zoom:40%;" /></p>
+<p>均摊复杂度降至 $O(1)$ </p>
+<p>复杂度证明：先证明性质1~3仍然成立，然后用“零花钱”来说明。具体见书上P152~P153，为了避免笔记过长，这里仅把链接贴在这里。</p>
+<p><a target="_blank" rel="noopener" href="https://notes.sjtu.edu.cn/uploads/upload_d8dd12874258d6c53653720a547b6fb5.png">P152</a>，<a target="_blank" rel="noopener" href="https://notes.sjtu.edu.cn/uploads/upload_700ab4a25df833d10c88253e433b55e7.png">P153</a></p>
+<h4 id="5-1-5-Prim-算法"><a href="#5-1-5-Prim-算法" class="headerlink" title="5.1.5 Prim 算法"></a>5.1.5 Prim 算法</h4><p>（Kruskal算法的变体）</p>
+<p><img src="/images/assets/image-20250503095648054.png" alt="image-20250503095648054" style="zoom:50%;" /></p>
+<h3 id="5-2-Huffman-编码"><a href="#5-2-Huffman-编码" class="headerlink" title="5.2 Huffman 编码"></a>5.2 Huffman 编码</h3><h3 id="5-3-Horn-公式"><a href="#5-3-Horn-公式" class="headerlink" title="5.3 Horn 公式"></a>5.3 Horn 公式</h3><h3 id="5-4-集合覆盖"><a href="#5-4-集合覆盖" class="headerlink" title="5.4 集合覆盖"></a>5.4 集合覆盖</h3><p>Set Cover问题：</p>
+<p><img src="/images/assets/image-20250503095720386.png" alt="image-20250503095720386" style="zoom:40%;" /></p>
+<p><img src="/images/assets/image-20250503095832542.png" alt="image-20250503095832542" style="zoom:40%;" /></p>
+<p>虽然这个贪心不是最优的，但是不会太差：</p>
+<p><img src="/images/assets/image-20250503095847577.png" alt="image-20250503095847577" style="zoom:40%;" /></p>
+<p>证明：设 $n_t$ 为贪心算法中经过 $t$ 次迭代后仍未覆盖的元素数量($n_0 = n$)。由于这些剩余的元素能被最优的 $k$ 个集合覆盖，因此，当前一定存在某个包含其中 $\frac{n_t}{k}$ 个元素的集合，贪心至少会选取 $\frac{n_t}{k}$ 个元素。</p>
+<h2 id="第-6-章-动态规划"><a href="#第-6-章-动态规划" class="headerlink" title="第 6 章 动态规划"></a>第 6 章 动态规划</h2><h3 id="6-1-重新审视有向无环图的最短路径问题"><a href="#6-1-重新审视有向无环图的最短路径问题" class="headerlink" title="6.1 重新审视有向无环图的最短路径问题"></a>6.1 重新审视有向无环图的最短路径问题</h3><p><img src="/images/assets/image-20250503100127718.png" alt="image-20250503100127718" style="zoom:40%;" /></p>
+<h3 id="6-2-最长递增子序列"><a href="#6-2-最长递增子序列" class="headerlink" title="6.2 最长递增子序列"></a>6.2 最长递增子序列</h3><p><img src="/images/assets/image-20250503100210650.png" alt="image-20250503100210650" style="zoom:40%;" /></p>
+<p><img src="/images/assets/image-20250503100146003.png" alt="image-20250503100146003" style="zoom:40%;" /></p>
+<h3 id="6-3-编辑距离"><a href="#6-3-编辑距离" class="headerlink" title="6.3 编辑距离"></a>6.3 编辑距离</h3><p>找两个字符串之间的最大匹配度。</p>
+<p><img src="/images/assets/image-20250503100325426.png" alt="image-20250503100325426" style="zoom:40%;" /></p>
+<p><img src="/images/assets/image-20250503100316790.png" alt="image-20250503100316790" style="zoom:40%;" /></p>
+<p><img src="/images/assets/image-20250503100352837.png" alt="image-20250503100352837" style="zoom:40%;" /></p>
+<h3 id="6-4-背包问题"><a href="#6-4-背包问题" class="headerlink" title="6.4 背包问题"></a>6.4 背包问题</h3><p>可重背包：每种物品可以选很多次。</p>
+<p><img src="/images/assets/image-20250503100941134.png" alt="image-20250503100941134" style="zoom:40%;" /></p>
+<p>无重背包：</p>
+<p><img src="/images/assets/image-20250503101005497.png" alt="image-20250503101005497" style="zoom:40%;" /></p>
+<h3 id="6-5-矩阵链式相乘"><a href="#6-5-矩阵链式相乘" class="headerlink" title="6.5 矩阵链式相乘"></a>6.5 矩阵链式相乘</h3><p><img src="/images/assets/image-20250503101033572.png" alt="image-20250503101033572" style="zoom:40%;" /></p>
+<p><img src="/images/assets/image-20250503101048048.png" alt="image-20250503101048048" style="zoom:40%;" /></p>
+<h3 id="6-6-最短路径问题（TSP）"><a href="#6-6-最短路径问题（TSP）" class="headerlink" title="6.6 最短路径问题（TSP）"></a>6.6 最短路径问题（TSP）</h3><p><img src="/images/assets/image-20250503101110335.png" alt="image-20250503101110335" style="zoom:40%;" /></p>
+<p><img src="/images/assets/image-20250503101125882.png" alt="image-20250503101125882" style="zoom:40%;" /></p>
+<h3 id="6-7-树中的独立集"><a href="#6-7-树中的独立集" class="headerlink" title="6.7 树中的独立集"></a>6.7 树中的独立集</h3><p><img src="/images/assets/image-20250503101151747.png" alt="image-20250503101151747" style="zoom:40%;" /></p>
+<h2 id="第-7-章-线性规划与归约"><a href="#第-7-章-线性规划与归约" class="headerlink" title="第 7 章 线性规划与归约"></a>第 7 章 线性规划与归约</h2><h3 id="7-1-线性规划简介"><a href="#7-1-线性规划简介" class="headerlink" title="7.1 线性规划简介"></a>7.1 线性规划简介</h3><p>给定一组变量，并希望为这些变量分配实数值，以便： (1) 满足一组涉及这些变量的线性方程和/或线性不等式； (2) 最大化或最小化给定的线性目标函数。</p>
+<p><strong>单纯形法</strong>：</p>
+<p>算法从一个顶点开始，例如在我们的例子中可能是(0,0),不断重复地寻找利润(目标函数)值较高的邻居顶点(该顶点与原顶点由可行区域的一条边相连),并向其移动。通过一种历经多边形顶点的爬山方法，从一个邻居到下一个邻居，算法将沿路不断提高利润。一旦再也找不到利润更高的邻居，单纯形法将得出结论，宣布当前顶点为最优解，同时结束计算。</p>
+<p><img src="/images/assets/image-20250508142420237.png" alt="image-20250508142420237" style="zoom:40%;" /></p>
+<p>正确性：回想一下我们之前分析指出的利润线的移动特征。由于最终相交顶点的所有邻居都位于该直线之下，因此可行多边形中的剩余部分也必然都位于该直线的下方(请注意可行区域是一个凸多边形!)。</p>
+<p><strong>归约</strong>：</p>
+<p>我们想要解决问题P。我们已经拥有一个能解决问题Q的算法。如果任何用于Q的子程序也能被用来解决P，我们就说P可归约至Q。<br>通常，P可以通过对Q子程序的一次调用来解决，这意味着P的任何实例x都能被转化为Q的实例y，从而使得P(x)可以从Q(y)推导得出。</p>
+<p><strong>线性规划的变体</strong>：</p>
+<p>一个普通的线性规划形式上往往具有很大的自由度：</p>
+<p>1.它可能是最大化问题也可能是最小化问题；</p>
+<p>2.约束条件可能是等式也有可能是不等式；</p>
+<p>3.变量通常非负，但事实上它们也可以具有任意符号。</p>
+<p>但可以通过归约相互转换：</p>
+<p><img src="/images/assets/image-20250508143234193.png" alt="image-20250508143234193" style="zoom:40%;" /></p>
+<p>这样就可以归约为标准形式：</p>
+<p>所有变量均为非负数，所有约束条件均为等式，且目标函数需最小化。</p>
+<h3 id="7-2-网络流"><a href="#7-2-网络流" class="headerlink" title="7.2 网络流"></a>7.2 网络流</h3><h4 id="7-2-1-石油运输"><a href="#7-2-1-石油运输" class="headerlink" title="7.2.1 石油运输"></a>7.2.1 石油运输</h4><p><img src="/images/assets/image-20250508143423280.png" alt="image-20250508143423280" style="zoom:40%;" /></p>
+<h4 id="7-2-2-最大流"><a href="#7-2-2-最大流" class="headerlink" title="7.2.2 最大流"></a>7.2.2 最大流</h4><p>描述：在不超过每条边容量的前提下，我们希望由 $s$ 向 $t$ 输送尽可能多的石油。</p>
+<p><a target="_blank" rel="noopener" href="https://notes.sjtu.edu.cn/uploads/upload_5c606186f12a469e1ffc74c5a8d2fdae.png">书上的描述</a> 以及 <a target="_blank" rel="noopener" href="https://notes.sjtu.edu.cn/uploads/upload_878b38fee66f504746e03541312ce600.png">Slides中的描述</a></p>
+<p>这样就转化为了线性规划问题，可以用单纯形法解决。</p>
+<h4 id="7-2-3-对算法的深入观察"><a href="#7-2-3-对算法的深入观察" class="headerlink" title="7.2.3 对算法的深入观察"></a>7.2.3 对算法的深入观察</h4><p><a target="_blank" rel="noopener" href="https://notes.sjtu.edu.cn/uploads/upload_824a0a46eab6897c4b482dee699b8de0.png">直接使用单纯形法是行不通的，要做一点修改：</a></p>
+<p>在每次迭代中，单纯形法寻找 $s$ 到 $t$ 的一条路径，其中的任意边 $(u,v)$ 可能为如下两种类型之一：</p>
+<p>1.$(u,v)$ 包含在最初的网络中，并且未达到最大流量；</p>
+<p>2.其反向边 $(v,u)$ 在最初的网络中，并且其中已存在一定的流量。</p>
+<p>如果当前的流为 $f$ ,则对于第一种情况，边 $(u,v)$ 最多还能接受 $c_{uv}-f_{uv}$ 的多余流量；而在第二种情况下，最多增加的流量为 $f_{uv}$ (取消 $(v,u)$ 上的全部或部分流量)。这类增加流量的机会可以由剩余网络 $G^f=(V,E^f)$ 来判定，该网络包含了所有的以上两类边，并标出了其剩余流量 $c^f$:</p>
+<p><img src="/images/assets/image-20250508144834633.png" alt="image-20250508144834633" style="zoom:40%;" /></p>
+<p>$\Rightarrow$ 该算法采取迭代的方式进行，每次先构造一个 $G$ ,然后利用线性时间的广度优先搜索在 $G$ 中寻找 $s$ 到 $t$ 的一条可行的(能够继续提高流量的)路径，找不到任何这样的路径时算法停止。</p>
+<p><a target="_blank" rel="noopener" href="https://notes.sjtu.edu.cn/uploads/upload_493b0253dffb9a826858b26dd34a29a6.png">一个例子</a></p>
+<h4 id="7-2-4-最优性的保证"><a href="#7-2-4-最优性的保证" class="headerlink" title="7.2.4 最优性的保证"></a>7.2.4 最优性的保证</h4><p>将节点分为两部分 $L$ 和 $R$ :</p>
+<p><img src="/images/assets/image-20250508150535991.png" alt="image-20250508150535991" style="zoom:40%;" /></p>
+<p>这三条边作为一个<strong>割</strong>，，任意一次石油传输都必须经过L到达R。因此，没有哪个流的规模能够超过L到R的边的总容量，所以最优。一般地，对于任意流 $f$ 和任意 $(s,t)$ 分割 $(L,R)$ 。$规模(f)≤容量(L,R)$ 。事实上，我们有：</p>
+<p><strong>最小分割最大流定理</strong> 网络中最大流的规模等于其中 $(s,t)$ 分割的最小容量。</p>
+<p>进一步，最小割可以在我们的算法中作为副产品得到。</p>
+<p>$f$ 为算法终止时得到的流，记 $L$ 为 $G^f$ 中可由 $s$ 出发到达的所有节点集合，$R=V-L$ 。我们断言：</p>
+<script type="math/tex; mode=display">
+规模(f)=容量(L,R)</script><p>为了证明其正确性，由 $L$ 的定义，不难发现任意由 $L$ 到 $R$ 的边必然都是“满”的(当前流 $f$ 使用了其全部流量)，而任意由 $R$ 到 $L$ 的边流量都为0。也即 $f_{e}=c_{e}$ 且 $f_e=0$ 。由此可知，跨越 $(L,R)$ 的流量应该就等于该分割的容量。</p>
+<h4 id="7-2-5-算法的效率"><a href="#7-2-5-算法的效率" class="headerlink" title="7.2.5 算法的效率"></a>7.2.5 算法的效率</h4><p>每次迭代 $O(|E|)$，假设在最初的网络中所有边的容量都是一个不大于 $C$ 的整数，注意到最大流量最多为 $C|E|$ ，迭代的次数应该也最多为$C|E|$ 。如果不能选择恰当的路径，最终的迭代次数将与 $C$ 成正比。但采用广度优先搜索将使得找到的路径包含最少的边，则不论边的容量如何，最终的迭代次数将不超过 $O(|V|·|E|)$。而该上界保证了对最大流来说算法总的运行时间为 $O(|V|\cdot|E|^2)$</p>
+<h3 id="7-3-二部图的匹配"><a href="#7-3-二部图的匹配" class="headerlink" title="7.3 二部图的匹配"></a>7.3 二部图的匹配</h3><p>左侧四个节点代表男孩，右侧四个节点代表女孩。是否可能配对所有的男孩女孩，并且配对双方连边？在图论中，这样的配对称为一个<strong>完美匹配</strong>。</p>
+<p><img src="/images/assets/image-20250508152527636.png" alt="image-20250508152527636" style="zoom:40%;" /></p>
+<p>以上的配对游戏可以被归约到最大流问题，因此它也是一个线性规划问题。定义一个拥有流向所有男孩的边的源节点 $s$ ；一个拥有从所有女孩流出的边的汇节点$t$ ；同时对应于原图中的所有边在新图中加入由男孩流向女孩的边。最后，赋予所有的边容量1。</p>
+<p><img src="/images/assets/image-20250508152735124.png" alt="image-20250508152735124" style="zoom:40%;" /></p>
+<p><strong>性质</strong>：如果所有边的容量为整数，则由我们的算法得到的最大流的规模也为整数。</p>
+<h3 id="7-4-对偶"><a href="#7-4-对偶" class="headerlink" title="7.4 对偶"></a>7.4 对偶</h3><p>要解决</p>
+<p><img src="/images/assets/image-20250508153352165.png" alt="image-20250508153352165" style="zoom:40%;" /></p>
+<p>等价于</p>
+<p><img src="/images/assets/image-20250508153427498.png" alt="image-20250508153427498" style="zoom:40%;" /></p>
+<p>所以我们实际上是在求</p>
+<p><img src="/images/assets/image-20250508153455686.png" alt="image-20250508153455686" style="zoom:40%;" /></p>
+<p>$原问题：(x1,x2)=(100,300); 对偶问题：(y1,y2,y3)=(0,5,1)$ 。而实际上，这两个问题的最优值都是1900，从而对于各自的LP都是最优的。</p>
+<p>事实上，每个LP问题都有一个对偶问题。</p>
+<p><img src="/images/assets/image-20250508153731441.png" alt="image-20250508153731441" style="zoom:40%;" /></p>
+<h3 id="7-5-零和博弈-游戏"><a href="#7-5-零和博弈-游戏" class="headerlink" title="7.5 零和博弈(游戏)"></a>7.5 零和博弈(游戏)</h3><p><img src="/images/assets/image-20250515132050472.png" alt="image-20250515132050472" style="zoom: 40%;" /></p>
+<p>重复以上游戏。在每一回合中Row以 $x_1$ 的概率选择 r、以 $x_2$ 的概率选择 p、以 $x_3$ 的概率选择 s。该策略用向量形式表示为 $x=(x_1,x_2,x_3)$ ,其中的分量值均非负且总和为1。类似地，将Column的混合策略记为 $y=(y_1,y_2,y_3)$ 。</p>
+<p><img src="/images/assets/image-20250515132659693.png" alt="image-20250515132659693" style="zoom:40%;" /></p>
+<p>假设Row采用一种“完全随机”的策略 $x=(1/3,1/3,1/3)$ 。则无论column怎么做，期望都是0.所以，Row最坏最坏打成平手。对手亦然。</p>
+<p><img src="/images/assets/image-20250515133053617.png" alt="image-20250515133053617" style="zoom:40%;" /></p>
+<p>现在换一种稍微不同的方式，考虑以下两种场景：</p>
+<p>1.首先由Row宣布自己的策略，然后Column再选定策略；</p>
+<p>2.首先由Column宣布自己的策略，然后Row再选定策略。</p>
+<p>我们已知知道了如果玩家都采取最优的策略，则对于任何一种情况，平均支付都相同，为0。这一重要的性质事实上源自线性规划的对偶性——或者说，该性质与对偶性是等价的。</p>
+<p>让我们通过一个非对称的博弈对其进行研究。考虑一个总统选举的场景。其中有两名候选人，他们的行动表现为选择不同的核心议题(比如经济(e)、社会(s)、道德(m)和减税(t)纲领。支付矩阵G中的每个位置对应于Column(在此他和Row一起变成了总统候选人)丢失的选票数。</p>
+<p><img src="/images/assets/image-20250515134821257.png" alt="image-20250515134821257" style="zoom:40%;" /></p>
+<p>所以Row要做的是</p>
+<p><img src="/images/assets/image-20250515134927869.png" alt="image-20250515134927869" style="zoom:40%;" /></p>
+<p>等价于</p>
+<p><img src="/images/assets/image-20250515134946063.png" alt="image-20250515134946063" style="zoom:40%;" /></p>
+<p>同理Column：</p>
+<p><img src="/images/assets/image-20250515135006584.png" alt="image-20250515135006584" style="zoom:40%;" /></p>
+<p>二者对偶，有相同的最优值V</p>
+<p>总结：通过求解一个LP,Row(追求最大化者)能够在无视 Column 策略的情况下，确保至少V的支付。而通过求解对偶LP,Column(追求最小化者)也能够在无视Row 策略的情况下确保最多V的支付。接下来还可以发现，对于二人这都是唯一可行的最优策略—即使在我们事先无法确定游戏中宣布策略先后的情况下，双方也应该优先选择该策略。在此，V称为该游戏的价值。</p>
+<p><img src="/images/assets/image-20250515135132668.png" alt="image-20250515135132668" style="zoom:40%;" /></p>
+<p>这看起来有些令人意想不到，因为等式左侧对应于Row先宣布策略的场景，我们曾经推测会产生有利于Column的结果，而右侧对应的Column先宣布策略的场景也曾被认为是对Row有利的。现在我们看到，正如对偶性对最大流和最小分割所做的那样，它使得两种不同情形的结果变得完全相同了。</p>
+<h3 id="7-6-单纯形算法"><a href="#7-6-单纯形算法" class="headerlink" title="7.6 单纯形算法"></a>7.6 单纯形算法</h3><h4 id="7-6-1-n-维空间中的顶点和邻居"><a href="#7-6-1-n-维空间中的顶点和邻居" class="headerlink" title="7.6.1 n 维空间中的顶点和邻居"></a>7.6.1 n 维空间中的顶点和邻居</h4><p>选择约束不等式的一个子集。如果存在唯一的点满足其对应的所有等式，且该点恰好也是可行的，则其为一个顶点。当存在n个变量的时候，需要n个线性方程。所以，每个顶点都是由n个不等式所定义的。若两个顶点对应的所有不等式中有n-1个相同，则它们互为邻居。</p>
+<h4 id="7-6-2-算法"><a href="#7-6-2-算法" class="headerlink" title="7.6.2 算法"></a>7.6.2 算法</h4><p>在每次迭代中，单纯形法需要完成如下两项任务：</p>
+<p>1.检查当前顶点是否最优(如果是，则退出)。</p>
+<p>2.决定向哪里移动。</p>
+<p>首先对于原点讨论。对任务一，原点最优当且仅当所有的 $c_i\leq 0$ 。(需要b &gt; 0)</p>
+<p>对任务二，我们可以通过增大对应于 $c_i&gt;0$ 的 $x_i$​ 来进行移动。也即，我们放松已经“绷紧”的约束 $x_1\geq 0$ ,让$x_i$ 增大，直到某个原来“松弛”的约束被“绷紧”。在该点上，我们再次得到了恰好n个紧的不等式，故我们到达的是一个新的顶点。</p>
+<p>对于一般的顶点u呢？我们把他归纳到原点（坐标变换）：我们看u的局部视图，这类重新定义的局部坐标包含了其中的点到n个超平面的距离(经过适当放缩后) $y_1,\cdots,y_n$,而这n个超平面定义和包围了u:</p>
+<p>特别地，如果包围u的一堵“墙”(超平面)对应的不等式为 $\pmb{a_i}\cdot \pmb{x}\leq b$ ,则由一个点x到这堵“墙”的距离为 $y_i = b_i - \pmb{a_i}\cdot \pmb{x}$ </p>
+<p>把x坐标变成y坐标，“修改”后的 LP具有如下三点性质：</p>
+<p><img src="/images/assets/image-20250515141929583.png" alt="image-20250515141929583" style="zoom:40%;" /></p>
+<p><a target="_blank" rel="noopener" href="https://notes.sjtu.edu.cn/uploads/upload_5eef6453f6bfe27434cd9c069cbbad9e.png">A test run</a></p>
+<h4 id="7-6-3-补遗"><a href="#7-6-3-补遗" class="headerlink" title="7.6.3 补遗"></a>7.6.3 补遗</h4><h5 id="起始顶点："><a href="#起始顶点：" class="headerlink" title="起始顶点："></a>起始顶点：</h5><p><img src="/images/assets/image-20250515151027500.png" alt="image-20250515151027500" style="zoom:40%;" /></p>
+<p>对于这个新的LP,容易找到一个起始顶点，即对所有i满足 $z_i=b_i$ ;且其它变量都为0的点。因此我们可以用单纯形法求得其最优解。</p>
+<p>存在两种情况。如果 $z_1+z_2+\cdots+z_m$ 的最优值为0,则由单纯形法求得的所有 $z_i$ 都为0。由新LP的这一最优顶点可知，我们只需忽略所有的 $z_i$ ,即可得到原LP的一个可行的起始顶点。然后我们就可以开始运行单纯形法了。如果以上的最优值是正的，说明原来的线性规划不可行。</p>
+<h5 id="退化："><a href="#退化：" class="headerlink" title="退化："></a>退化：</h5><p>一般的顶点用n个式子框定。但是有些点用了多于n个，称为退化。</p>
+<p>比如，在我们想要max -x+z的时候。一开始在原点，原点是退化的，由1、3、4、5框定。但一开始只由3、4、5式子产生。任意松弛一个式子都无法到达opt点：1、2、3式子产生。但是如下图，这个点确实是原点的邻居。所以我们可能需要把3、4、5变成1、3、4.要不然，一开始想松弛5的时候由于 $z \leq y = 0$​，z就死在这儿了。但结果却可能事与愿违，导致单纯性法最终陷入无限循环。</p>
+<p><img src="/images/assets/image-20250515153042509.png" alt="image-20250515153042509" style="zoom:40%;" /></p>
+<p>修正：把方程右边的b改一点。这样就不会有退化的点了。</p>
+<p><img src="/images/assets/image-20250515153629213.png" alt="image-20250515153629213" style="zoom:40%;" /></p>
+<h5 id="无界性："><a href="#无界性：" class="headerlink" title="无界性："></a>无界性：</h5><p>有些情况下LP是无界的，此时目标函数能够取任意大的值。如果存在这样的情况，在探索某个顶点的邻居时，单纯形法会注意到移除一个不等式并加入一个新的不等式后，新的线性方程组将没有确定的解(也即其有无穷多的解)。并且事实上(这是一个简单的测试)其解空间包含了一整条直线，沿着该直线能够使得目标函数值变得越来越大，直到∞。此时单纯形法将会退出并报告该情况。</p>
+<h4 id="7-6-4-单纯形法的运行时间"><a href="#7-6-4-单纯形法的运行时间" class="headerlink" title="7.6.4 单纯形法的运行时间"></a>7.6.4 单纯形法的运行时间</h4><p>由于每次迭代只有一个不等式被替代，我们实际上可以在 $O((m+n)n)$ 下重写LP，</p>
+<p><img src="/images/assets/image-20250522134509750.png" alt="image-20250522134509750" style="zoom:40%;" /></p>
+<p>如此一来，每次迭代就只需要 $O(mn)$ 。至多 $C_{m+n}^n$ 次迭代（顶点上限）。所以单纯形法实际上是指数级别的。</p>
+<h3 id="7-7-后记：电路值（Circuit-Value）"><a href="#7-7-后记：电路值（Circuit-Value）" class="headerlink" title="7.7 后记：电路值（Circuit Value）"></a>7.7 后记：电路值（Circuit Value）</h3><p>布尔电路：一个由以下几类门电路(简称门)构成的有向无环图(dag):</p>
+<ul>
+<li>输入门(input gate)：入度为0,值为 true或 false。</li>
+<li>与门(AND gate)：入度为2。</li>
+<li>非门(NOT gate)：入度为1。</li>
+</ul>
+<p>此外，某一个门被指定为输出。</p>
+<p>所谓电路值问题：如果将布尔逻辑按照门的拓扑顺序加以应用，输出是否为 true?</p>
+<p><img src="/images/assets/image-20250522141141474.png" alt="image-20250522141141474" style="zoom:40%;" /></p>
+<p><img src="/images/assets/image-20250522141236003.png" alt="image-20250522141236003" style="zoom:40%;" /></p>
+<p>这些约束要求所有的门都必须取正确的值—0代表 false,1代表 true。我们不必求最大值或最小值，而只需从对应于输出门的变量x。中读取结果。</p>
+<p>$\Rightarrow$ 变成一个LP问题</p>
+<h2 id="第-8-章-NP-完全问题"><a href="#第-8-章-NP-完全问题" class="headerlink" title="第 8 章 NP - 完全问题"></a>第 8 章 NP - 完全问题</h2><h3 id="8-1-搜索问题"><a href="#8-1-搜索问题" class="headerlink" title="8.1 搜索问题"></a>8.1 搜索问题</h3><h4 id="SAT问题（可满足性问题）"><a href="#SAT问题（可满足性问题）" class="headerlink" title="SAT问题（可满足性问题）"></a>SAT问题（可满足性问题）</h4><p><img src="/images/assets/image-20250522142734328.png" alt="image-20250522142734328" style="zoom:40%;" /></p>
+<p>CNF：合取范式。SAT问题即为：给定一个采取合取范式的布尔公式，为其找到一个可满足赋值或判定该赋值不存在。</p>
+<p>SAT是一个典型的搜索问题。给定一个问题实例 $I$ ，我们需要求它的一个解 $S$ (即某个符合特定描述的对象。在我们当前的问题中为一组满足所有子句的赋值)。如果这样的解不存在，则称该问题不可解。</p>
+<p>一个搜索问题必须具有如下性质：对实例 $I$ ,其任意一个解 $S$​ 的正确性都应该能被快速地检验。能被快速检验意味着存在一个以 $I$ 和 $S$ 为输入的多项式时间算法，用于验证 $S$ 是否为 $I$ 的一个解。</p>
+<p>搜索问题的完整定义：</p>
+<p><img src="/images/assets/image-20250522143135663.png" alt="image-20250522143135663" style="zoom:40%;" /></p>
+<h4 id="TSP问题（旅行商问题）"><a href="#TSP问题（旅行商问题）" class="headerlink" title="TSP问题（旅行商问题）"></a>TSP问题（旅行商问题）</h4><p>我们需要确定一条旅行路线，该路线为一个恰好经过每个顶点一次的环，且总的旅行费用不能超过 b</p>
+<p>可以看出这是一个搜索问题（存在算法C，直接把所有路径加起来看是否小于b）</p>
+<p>这里我们叙述的是：是否有不超过b的（搜索问题），而不是最优化问题。但其实二者是等价（难度一致）的。（搜索通过二分答案可以解决最优化问题，最优化问题也可以直接解决搜索问题）</p>
+<h4 id="Euler-和-Rudrata"><a href="#Euler-和-Rudrata" class="headerlink" title="Euler 和 Rudrata"></a>Euler 和 Rudrata</h4><p>Euler：七桥问题</p>
+<p>定义一个称为 Euler 路径的搜索问题如下：给定一个图，寻找一条恰好包含每条边一次的路径。从 Euler给出的答案出发，稍加思考不难发现，这一搜索问题能在多项式时间内求解。</p>
+<p>Rudrata：象能否从某个棋盘格出发，不重复地走遍所有的棋盘格，并最终回到出发的格子</p>
+<p>定义Rudrata环路搜索问题如下：给定一个图，求一条经过每个顶点恰好一次的环路，或者，报告该环路不存在。</p>
+<h4 id="Minimum-Cut-and-Balanced-Cut（分割与二等分）"><a href="#Minimum-Cut-and-Balanced-Cut（分割与二等分）" class="headerlink" title="Minimum Cut and Balanced Cut（分割与二等分）"></a>Minimum Cut and Balanced Cut（分割与二等分）</h4><p>分割是一个边的集合，将其从图中移除将导致图不再连通。</p>
+<p>最小分割问题：给定一个图和预算b,求最多包含b条边的分割。（可以用最大流最小割，每条边设置容量为1，在多项式时间内通过计算n-1次最大流而求解。具体来说，令每条边容量为1,然后求某个确定节点到其它每个节点的最大流。）</p>
+<p>平衡分割问题可以表述为：给定一个包含n个顶点的图和预算b,平衡分割将所有的顶点分成两个集合S和T,使得 $|S|、|T|≥\frac{n}{3}$ ,并且S和T之间最多有b条边。</p>
+<h4 id="Integer-linear-programming-ILP，整数线性规划）"><a href="#Integer-linear-programming-ILP，整数线性规划）" class="headerlink" title="Integer linear programming (ILP，整数线性规划）"></a>Integer linear programming (ILP，整数线性规划）</h4><p><img src="/images/assets/image-20250522151946743.png" alt="image-20250522151946743" style="zoom:40%;" /></p>
+<h4 id="3D匹配"><a href="#3D匹配" class="headerlink" title="3D匹配"></a>3D匹配</h4><p>在3D匹配问题中，除了n个男孩和n个女孩，新增了n个宠物；它们之间的相容关系被表达为一个三元组的集合，集合中每个元素都包含一个男孩、一个女孩和一个宠物。直观上，三元组(b,g,p)意味着男孩b,女孩g和宠物p能够融洽相处。我们需要求n个独立的三元组，从而最终形成n个和谐的“家庭组合”。</p>
+<p><img src="/images/assets/image-20250522152256998.png" alt="image-20250522152256998" style="zoom:40%;" /></p>
+<h4 id="独立集、顶点覆盖和团"><a href="#独立集、顶点覆盖和团" class="headerlink" title="独立集、顶点覆盖和团"></a>独立集、顶点覆盖和团</h4><p><img src="/images/assets/image-20250522152412056.png" alt="image-20250522152412056" style="zoom:40%;" /></p>
+<h4 id="最长路径问题"><a href="#最长路径问题" class="headerlink" title="最长路径问题"></a>最长路径问题</h4><p><img src="/images/assets/image-20250522152456594.png" alt="image-20250522152456594" style="zoom:40%;" /></p>
+<h4 id="背包问题和子集和"><a href="#背包问题和子集和" class="headerlink" title="背包问题和子集和"></a>背包问题和子集和</h4><p><img src="/images/assets/image-20250522152529253.png" alt="image-20250522152529253" style="zoom:40%;" /></p>
+<p><img src="/images/assets/image-20250522152542356.png" alt="image-20250522152542356" style="zoom:40%;" /></p>
+<h3 id="8-2-NP-完全问题"><a href="#8-2-NP-完全问题" class="headerlink" title="8.2 NP - 完全问题"></a>8.2 NP - 完全问题</h3><p><img src="/images/assets/image-20250522153208262.png" alt="image-20250522153208262" style="zoom:40%;" /></p>
+<p>搜索问题定义是：任意可能解的正确性都能被快速检验，也即：存在以问题实例I(用于确定待求解问题的数据)和可能解S为输入的高效检验算法C,其输出为true的充要条件是S确实是 $I$ 的解。此外，C(I,S)必须是关于实例长度 $|I|$ 的多项式时间算法。我们将所有这些搜索问题称为<strong>NP-问题</strong>。</p>
+<p>所有能在多项式时间内求解的搜索问题被记为<strong>P</strong>。也即，前述表右侧的问题都是属于<strong>P</strong>的。</p>
+<p>$\pmb{P}$ : polynomial time，能在多项式时间内求解的搜索问题</p>
+<p>$\pmb{N P}$ : nondeterministic polynomial time，搜索问题，即任何可能解的正确性能在多项式时间内被验证</p>
+<p>$\pmb{P} \neq \pmb{NP}$ ?</p>
+<p>寻找证明问题：</p>
+<p><img src="/images/assets/image-20250522153932545.png" alt="image-20250522153932545" style="zoom:40%;" /></p>
+<p>属于搜索问题，因此属于NP类。因为数学陈述的形式证明可以通过高效的算法进行验证。</p>
+<p>所以如果P= NP，那么将存在一种高效的方法来证明任何定理</p>
+<p>我们相信 $\pmb{P} \neq \pmb{NP}$ ，而且我们还能说明关于表左侧的问题，已经证明都可以在某种意义下被归约为完全相同的问题。我们还将使用归约来说明这些问题是NP搜索问题中最难的——只要其中某一个存在多项式时间算法，则所有NP问题也都存在类似的算法。</p>
+<p>再论归约：</p>
+<p><img src="/images/assets/image-20250529132953641.png" alt="image-20250529132953641" style="zoom:40%;" /></p>
+<p>$A的长度=f的时间+B的时间+S的长度=|I|的多项式+|I|的多项式+|I|的多项式$，所以成立</p>
+<p>归约的使用：</p>
+<p><img src="/images/assets/image-20250529141255968.png" alt="image-20250529141255968" style="zoom:40%;" /></p>
+<p>也可以写为 $A \leq B$ </p>
+<p>$\pmb{N P -Complete}$ ：称一个搜索问题是NP-完全的，是指其它所有搜索问题都可以归约到它。（注意，这样的问题是否存在并不知道）</p>
+<p><img src="/images/assets/image-20250529141009530.png" alt="image-20250529141009530" style="zoom:40%;" /></p>
+<p>因数分解：求给定整数的所有素因子。是搜索问题（$NP$），但是没有人相信是 $NP-Complete$ .因为它与其他问题之间的差异在于：不存在我们所熟悉的句子“或者报告解不存在”，它一定是有解的。</p>
+<h3 id="8-3-所有的归约"><a href="#8-3-所有的归约" class="headerlink" title="8.3 所有的归约"></a>8.3 所有的归约</h3><p>我们最终将得到这样一张图，图中所有的点都是 $NP-Complete$ 的。而且这些箭头其实是双向的，因为TSP既在 All of NP 里，也在图的最下面作为单独的节点。</p>
+<p><img src="/images/assets/image-20250529142016449.png" alt="image-20250529142016449" style="zoom:40%;" /></p>
+<h4 id="Rudrata-s-t-Path→Rudrata-Cycle"><a href="#Rudrata-s-t-Path→Rudrata-Cycle" class="headerlink" title="Rudrata(s, t)-Path→Rudrata Cycle"></a>Rudrata(s, t)-Path→Rudrata Cycle</h4><p>Rudrata环路问题：给定一个图，求是否存在一个恰好经过每个顶点一次的环路?</p>
+<p>Rudrata(s,t)-路径问题，需要指定两个特殊的顶点s和t,然后求一条由s到t的恰好经过每个顶点一次的路径。</p>
+<p>现在我要做归约：</p>
+<p><img src="/images/assets/image-20250529143036202.png" alt="image-20250529143036202" style="zoom:40%;" /></p>
+<p>加点x是归约的f，删除点x是归约的h。这样我们就规约好了。</p>
+<h4 id="3SAT→Independent-Set"><a href="#3SAT→Independent-Set" class="headerlink" title="3SAT→Independent Set"></a>3SAT→Independent Set</h4><p><img src="/images/assets/image-20250529143608434.png" alt="image-20250529143608434" style="zoom:40%;" /></p>
+<p>容易看出，多项式时间的f和h也是很容易构造的。（f如上图，h只需要从每个三角形中取一个true的，即可得到3SAT的答案）</p>
+<h4 id="SAT→3SAT"><a href="#SAT→3SAT" class="headerlink" title="SAT→3SAT"></a>SAT→3SAT</h4><p><img src="/images/assets/image-20250529145707263.png" alt="image-20250529145707263" style="zoom:40%;" /></p>
+<p>事实上，即使在3SAT中增加每个变量最多在不同子句中出现三次这一限制，其仍然是很难的。我们构造一个3SAT到这个特定版本的归约：</p>
+<p>假设在3SAT的实例中，变量x在k&gt;3个子句中出现。则将其第一次的出现替换为 $x_1$ ,第二次的替换为 $x_2$​ ,如此继续，将其所有的k次出现都替换为一个新的变量。接下来，增加一组子句</p>
+<script type="math/tex; mode=display">
+(\overline{x}_1 \vee x_2)(\overline{x}_2 \vee x_3)\cdots(\overline{x}_k \vee x_1)</script><p>在新的公式中不再存在出现次数超过3的变量(事实上，已没有出现超过两次的文字)。同时，上面的附加子句使得这些变量都必须取值相同。因此原3SAT实例可满足当且仅当加入限制后的实例可满足。 </p>
+<h4 id="Independent-Set→Vertex-Cover"><a href="#Independent-Set→Vertex-Cover" class="headerlink" title="Independent Set→Vertex Cover"></a>Independent Set→Vertex Cover</h4><p>只需要注意一点：节点集合S是图G=(V,E)的一个顶点覆盖，当且仅当剩余节点的集合V-S是G中的一个独立集</p>
+<p>因此，为了求解独立集问题的一个实例 $(G,g)$ ,仅需找到 $G$ 的一个包含 $|V|-g$ 个节点的顶点覆盖。如果存在这样的顶点覆盖，则选择所有未包含在其中的节点即可构成一个独立集。如果不存在这样的顶点覆盖，则G不可能有一个规模为g的独立集。</p>
+<h4 id="Independent-Set→Clique"><a href="#Independent-Set→Clique" class="headerlink" title="Independent Set→Clique"></a>Independent Set→Clique</h4><p>定义补图：原来的图中有边的没边，没边的加边得到 $\overline{G}$。于是节点集S是G的一个独立集当且仅当S是 $\overline{G}$ 中的一个团。</p>
+<h4 id="3SAT→3D-Matching"><a href="#3SAT→3D-Matching" class="headerlink" title="3SAT→3D Matching"></a>3SAT→3D Matching</h4><p>首先，我们构造一个“器件”：考虑如下四个三元组的集合，我们将每个三元组表示为一个三角形节点，三个角分别连接了一个男孩、一个女孩和一个宠物。</p>
+<p><img src="/images/assets/image-20250529161054701.png" alt="image-20250529161054701" style="zoom:40%;" /></p>
+<p>假设男孩$b_0$、$b_1$以及女孩$g_0$、$g_1$不属于任何其它的三元组。为了把这两个男孩两个女孩匹配起来，任意的匹配要么包含两个三元组$(b_0, g_1, p_0)$和$(b_1, g_0, p_2)$，要么包含$(b_0, g_0, p_1)$和$(b_1, g_1, p_3)$。因此，以上的“器件”就具有了两个可能的状态，恰好类似于一个典型的布尔变量的行为。对于每个3SAT的变量都生成一个上面的器件，用下标x标识：$b_{x0}, b_{x1}$ ， $g_{x0}, g_{x1}$， $p_{x0}, p_{x1},p_{x2}, p_{x3}$</p>
+<p>这样，我们就对于每个变量赋予了意义：若 $x = true$，则男孩 $b_{x0}$ 与女孩 $g_{x1}$ 相匹配，否则与 $g_{x0}$ 相匹配。</p>
+<p>然后，对于每个字句，构造一个男孩一个女孩，并且使用每个变量所对应的器件（注意到由于器件能够有true false的意义是由于我们让$b_{x0}, b_{x1}$ ， $g_{x0}, g_{x1}$ 不与外部相连。所以我们在构造字句所对应的3D匹配的时候实际上是用每一个器件中的宠物作为接口来实现的）来做一个3SAT→3D Matching的对应。</p>
+<p>例如子句$c = (x  \vee \overline{y} \vee z)$：</p>
+<p>引进男孩: $b_{c1}$ 和女孩: $g_{c1}$ 这些三元组中的宠物将用于反映这些子句被满足的三种途径：(1)$x = true$，(2)$y = false$，(3)$z = true$。 这三个途径只要有一个走得通就行了。</p>
+<p>对于(1)，我们构造三元组来对应：$(b_c, g_c, p_{x1})$，其中$p_{x1}$即$x$的器件中的宠物$p_1$。</p>
+<p>以下是为什么选择$p_1$的理由：若$x = true$，则$b_{x0}$与$g_{x1}$匹配且$b_{x1}$与$g_{x0}$匹配，因此用掉了宠物$p_{x0}$和$p_{x2}$。在此情况下，$b_c$和$g_c$可以和$p_{x1}$相匹配。但如果$x = false$，则$p_{x1}$和$p_{x3}$将被采用，于是$g_c$和$b_c$就无法采用这种方式进行匹配了。</p>
+<p>所以这个三元组就对应了c成立与否的一条途径。而对于每个字句中的变量都构造这样一个三元组，那么可以发现，c成立等价于 $b_c,g_c$ 顺利被匹配掉了。</p>
+<p> 我们需要确定一点，即对于一个文字在子句$c$中的每次出现，都有不同的宠物与$b_c$和$g_c$相匹配。这其实很简单：由此前的一个归约，我们可以假定每个文字的出现都不会超过两次，因此每个变量的器件都有足够多的宠物，其中两个对应于否定的出现，另两个对应于非否定的。</p>
+<p>归约到此似乎已经完成了：通过简单地查看每个变量的器件中哪个女孩$b_{x0}$被匹配，我们可以从任意的匹配中恢复出一个可满足赋值。并且，由任意的可满足赋值我们可以对与每个变量$x$对应的器件进行匹配，使得如果$x = true$则选择三元组$(b_{x0}, g_{x1}, p_{x0})$和$(b_{x1}, g_{x0}, p_{x2})$，如果$x = false$则选择$(b_{x0}, g_{x0}, p_{x1})$和$(b_{x1}, g_{x1}, p_{x3})$；并且每个子句$c$将使得$b_c$和$g_c$与其所包含的一个满足文字对应的宠物相匹配。</p>
+<p>还存在最后一个问题：在上一段最后定义的匹配中，有些宠物可能被剩余下来无从匹配。事实上，如果有$n$个变量和$m$个子句，则恰好有$2n - m$个宠物将不会被匹配(您可以检验该值一定为正的，因为每个变量最多有三次出现，且每个子句中最少有两个文字)。要解决该问题其实很容易：增加$2n - m$对新的男孩和女孩(两者已配对好了)，假设这些新加入的孩子都是些“大众宠物情人”，只需将他们与所有剩下的宠物配对即可。</p>
+<h4 id="3D-Matching→ZOE-Zero-One-Equations"><a href="#3D-Matching→ZOE-Zero-One-Equations" class="headerlink" title="3D Matching→ZOE(Zero One Equations)"></a>3D Matching→ZOE(Zero One Equations)</h4><p>ZOE:</p>
+<p><img src="/images/assets/image-20250529153641257.png" alt="image-20250529153641257" style="zoom:40%;" /></p>
+<p>举例来说，使用ZOE的语言，我们可以这样表达3D匹配问题($m$个男孩、$m$个女孩、$m$个宠物和$n$个男孩-女孩-宠物三元组)。对每个三元组，我们设置一个0 - 1变量$x_i (i = 1, \ldots, n)$，$x_i = 1$意味着第$i$个三元组被用于匹配，反之则表示没有被使用。 现在我们要做的是写下一些方程以说明由$x_i$所表达的解是一个合法的匹配。对每个男孩(或者女孩，或者宠物)，假设包含他(她、它)的三元组下标为$j_1, j_2, \ldots, j_k$，于是对应的方程就是 </p>
+<script type="math/tex; mode=display">
+x_{j_1} + x_{j_2} + \ldots + x_{j_k} = 1</script><p> 其含义为恰好有一个三元组被包含在匹配中。例如，以下矩阵$\mathbf{A}$对应于我们此前看到的3D匹配实例：</p>
+<p><img src="/images/assets/image-20250529163757306.png" alt="image-20250529163757306" style="zoom:40%;" /></p>
+<p>9行代表9个人（或宠物），每列代表一个三元组。</p>
+<h4 id="ZOE→Subset-Sum"><a href="#ZOE→Subset-Sum" class="headerlink" title="ZOE→Subset Sum"></a>ZOE→Subset Sum</h4><p>子集和问题：有一个集合，找一个子集，其和为一个给定的数。</p>
+<p>ZOE转化为子集和：对每一列，其值为二进制编码（从上到下读）。找一些列，其和为11…1.这就是一个子集和问题了。</p>
+<p>一个小问题：可能因为进位而导致非预期的成立，如：</p>
+<p><img src="/images/assets/image-20250529164317982.png" alt="image-20250529164317982" style="zoom:40%;" /></p>
+<p>$\Rightarrow$ 不以2base，以n+1base，则不会进位了。</p>
+<h4 id="ZOE→ILP"><a href="#ZOE→ILP" class="headerlink" title="ZOE→ILP"></a>ZOE→ILP</h4><h2 id="第-9-章-NP-完全问题的处理"><a href="#第-9-章-NP-完全问题的处理" class="headerlink" title="第 9 章 NP - 完全问题的处理"></a>第 9 章 NP - 完全问题的处理</h2><h3 id="9-1-智能穷举搜索"><a href="#9-1-智能穷举搜索" class="headerlink" title="9.1 智能穷举搜索"></a>9.1 智能穷举搜索</h3><h4 id="9-1-1-回溯"><a href="#9-1-1-回溯" class="headerlink" title="9.1.1 回溯"></a>9.1.1 回溯</h4><h4 id="9-1-2-分支定界"><a href="#9-1-2-分支定界" class="headerlink" title="9.1.2 分支定界"></a>9.1.2 分支定界</h4><h3 id="9-2-近似算法"><a href="#9-2-近似算法" class="headerlink" title="9.2 近似算法"></a>9.2 近似算法</h3><h4 id="9-2-1-顶点覆盖"><a href="#9-2-1-顶点覆盖" class="headerlink" title="9.2.1 顶点覆盖"></a>9.2.1 顶点覆盖</h4><h4 id="9-2-2-聚类"><a href="#9-2-2-聚类" class="headerlink" title="9.2.2 聚类"></a>9.2.2 聚类</h4><h4 id="9-2-3-TSP"><a href="#9-2-3-TSP" class="headerlink" title="9.2.3 TSP"></a>9.2.3 TSP</h4><h4 id="9-2-4-背包问题"><a href="#9-2-4-背包问题" class="headerlink" title="9.2.4 背包问题"></a>9.2.4 背包问题</h4><h4 id="9-2-5-逼近的层次"><a href="#9-2-5-逼近的层次" class="headerlink" title="9.2.5 逼近的层次"></a>9.2.5 逼近的层次</h4><h3 id="9-3-局部搜索中的启发方法"><a href="#9-3-局部搜索中的启发方法" class="headerlink" title="9.3 局部搜索中的启发方法"></a>9.3 局部搜索中的启发方法</h3><h4 id="9-3-1-重新审视旅行商问题"><a href="#9-3-1-重新审视旅行商问题" class="headerlink" title="9.3.1 重新审视旅行商问题"></a>9.3.1 重新审视旅行商问题</h4><h4 id="9-3-2-图划分"><a href="#9-3-2-图划分" class="headerlink" title="9.3.2 图划分"></a>9.3.2 图划分</h4><h4 id="9-3-3-处理局部最优"><a href="#9-3-3-处理局部最优" class="headerlink" title="9.3.3 处理局部最优"></a>9.3.3 处理局部最优</h4><h2 id="第-10-章-量子算法"><a href="#第-10-章-量子算法" class="headerlink" title="第 10 章 量子算法"></a>第 10 章 量子算法</h2><h3 id="10-1-量子位元、叠加状态和度量"><a href="#10-1-量子位元、叠加状态和度量" class="headerlink" title="10.1 量子位元、叠加状态和度量"></a>10.1 量子位元、叠加状态和度量</h3><h3 id="10-2-算法设计"><a href="#10-2-算法设计" class="headerlink" title="10.2 算法设计"></a>10.2 算法设计</h3><h3 id="10-3-量子傅立叶变换"><a href="#10-3-量子傅立叶变换" class="headerlink" title="10.3 量子傅立叶变换"></a>10.3 量子傅立叶变换</h3><h3 id="10-4-周期性"><a href="#10-4-周期性" class="headerlink" title="10.4 周期性"></a>10.4 周期性</h3><h3 id="10-5-量子电路"><a href="#10-5-量子电路" class="headerlink" title="10.5 量子电路"></a>10.5 量子电路</h3><h4 id="10-5-1-基本量子门"><a href="#10-5-1-基本量子门" class="headerlink" title="10.5.1 基本量子门"></a>10.5.1 基本量子门</h4><h4 id="10-5-2-量子电路的两种基本类型"><a href="#10-5-2-量子电路的两种基本类型" class="headerlink" title="10.5.2 量子电路的两种基本类型"></a>10.5.2 量子电路的两种基本类型</h4><h4 id="10-5-3-量子傅立叶变换电路"><a href="#10-5-3-量子傅立叶变换电路" class="headerlink" title="10.5.3 量子傅立叶变换电路"></a>10.5.3 量子傅立叶变换电路</h4><h3 id="10-6-将因子分解问题转化为周期求解问题"><a href="#10-6-将因子分解问题转化为周期求解问题" class="headerlink" title="10.6 将因子分解问题转化为周期求解问题"></a>10.6 将因子分解问题转化为周期求解问题</h3><h3 id="10-7-因子分解的量子算法"><a href="#10-7-因子分解的量子算法" class="headerlink" title="10.7 因子分解的量子算法"></a>10.7 因子分解的量子算法</h3>
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2025/05/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%80%BB%E7%BB%93/"
+      title="数据结构总结"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        数据结构总结
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2025/05/20/%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%97%AD%E9%A6%86%E9%9F%B3%E4%B9%90/"
+      title="图书馆闭馆音乐"
+     >
+
+    <p class="title-text">
+      
+        图书馆闭馆音乐
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="comment-card" class="comment-card">
+    <div class="main-title-bar">
+      <div class="main-title-dot"></div>
+      <div class="main-title">Comments </div>
+    </div>
+    <div id="vcomments"></div>
+  </div>
+  <script>
+      new Valine({"enable":true,"appId":"SfQIE69iSsJmTNkcRv2nKXfR-gzGzoHsz","appKey":"Qui0C4Ke95otxc0zdgAa3UwV","placeholder":"Write something ... (You should go to https://cn.gravatar.com and sign up to have your own profile picture)","pageSize":10,"highlight":true,"avatar":"identicon","serverURLs":null,"el":"#vcomments"});
+  </script>
+
+
+
+
+
+    </div>
+    <div id="footer-wrapper">
+      <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2025 Smiling<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+      <span id="busuanzi_container_site_pv">
+        🌏本站总访问量<span id="busuanzi_value_site_pv"></span>次 |
+      </span>
+      <span id="busuanzi_container_site_uv">
+        🧑‍💻本站访客数<span id="busuanzi_value_site_uv"></span>人次
+      </span>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
