@@ -45,7 +45,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2025/05/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0/images/mmexport871fd813f9d3e9c4ac4cf3df69058f2f_1729340.webp">
 <meta property="article:published_time" content="2025-05-12T14:41:32.000Z">
-<meta property="article:modified_time" content="2025-05-28T12:12:18.018Z">
+<meta property="article:modified_time" content="2025-05-30T02:40:47.747Z">
 <meta property="article:author" content="Smiling">
 <meta property="article:tag" content="学习">
 <meta property="article:tag" content="程序设计与数据结构">
@@ -396,37 +396,27 @@ public:
 <li>
 <p>各种小算法的伪代码，例如mst的Kruskal和Prim</p>
 </li>
+<li>
+<p>操作系统内部，函数调用用栈来实现</p>
+</li>
+<li>
+<p>优先队列与普通队列（先进先出）的最大区别在于：<strong>每个元素都有一个优先级，队列的输出顺序由元素的优先级决定</strong>，而非进入队列的先后顺序。用堆实现</p>
+</li>
+<li>
+<p>拓扑排序，要么用BFS每次找汇点（出度为0）输出删除，要么用DFS的post倒序排序</p>
+</li>
 </ol>
 <h2 id="2-questions">2 Questions</h2>
 <ol>
-<li>
-<p>可通过同时使用按高度并和路径压缩提高并查集的性能：为什么错了？（23John-15)</p>
-</li>
-<li>
-<p>哈希函数确定查找成功所需的平均元素比较次数和查找不成功所需的平均元素比较次数，为什么查找不成功要+1？在空的时候不是直接返回false吗？(23John-二.4)</p>
-</li>
-<li>
-<p>(    ) 只考虑加减乘除与括号，以下说法错误的是______________________</p>
-<p>A. 后缀表达式已经体现了运算顺序，因此不需要括号</p>
-<p>B. 当新运算符优先级高于根运算符时新运算符作为根，原来的表达式树作为该根的左子树</p>
-<p>C. 将中缀表达式转换为后缀表达式只需要一个栈</p>
-<p>D. 中缀表达式对应的后缀表达式是唯一的 （24John-4)</p>
-</li>
-<li>
-<p>树的高度到底是怎么定义的？eg.24John-8</p>
-</li>
-<li>
-<p>Fortune要考吗（224john-二6）</p>
-</li>
-<li>
-<p>LRU-k算法没看明白（2024john-二9）</p>
-</li>
-<li>
-<p>2024John-二12看不懂</p>
-</li>
+<li>可通过同时使用按高度并和路径压缩提高并查集的性能：为什么错了？（23John-15)</li>
+<li>哈希函数确定查找成功所需的平均元素比较次数和查找不成功所需的平均元素比较次数，为什么查找不成功要+1？在空的时候不是直接返回false吗？(23John-二.4)</li>
+<li>树的高度到底是怎么定义的？eg.24John-8</li>
+<li>Fortune要考吗（224john-二6）</li>
+<li>LRU-k算法没看明白（2024john-二9）</li>
+<li>2024John-二12看不懂</li>
 <li></li>
 </ol>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">RR</span><span class="params">(AvlNode *fa)</span></span>&#123;</span><br><span class="line">    AvlNode *A = fa-&gt;left;</span><br><span class="line">    AvlNode *B = A-&gt;right;</span><br><span class="line">    A-&gt;right = B-&gt;left;</span><br><span class="line">    B-&gt;left = A;</span><br><span class="line">    fa-&gt;left = B;</span><br><span class="line">    A-&gt;height--;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">DelRepeat</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::map&lt;elemType , <span class="type">int</span>&gt; mp;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span> ; i &lt; currentLength ; i++)&#123;</span><br><span class="line">        mp[data[i]]++;</span><br><span class="line">        <span class="keyword">if</span>(mp[data[i]] &gt;= <span class="number">2</span>)&#123;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="3-附录">3 附录</h2>
 <ol>
 <li>
