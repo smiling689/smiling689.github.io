@@ -30,24 +30,18 @@
 
 
   
-  <title>环境配置 | Smiling</title>
+  <title>Archives: 2025/6 | Smiling</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="记录一下我在配置各种环境的时候遇到的问题，以便未来再次遇到的时候能够快速解决。 tensorflow 安装tensorflow的时候，pip 找不到适配的 tensorflow 版本。 12345678smiling@Smiling:~&#x2F;csdiy&#x2F;CS50_AI&#x2F;Project5&#x2F;traffic$ pip3 install -r requirements.txt    Defaulting to">
-<meta property="og:type" content="article">
-<meta property="og:title" content="环境配置">
-<meta property="og:url" content="http://example.com/2025/05/06/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Smiling">
+<meta property="og:url" content="http://example.com/archives/2025/06/index.html">
 <meta property="og:site_name" content="Smiling">
-<meta property="og:description" content="记录一下我在配置各种环境的时候遇到的问题，以便未来再次遇到的时候能够快速解决。 tensorflow 安装tensorflow的时候，pip 找不到适配的 tensorflow 版本。 12345678smiling@Smiling:~&#x2F;csdiy&#x2F;CS50_AI&#x2F;Project5&#x2F;traffic$ pip3 install -r requirements.txt    Defaulting to">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-05-06T03:15:38.000Z">
-<meta property="article:modified_time" content="2025-05-15T02:07:42.387Z">
 <meta property="article:author" content="Smiling">
-<meta property="article:tag" content="学习">
-<meta property="article:tag" content="杂项">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Smiling" type="application/atom+xml">
@@ -279,163 +273,44 @@
     <div id="content-body">
        
 
-
-<article id="post-环境配置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  
+<div class="archive-main-card">
+    <div class="archive-top">
+      <div class="main-title-bar">
+        <div class="main-title-dot"></div>
+        <h1 class="article-title">Archives</h1>
+      </div>    
+    </div>
     
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
+    
+      
+      
         
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 class="p-name article-title" itemprop="headline name">
-        环境配置
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2025-05-06T03:15:38.000Z" itemprop="datePublished">2025-05-06</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            1.8k words 
-          </div>
-          <!-- busuanzi-counter -->
-          
-            
-            <div class="readcount need-seperator meta-info">
-             <span id="busuanzi_container_page_pv">阅读<span id="busuanzi_value_page_pv"></span>次</span>
+        <div class="year-line">
+            <div class="year-num">2025</div>
+            <div class="dot-wrapper">
+                <div class="dot"></div>
             </div>
-          
+            <div class="article-count">1 article</div>
         </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="tag">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%9D%82%E9%A1%B9/" rel="tag">杂项</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-            <!-- Table of Contents -->
-             
-          <p>记录一下我在配置各种环境的时候遇到的问题，以便未来再次遇到的时候能够快速解决。</p>
-<h2 id="tensorflow">tensorflow</h2>
-<p>安装tensorflow的时候，pip 找不到适配的 tensorflow 版本。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">smiling@Smiling:~/csdiy/CS50_AI/Project5/traffic$ pip3 install -r requirements.txt</span><br><span class="line">    </span><br><span class="line">Defaulting to user installation because normal site-packages is not writeable</span><br><span class="line">Collecting opencv-python (from -r requirements.txt (line 1))</span><br><span class="line">  Using cached opencv_python-4.11.0.86-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (20 kB)</span><br><span class="line">Requirement already satisfied: scikit-learn <span class="keyword">in</span> /home/smiling/.local/lib/python3.13/site-packages (from -r requirements.txt (line 2)) (1.6.1)</span><br><span class="line">ERROR: Could not find a version that satisfies the requirement tensorflow (from versions: none)</span><br><span class="line">ERROR: No matching distribution found <span class="keyword">for</span> tensorflow</span><br></pre></td></tr></table></figure>
-<p>当使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python --version</span><br></pre></td></tr></table></figure>
-<p>的时候以为自己已经调到了正确的python版本（这里我想从3.13调成3.12版本），但是实际上使用</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 -V</span><br></pre></td></tr></table></figure>
-<p>就可能发现，pip3还是用的python3.13</p>
-<p>所以需要调整，解决方式：</p>
-<h4 id="创建并激活-python-3-12-的虚拟环境">创建并激活 Python 3.12 的虚拟环境</h4>
-<p>使用 <code>venv</code> 来创建一个基于 Python 3.12 的虚拟环境：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3.12 -m venv myenv312</span><br></pre></td></tr></table></figure>
-<p>激活该虚拟环境：</p>
-<ul>
-<li>在 Linux 系统上：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> myenv312/bin/activate</span><br></pre></td></tr></table></figure>
-<ul>
-<li>在Windows系统上：</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myenv312\Scripts\activate</span><br></pre></td></tr></table></figure>
-<p>然后</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 -V</span><br></pre></td></tr></table></figure>
-<p>确保显示的是 Python 3.12 版本。</p>
-<p>之后再使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install tensorflow</span><br></pre></td></tr></table></figure>
-<p>就可以了。</p>
-<p>之后在其他地方使用如果还出现问题，可能要再创建一个虚拟环境，使得python版本和tensorflow匹配。</p>
-<p>之后再进入已创建的基于 Python 3.12 的 myenv312 虚拟环境，不同系统操作如下：</p>
-<h5 id="linux-系统">Linux 系统</h5>
-<p>打开终端，进入到包含虚拟环境目录（myenv312 所在目录），执行命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source myenv312/bin/activate</span><br></pre></td></tr></table></figure>
-<p>激活后，终端命令行开头会显示虚拟环境名称，如 (myenv312) user@hostname:~/your_directory$  ，表示已成功进入虚拟环境。</p>
-<h5 id="windows-系统">Windows 系统</h5>
-<p>打开命令提示符或 PowerShell ，进入到 myenv312 虚拟环境所在目录，执行命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myenv312\Scripts\activate</span><br></pre></td></tr></table></figure>
-<p>执行后，命令行开头会显示 (myenv312)  ，如 (myenv312) C:\Users\your_username\your_directory&gt; ，即成功进入虚拟环境。</p>
-<h2 id="python经典问题">python经典问题</h2>
-<p>有时候在安装了一个库之后发现还是识别不到，很可能是如下问题：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">smiling@Smiling:~/physics-raudio$ pip3 --version</span><br><span class="line">pip 25.1.1 from /home/smiling/.local/lib/python3.13/site-packages/pip (python 3.13)</span><br><span class="line">smiling@Smiling:~/physics-raudio$ python3 --version</span><br><span class="line">Python 3.8.10</span><br></pre></td></tr></table></figure>
-<p>使用的pip和python版本不一样，导致无法识别</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">smiling@Smiling:~/physics-raudio$ <span class="built_in">sudo</span> <span class="built_in">rm</span> /usr/bin/python3</span><br><span class="line">smiling@Smiling:~/physics-raudio$ <span class="built_in">sudo</span> <span class="built_in">ln</span> -s /usr/bin/python3.13 /usr/bin/python3 </span><br></pre></td></tr></table></figure>
-<p>之后再检查应该就会发现python调到了正确的版本。</p>
-<p>但是好像这样的方法ai不推荐。建议下次有空的话还是仔细探索一下怎么使用</p>
-
-        
-      </div>
-
-         
-    </div>
-    
-     
-  </div>
-  
-    
-<nav id="article-nav">
-  <a class="article-nav-btn left "
-    
-      href="/2025/05/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0/"
-      title="数据结构备考笔记"
-     >
-    <i class="fa-solid fa-angle-left"></i>
-    <p class="title-text">
       
-        数据结构备考笔记
-        
-    </p>
-  </a>
-  <a class="article-nav-btn right "
+      <a class="archive-article-link" href="/2025/06/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/" title="算法笔记">
+        <div class="date">06-05</div>
+        <div class="line">
+            <div class="dot"></div>
+        </div>
+        <div class="title">
+            <div class="title-inner">
+                
+                    算法笔记
+                
+            </div>
+        </div>
+        <div class="tags">
+            #学习 #算法
+        </div>
+      </a>
     
-      href="/2025/05/05/CS50-AI/"
-      title="CS50-AI"
-     >
-
-    <p class="title-text">
-      
-        CS50-AI
-        
-    </p>
-    <i class="fa-solid fa-angle-right"></i>
-  </a>
-</nav>
-
-
-  
-</article>
-
-
-  
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-  <div id="comment-card" class="comment-card">
-    <div class="main-title-bar">
-      <div class="main-title-dot"></div>
-      <div class="main-title">Comments </div>
-    </div>
-    <div id="vcomments"></div>
   </div>
-  <script>
-      new Valine({"enable":true,"appId":"SfQIE69iSsJmTNkcRv2nKXfR-gzGzoHsz","appKey":"Qui0C4Ke95otxc0zdgAa3UwV","placeholder":"Write something ... (You should go to https://cn.gravatar.com and sign up to have your own profile picture)","pageSize":10,"highlight":true,"avatar":"identicon","serverURLs":null,"el":"#vcomments"});
-  </script>
-
-
-
-
-
     </div>
     <div id="footer-wrapper">
       <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
